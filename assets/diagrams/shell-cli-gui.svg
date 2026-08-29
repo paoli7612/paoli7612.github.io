@@ -1,18 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-labelledby="t d">
-<title id="t">GUI e CLI</title><desc id="d">Due modi di interagire con il sistema operativo: interfaccia grafica e riga di comando.</desc>
-<defs><style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="t d">
+<title id="t">GUI e CLI</title>
+<desc id="d">Confronto tra interfaccia grafica simile a Windows e terminale con prompt e comandi.</desc>
+<defs>
+<style>
   text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
   .title{font-size:24px;font-weight:700}
   .label{font-size:16px;font-weight:700}
   .small{font-size:13px;fill:#5f6c78}
+  .tiny{font-size:11px;fill:#5f6c78}
+  .mono{font-family:Consolas,"Courier New",monospace;font-size:13px}
   .box{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:10}
-  .accent{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:10}
-  .warn{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:10}
+  .panel{fill:#f7faf9;stroke:#d8dee5;stroke-width:2;rx:8}
+  .win-blue{fill:#1473e6}
+  .win-soft{fill:#edf5ff}
+  .terminal{fill:#111820}
+  .terminal-bar{fill:#202a34}
+  .term-text{fill:#d7fbe8}
+  .term-muted{fill:#8ea4b8}
   .arrow-line{stroke:#006d77;stroke-width:4;stroke-linecap:round}
   .arrow-head{fill:#006d77}
-</style></defs>
+</style>
+</defs>
+
 <text x="40" y="48" class="title">Due strade per dare ordini al sistema</text>
-<rect x="55" y="95" width="340" height="250" class="box"/><text x="225" y="135" text-anchor="middle" class="label">GUI</text><rect x="95" y="165" width="260" height="135" fill="#e7f0ed" stroke="#006d77" stroke-width="2" rx="8"/><circle cx="125" cy="190" r="9" fill="#c44f24"/><rect x="145" y="184" width="170" height="13" fill="#fff"/><rect x="120" y="220" width="210" height="45" fill="#fff" stroke="#d8dee5"/><text x="225" y="380" text-anchor="middle" class="small">Finestre, icone, pulsanti, menu</text>
-<rect x="505" y="95" width="340" height="250" class="box"/><text x="675" y="135" text-anchor="middle" class="label">CLI</text><rect x="545" y="165" width="260" height="135" fill="#17202a" rx="8"/><text x="570" y="205" fill="#fff" font-size="15">cd Documenti</text><text x="570" y="235" fill="#fff" font-size="15">mkdir esercizi</text><text x="570" y="265" fill="#fff" font-size="15">dir</text><text x="675" y="380" text-anchor="middle" class="small">Comandi scritti interpretati dalla shell</text>
-<line x1="225" y1="410" x2="658" y2="410" class="arrow-line"/><polygon points="675,410 655,399 655,421" class="arrow-head"/><text x="450" y="445" text-anchor="middle" class="small">Entrambe arrivano ai servizi del sistema operativo</text>
+
+<rect x="48" y="88" width="370" height="292" class="box"/>
+<text x="233" y="124" text-anchor="middle" class="label">GUI</text>
+<rect x="82" y="145" width="302" height="194" class="panel"/>
+<rect x="82" y="145" width="302" height="31" class="win-blue" rx="8"/>
+<rect x="82" y="164" width="302" height="12" class="win-blue"/>
+<text x="106" y="165" fill="#fff" font-size="12" font-weight="700">Esplora file</text>
+<circle cx="342" cy="160" r="5" fill="#fff" opacity=".9"/>
+<line x1="356" y1="155" x2="366" y2="165" stroke="#fff" stroke-width="2"/>
+<line x1="366" y1="155" x2="356" y2="165" stroke="#fff" stroke-width="2"/>
+<rect x="96" y="190" width="78" height="135" fill="#ffffff" stroke="#d8dee5"/>
+<rect x="188" y="190" width="178" height="135" fill="#ffffff" stroke="#d8dee5"/>
+<rect x="108" y="207" width="48" height="10" class="win-soft"/>
+<rect x="108" y="232" width="48" height="10" class="win-soft"/>
+<rect x="108" y="257" width="48" height="10" class="win-soft"/>
+<rect x="204" y="207" width="40" height="32" fill="#ffd166" rx="3"/>
+<rect x="260" y="207" width="40" height="32" fill="#ffd166" rx="3"/>
+<rect x="316" y="207" width="32" height="32" fill="#e7f0ed" stroke="#006d77" rx="3"/>
+<text x="224" y="257" text-anchor="middle" class="tiny">Documenti</text>
+<text x="280" y="257" text-anchor="middle" class="tiny">Immagini</text>
+<text x="332" y="257" text-anchor="middle" class="tiny">rete.lnk</text>
+<rect x="203" y="284" width="146" height="20" fill="#edf5ff" stroke="#1473e6"/>
+<text x="276" y="298" text-anchor="middle" class="tiny">lezione-sistemi.txt</text>
+<text x="233" y="410" text-anchor="middle" class="small">Finestre, icone, menu e puntatore</text>
+
+<rect x="482" y="88" width="370" height="292" class="box"/>
+<text x="667" y="124" text-anchor="middle" class="label">CLI</text>
+<rect x="520" y="145" width="294" height="194" class="terminal" rx="8"/>
+<rect x="520" y="145" width="294" height="30" class="terminal-bar" rx="8"/>
+<rect x="520" y="164" width="294" height="11" class="terminal-bar"/>
+<circle cx="540" cy="160" r="5" fill="#ff5f56"/>
+<circle cx="558" cy="160" r="5" fill="#ffbd2e"/>
+<circle cx="576" cy="160" r="5" fill="#27c93f"/>
+<text x="608" y="165" class="tiny" fill="#c7d2df">Windows PowerShell</text>
+<text x="540" y="204" class="mono term-muted">PS C:\Users\Studente&gt;</text>
+<text x="704" y="204" class="mono term-text">cd Documenti</text>
+<text x="540" y="232" class="mono term-muted">PS C:\Users\Studente\Documenti&gt;</text>
+<text x="540" y="260" class="mono term-text">mkdir esercizi-tpsit</text>
+<text x="540" y="288" class="mono term-text">dir</text>
+<text x="540" y="316" class="mono term-muted">Mode   Name</text>
+<text x="628" y="316" class="mono term-text">esercizi-tpsit</text>
+<rect x="745" y="304" width="9" height="18" fill="#d7fbe8"/>
+<text x="667" y="410" text-anchor="middle" class="small">Prompt, comandi, output e cursore</text>
+
+<line x1="233" y1="442" x2="648" y2="442" class="arrow-line"/>
+<polygon points="668,442 645,430 645,454" class="arrow-head"/>
+<text x="450" y="480" text-anchor="middle" class="small">Entrambe arrivano ai servizi del sistema operativo</text>
 </svg>
