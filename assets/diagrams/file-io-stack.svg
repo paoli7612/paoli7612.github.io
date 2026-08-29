@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="t d">
+<title id="t">Accesso a file e periferiche</title><desc id="d">Dal programma al file system, al driver e alla periferica.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#006d77"/></marker><style>
+  text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
+  .title{font-size:24px;font-weight:700}
+  .label{font-size:16px;font-weight:700}
+  .small{font-size:13px;fill:#5f6c78}
+  .box{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:10}
+  .accent{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:10}
+  .warn{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:10}
+  .line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}
+</style></defs>
+<text x="40" y="48" class="title">Come un programma raggiunge un file o una periferica</text>
+<rect x="250" y="90" width="400" height="65" class="box"/><text x="450" y="130" text-anchor="middle" class="label">Programma applicativo</text>
+<rect x="250" y="185" width="400" height="65" class="accent"/><text x="450" y="225" text-anchor="middle" class="label">Chiamate al sistema operativo</text>
+<rect x="80" y="310" width="260" height="80" class="box"/><text x="210" y="342" text-anchor="middle" class="label">File system</text><text x="210" y="367" text-anchor="middle" class="small">nomi, cartelle, metadati</text>
+<rect x="560" y="310" width="260" height="80" class="box"/><text x="690" y="342" text-anchor="middle" class="label">Driver</text><text x="690" y="367" text-anchor="middle" class="small">comandi specifici del dispositivo</text>
+<rect x="80" y="430" width="260" height="55" class="warn"/><text x="210" y="465" text-anchor="middle" class="label">Disco / SSD</text>
+<rect x="560" y="430" width="260" height="55" class="warn"/><text x="690" y="465" text-anchor="middle" class="label">Stampante, rete, tastiera...</text>
+<path d="M450 155 V180" class="line"/><path d="M410 250 C325 280 250 285 220 305" class="line"/><path d="M490 250 C575 280 650 285 680 305" class="line"/><path d="M210 390 V425" class="line"/><path d="M690 390 V425" class="line"/>
+</svg>

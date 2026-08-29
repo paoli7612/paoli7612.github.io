@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Interazione con il sistema operativo | Programma di studio</title>
-  <meta name="description" content="Lezione di TPSIT sui sistemi operativi per studenti del triennio di informatica.">
+  <meta name="description" content="Lezione illustrata di TPSIT sui sistemi operativi per studenti del triennio di informatica.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -35,48 +35,40 @@
             <header>
               <p class="eyebrow">Capitoletto</p>
               <h1>Interazione con il sistema operativo</h1>
-              <p>Sistemi operativi e gestione delle risorse</p>
+              <p>Come utenti e programmi comunicano con il sistema operativo attraverso interfacce grafiche, terminale, shell e comandi.</p>
             </header>
             <div class="content-blocks">
               <section class="content-block">
-                    <h2>Che cos'è un sistema operativo</h2>
-                    <p>Un sistema operativo è il software di base che permette a una persona e ai programmi applicativi di utilizzare l'hardware di un computer. Senza sistema operativo, ogni programma dovrebbe sapere da solo come parlare con tastiera, schermo, disco, rete e memoria: sarebbe complicato, poco sicuro e diverso per ogni macchina.</p>
-<p>Il sistema operativo si comporta come un intermediario. Da una parte riceve richieste dagli utenti e dalle applicazioni; dall'altra controlla CPU, memoria, file, periferiche e connessioni. Il suo compito è rendere il computer utilizzabile, ordinato e condivisibile.</p>
+                    <h2>Obiettivi della lezione</h2>
+                    <ul><li>Capire che il sistema operativo è un intermediario tra utente, programmi e hardware.</li><li>Distinguere interfaccia grafica, terminale e shell.</li><li>Usare il concetto di comando, argomento, percorso e variabile d'ambiente.</li><li>Saper spiegare perché la riga di comando è utile in informatica.</li></ul>
                   </section>
 <section class="content-block">
-                    <h2>Interfaccia grafica e riga di comando</h2>
-                    <p>L'interfaccia grafica, detta GUI, permette di lavorare con finestre, icone, menu e puntatore. È comoda per molte attività quotidiane, perché rende visibili oggetti e comandi: si aprono cartelle, si trascinano file, si configurano opzioni tramite pannelli.</p>
-<p>La riga di comando, detta CLI, permette invece di impartire istruzioni scritte. All'inizio può sembrare meno immediata, ma è molto potente: un comando può essere ripetuto, documentato, copiato, inserito in uno script e usato anche su server remoti privi di interfaccia grafica.</p><ul>
-<li>GUI: adatta a esplorazione visuale, uso quotidiano e operazioni occasionali.</li>
-<li>CLI: adatta ad amministrazione, automazione, diagnostica e lavoro su server.</li>
-<li>Entrambe non si escludono: un tecnico informatico deve saper usare tutte e due.</li>
-</ul>
+                    <h2>Il sistema operativo come intermediario</h2>
+                    <figure class="lesson-figure"><img src="../../../assets/diagrams/os-layers.svg" alt="Schema a livelli del sistema operativo"><figcaption>Figura 1: il sistema operativo si trova tra applicazioni e hardware.</figcaption></figure><p>Il sistema operativo è il software di base che rende utilizzabile il computer. Riceve richieste dagli utenti e dai programmi, poi le traduce in operazioni sulle risorse fisiche: CPU, memoria, disco, rete, schermo, tastiera e altre periferiche.</p><p>Questa separazione è importante: un programma di videoscrittura non deve conoscere i dettagli della scheda video o del disco. Chiede al sistema operativo di mostrare testo, salvare file o stampare; il sistema operativo controlla permessi, risorse disponibili e driver.</p>
+                  </section>
+<section class="content-block">
+                    <h2>GUI e CLI</h2>
+                    <figure class="lesson-figure"><img src="../../../assets/diagrams/shell-cli-gui.svg" alt="Confronto fra interfaccia grafica e riga di comando"><figcaption>Figura 2: GUI e CLI sono due modi diversi per arrivare ai servizi del sistema operativo.</figcaption></figure><table><thead><tr><th>Interfaccia</th><th>Come si usa</th><th>Quando conviene</th></tr></thead><tbody><tr><td>GUI</td><td>Finestre, icone, menu, pulsanti.</td><td>Operazioni visive, uso quotidiano, configurazioni occasionali.</td></tr><tr><td>CLI</td><td>Comandi scritti dentro un terminale.</td><td>Automazione, server, diagnostica, attività ripetitive.</td></tr></tbody></table><aside class="simple-box"><strong>In parole semplici</strong><p>La GUI è come usare un pannello con pulsanti. La CLI è come scrivere istruzioni precise. Entrambe comandano lo stesso sistema, ma con stili diversi.</p></aside>
                   </section>
 <section class="content-block">
                     <h2>Shell, terminale e comandi</h2>
-                    <p>Il terminale è la finestra o l'ambiente in cui scriviamo i comandi. La shell è il programma che li interpreta. Quando scriviamo un comando, la shell lo analizza, cerca il programma richiesto, passa eventuali argomenti e mostra il risultato.</p>
-<p>Comandi come cd, dir o ls, copy o cp, mkdir, del o rm permettono di navigare nel file system e manipolare file e cartelle. Altri comandi mostrano processi, configurazione di rete, spazio su disco e informazioni del sistema.</p><pre><code>cd Documenti
+                    <p>Il terminale è l'ambiente in cui scriviamo. La shell è il programma che interpreta ciò che scriviamo. Un comando può avere argomenti, cioè informazioni aggiuntive che specificano su cosa lavorare.</p><pre><code>cd Documenti
 mkdir esercizi
-dir</code></pre><p>In questo esempio si entra nella cartella Documenti, si crea una nuova cartella chiamata esercizi e poi si visualizza il contenuto della posizione corrente. La cosa importante non è memorizzare solo il comando, ma capire l'azione che produce sul sistema.</p>
+dir</code></pre><p>Qui <code>cd</code> cambia cartella, <code>mkdir</code> crea una directory e <code>dir</code> mostra il contenuto. Su Linux comandi equivalenti frequenti sono <code>cd</code>, <code>mkdir</code> e <code>ls</code>. Il concetto è più importante del nome esatto del comando: si sta chiedendo al sistema operativo di navigare e modificare il file system.</p>
                   </section>
 <section class="content-block">
-                    <h2>Percorsi, variabili d'ambiente e configurazione</h2>
-                    <p>Molti comandi lavorano su percorsi. Un percorso assoluto indica la posizione completa di un file o di una cartella; un percorso relativo parte invece dalla cartella corrente. Capire la differenza evita errori comuni, per esempio modificare il file sbagliato perché ci si trova nella directory sbagliata.</p>
-<p>Le variabili d'ambiente sono valori memorizzati dal sistema e letti dai processi. Possono contenere il nome dell'utente, la cartella personale, la lingua, o l'elenco delle cartelle in cui cercare i programmi eseguibili. Sono importanti per configurare strumenti di sviluppo, compilatori, interpreti e applicazioni server.</p>
+                    <h2>Percorsi e variabili d'ambiente</h2>
+                    <table><thead><tr><th>Concetto</th><th>Significato</th><th>Esempio</th></tr></thead><tbody><tr><td>Percorso assoluto</td><td>Indica la posizione completa partendo dalla radice del sistema.</td><td>C:\\Users\\Alberto\\Documenti</td></tr><tr><td>Percorso relativo</td><td>Parte dalla cartella in cui ci si trova ora.</td><td>esercizi\\lezione1.txt</td></tr><tr><td>Variabile d'ambiente</td><td>Valore letto dai programmi per conoscere configurazioni e percorsi.</td><td>PATH, HOME, USERPROFILE</td></tr></tbody></table><p>Le variabili d'ambiente aiutano i programmi a trovare strumenti e cartelle importanti. Per esempio <code>PATH</code> contiene un elenco di posizioni in cui la shell cerca i programmi da avviare.</p>
                   </section>
 <section class="content-block">
-                    <h2>Esercizi</h2>
-                    <ol>
-<li>Spiega con parole tue la differenza tra sistema operativo e programma applicativo.</li>
-<li>Indica due attività in cui useresti la GUI e due in cui useresti la CLI.</li>
-<li>Scrivi un esempio di percorso assoluto e uno di percorso relativo.</li>
-<li>Perché la riga di comando è utile nell'amministrazione di un server?</li>
-</ol>
+                    <h2>Esercizi guidati</h2>
+                    <ol><li>Apri un terminale e individua la cartella corrente con il comando adatto al tuo sistema.</li><li>Crea una cartella chiamata <code>prove-tpsit</code> e poi entra al suo interno.</li><li>Spiega a un compagno la differenza tra terminale e shell.</li><li>Scrivi tre situazioni in cui useresti la CLI invece della GUI.</li></ol>
                   </section>
+              <section class="qa-box"><h2>Domande con risposta semplice</h2><details><summary>Che cos'è un sistema operativo?</summary><p>È il software di base che gestisce l'hardware e permette a utenti e programmi di usare il computer.</p></details><details><summary>La GUI è più importante della CLI?</summary><p>No. La GUI è più comoda per molte azioni visuali, la CLI è più potente per automatizzare e amministrare sistemi.</p></details><details><summary>A cosa serve una variabile d'ambiente?</summary><p>Serve a conservare informazioni di configurazione che i programmi possono leggere quando vengono eseguiti.</p></details></section>
             </div>
             <section class="notes-box">
-              <h2>Per studiare</h2>
-              <p>Leggi prima le definizioni, poi collega ogni concetto a un esempio pratico sul computer che usi a scuola o a casa. Alla fine prova a rispondere agli esercizi senza guardare il testo.</p>
+              <h2>Per ripassare</h2>
+              <p>Prima osserva il diagramma, poi leggi la spiegazione. Se riesci a rispondere alle domande finali senza copiare le frasi del testo, hai capito davvero l'argomento.</p>
             </section>
           </article>
           <nav class="pager" aria-label="Capitoletti vicini">

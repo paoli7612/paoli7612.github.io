@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Processi e risorse | Programma di studio</title>
-  <meta name="description" content="Lezione di TPSIT sui sistemi operativi per studenti del triennio di informatica.">
+  <meta name="description" content="Lezione illustrata di TPSIT sui sistemi operativi per studenti del triennio di informatica.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -35,61 +35,38 @@
             <header>
               <p class="eyebrow">Capitoletto</p>
               <h1>Processi e risorse</h1>
-              <p>Sistemi operativi e gestione delle risorse</p>
+              <p>Come il sistema operativo organizza i programmi in esecuzione, assegna la CPU e coordina risorse condivise.</p>
             </header>
             <div class="content-blocks">
               <section class="content-block">
+                    <h2>Obiettivi della lezione</h2>
+                    <ul><li>Distinguere programma, processo e thread.</li><li>Interpretare gli stati principali di un processo.</li><li>Capire il ruolo dello scheduler.</li><li>Riconoscere problemi come deadlock e starvation.</li></ul>
+                  </section>
+<section class="content-block">
                     <h2>Programma, processo e thread</h2>
-                    <p>Un programma è un insieme di istruzioni salvato in memoria secondaria, per esempio su un SSD. Un processo è un programma in esecuzione: ha uno spazio di memoria, risorse assegnate, un identificatore e uno stato. La differenza è simile a quella tra una ricetta scritta è una ricetta che qualcuno sta cucinando.</p>
-<p>Un thread è un flusso di esecuzione all'interno di un processo. Più thread dello stesso processo condividono alcune risorse, come memoria e file aperti, ma possono svolgere attività diverse. Un browser, per esempio, può usare thread separati per interfaccia, rete e rendering delle pagine.</p>
+                    <p>Un programma è un file che contiene istruzioni. Un processo è quel programma mentre viene eseguito. Il processo ha memoria, file aperti, risorse assegnate e un identificatore. Un thread è un flusso di esecuzione interno a un processo.</p><table><thead><tr><th>Concetto</th><th>Idea chiave</th><th>Esempio</th></tr></thead><tbody><tr><td>Programma</td><td>Istruzioni salvate su disco.</td><td>Il file del browser installato.</td></tr><tr><td>Processo</td><td>Programma in esecuzione.</td><td>Il browser aperto in questo momento.</td></tr><tr><td>Thread</td><td>Attività interna del processo.</td><td>Un thread per la pagina, uno per la rete, uno per l'interfaccia.</td></tr></tbody></table><aside class="simple-box"><strong>In parole semplici</strong><p>Il programma è la ricetta, il processo è la ricetta mentre qualcuno la sta preparando, i thread sono più persone che collaborano nella stessa cucina.</p></aside>
                   </section>
 <section class="content-block">
                     <h2>Stati di un processo</h2>
-                    <p>Durante la sua vita, un processo cambia stato. Quando viene creato, viene preparato dal sistema operativo. Se e pronto, aspetta di ottenere la CPU. Se e in esecuzione, sta usando effettivamente il processore. Se e in attesa, non può proseguire finche non avviene un evento, per esempio la lettura da disco o l'arrivo di dati dalla rete.</p>
-<p>Questi stati servono al sistema operativo per organizzare il lavoro. Anche se l'utente vede molte applicazioni aperte contemporaneamente, la CPU esegue istruzioni seguendo una pianificazione precisa è rapidissima.</p><ul>
-<li>Nuovo: il processo è stato creato ma non è ancora pronto.</li>
-<li>Pronto: può essere eseguito appena lo scheduler gli assegna la CPU.</li>
-<li>In esecuzione: sta usando la CPU.</li>
-<li>In attesa: aspetta un evento o una risorsa.</li>
-<li>Terminato: ha concluso la propria esecuzione.</li>
-</ul>
+                    <figure class="lesson-figure"><img src="../../../assets/diagrams/process-states.svg" alt="Diagramma degli stati di un processo"><figcaption>Figura 1: un processo passa tra stati diversi durante la sua vita.</figcaption></figure><p>Un processo non usa sempre la CPU. A volte è pronto ma aspetta il proprio turno; a volte è in esecuzione; a volte è bloccato perché aspetta un dato dal disco, dalla rete o da una periferica.</p><table><thead><tr><th>Stato</th><th>Significato</th></tr></thead><tbody><tr><td>Nuovo</td><td>Il processo è stato creato.</td></tr><tr><td>Pronto</td><td>Può partire appena riceve la CPU.</td></tr><tr><td>In esecuzione</td><td>Sta usando la CPU.</td></tr><tr><td>In attesa</td><td>Aspetta un evento o una risorsa.</td></tr><tr><td>Terminato</td><td>Ha finito il lavoro.</td></tr></tbody></table>
                   </section>
 <section class="content-block">
-                    <h2>Scheduling della CPU</h2>
-                    <p>Lo scheduler è la parte del sistema operativo che decide quale processo o thread deve usare la CPU. La scelta non è casuale: dipende dalla politica di scheduling, dalle priorità, dal tempo già usato, dalle attese e dal tipo di sistema.</p>
-<p>In un computer desktop e importante la reattivita: quando l'utente muove il mouse o scrive, il sistema deve rispondere subito. In un server conta anche il throughput, cioe la quantità di lavoro completata. In un sistema real-time può essere decisivo rispettare scadenze temporali.</p><table>
-<thead><tr><th>Obiettivo</th><th>Domanda guida</th></tr></thead>
-<tbody>
-<tr><td>Equita</td><td>I processi ricevono una quota ragionevole di CPU?</td></tr>
-<tr><td>Reattivita</td><td>Il sistema risponde velocemente all'utente?</td></tr>
-<tr><td>Throughput</td><td>Quanti lavori vengono completati nell'unita di tempo?</td></tr>
-<tr><td>Priorita</td><td>I processi più importanti vengono serviti prima?</td></tr>
-</tbody>
-</table>
+                    <h2>Scheduler e time slice</h2>
+                    <p>Lo scheduler decide quale processo o thread deve usare la CPU. Nei sistemi interattivi l'obiettivo è mantenere il computer reattivo: anche con molte applicazioni aperte, il puntatore, la tastiera e le finestre devono rispondere rapidamente.</p><p>Spesso la CPU viene assegnata per piccoli intervalli di tempo chiamati time slice. Quando il tempo finisce, il sistema può sospendere un processo e farne avanzare un altro. L'utente percepisce esecuzione contemporanea, ma dietro c'è una rapida alternanza.</p>
                   </section>
 <section class="content-block">
-                    <h2>Risorse e concorrenza</h2>
-                    <p>I processi competono per risorse limitate: CPU, memoria, file, stampanti, socket di rete e dispositivi. Il sistema operativo deve assegnarle in modo ordinato e impedire che due processi interferiscano in modo pericoloso.</p>
-<p>Quando più processi o thread accedono alla stessa risorsa, possono nascere problemi di concorrenza. Per esempio, se due programmi modificano lo stesso file nello stesso momento senza coordinamento, il contenuto finale può diventare incoerente. Per questo i sistemi operativi usano meccanismi di protezione, code, lock, semafori e politiche di accesso.</p>
+                    <h2>Risorse condivise</h2>
+                    <p>I processi usano risorse: CPU, memoria, file, stampanti, socket di rete, database. Se due processi accedono contemporaneamente alla stessa risorsa senza regole, possono nascere errori.</p><table><thead><tr><th>Problema</th><th>Descrizione semplice</th><th>Esempio</th></tr></thead><tbody><tr><td>Race condition</td><td>Il risultato dipende dall'ordine imprevedibile delle operazioni.</td><td>Due thread aumentano lo stesso contatore.</td></tr><tr><td>Deadlock</td><td>Due o più processi si bloccano aspettandosi a vicenda.</td><td>A possiede la stampante e vuole il file; B possiede il file e vuole la stampante.</td></tr><tr><td>Starvation</td><td>Un processo aspetta troppo perché altri hanno sempre la precedenza.</td><td>Processi a bassa priorità non ricevono mai CPU.</td></tr></tbody></table>
                   </section>
 <section class="content-block">
-                    <h2>Deadlock e starvation</h2>
-                    <p>Un deadlock si verifica quando più processi restano bloccati perché ciascuno aspetta una risorsa posseduta da un altro. Nessuno può proseguire, quindi il sistema deve prevenire, evitare o rilevare la situazione.</p>
-<p>La starvation avviene quando un processo resta in attesa troppo a lungo perché altri processi vengono sempre preferiti. Uno scheduler ben progettato deve bilanciare priorità e giustizia, evitando che qualche processo venga dimenticato.</p>
+                    <h2>Esercizi guidati</h2>
+                    <ol><li>Apri il gestore attività del tuo sistema e osserva processi e consumo CPU.</li><li>Scegli un'applicazione e immagina almeno tre thread che potrebbe usare.</li><li>Disegna un deadlock con due processi e due risorse.</li><li>Spiega perché lo scheduler deve bilanciare reattività ed equità.</li></ol>
                   </section>
-<section class="content-block">
-                    <h2>Esercizi</h2>
-                    <ol>
-<li>Spiega la differenza tra programma e processo usando un esempio non informatico.</li>
-<li>Perché un processo può passare dallo stato in esecuzione allo stato in attesa?</li>
-<li>Quale obiettivo dello scheduling e più importante in un videogioco? Quale in un server web?</li>
-<li>Descrivi una possibile situazione di deadlock con due processi e due risorse.</li>
-</ol>
-                  </section>
+              <section class="qa-box"><h2>Domande con risposta semplice</h2><details><summary>Un programma e un processo sono la stessa cosa?</summary><p>No. Il programma è salvato sul disco; il processo è il programma mentre sta funzionando.</p></details><details><summary>Perché un processo va in attesa?</summary><p>Perché aspetta qualcosa, per esempio dati dal disco, dalla rete o da una periferica.</p></details><details><summary>Che cosa fa lo scheduler?</summary><p>Decide quale processo o thread può usare la CPU in un certo momento.</p></details></section>
             </div>
             <section class="notes-box">
-              <h2>Per studiare</h2>
-              <p>Leggi prima le definizioni, poi collega ogni concetto a un esempio pratico sul computer che usi a scuola o a casa. Alla fine prova a rispondere agli esercizi senza guardare il testo.</p>
+              <h2>Per ripassare</h2>
+              <p>Prima osserva il diagramma, poi leggi la spiegazione. Se riesci a rispondere alle domande finali senza copiare le frasi del testo, hai capito davvero l'argomento.</p>
             </section>
           </article>
           <nav class="pager" aria-label="Capitoletti vicini">

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>File e periferiche | Programma di studio</title>
-  <meta name="description" content="Lezione di TPSIT sui sistemi operativi per studenti del triennio di informatica.">
+  <meta name="description" content="Lezione illustrata di TPSIT sui sistemi operativi per studenti del triennio di informatica.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -35,56 +35,42 @@
             <header>
               <p class="eyebrow">Capitoletto</p>
               <h1>File e periferiche</h1>
-              <p>Sistemi operativi e gestione delle risorse</p>
+              <p>Come il sistema operativo organizza i dati persistenti e permette ai programmi di usare dispositivi diversi senza conoscere l'hardware nel dettaglio.</p>
             </header>
             <div class="content-blocks">
               <section class="content-block">
-                    <h2>File e directory</h2>
-                    <p>Un file è un contenitore di informazioni persistenti: resta memorizzato anche quando il computer viene spento. Puo contenere testo, immagini, audio, video, codice sorgente, dati strutturati o programmi eseguibili. Per l'utente il file ha un nome e spesso un'estensione; per il sistema operativo ha anche metadati come dimensione, data, proprietario e permessi.</p>
-<p>Le directory, o cartelle, servono a organizzare i file in una struttura gerarchica. Questa organizzazione permette di trovare i dati, separare progetti, applicare permessi e costruire percorsi chiari.</p>
+                    <h2>Obiettivi della lezione</h2>
+                    <ul><li>Distinguere file, directory e file system.</li><li>Capire a cosa servono metadati e percorsi.</li><li>Spiegare il ruolo di driver, buffer, cache e interrupt.</li><li>Descrivere come un programma accede a file e periferiche.</li></ul>
+                  </section>
+<section class="content-block">
+                    <h2>File, directory e metadati</h2>
+                    <p>Un file conserva dati in modo persistente: resta disponibile anche dopo lo spegnimento del computer. Una directory organizza file e altre directory in una struttura ordinata. Il sistema operativo non memorizza solo il contenuto, ma anche metadati: nome, dimensione, data, proprietario, permessi e posizione dei blocchi su disco.</p><table><thead><tr><th>Elemento</th><th>A cosa serve</th><th>Esempio</th></tr></thead><tbody><tr><td>File</td><td>Contiene informazioni.</td><td>relazione.txt, foto.jpg, programma.exe</td></tr><tr><td>Directory</td><td>Organizza file e sottocartelle.</td><td>Documenti, Immagini, Progetti</td></tr><tr><td>Metadati</td><td>Descrivono e gestiscono il file.</td><td>Dimensione, data modifica, permessi</td></tr></tbody></table>
                   </section>
 <section class="content-block">
                     <h2>File system</h2>
-                    <p>Il file system è il modo in cui il sistema operativo organizza file e directory su un dispositivo di memorizzazione. Non memorizza solo il contenuto dei file, ma anche informazioni necessarie a ritrovarli e gestirli: nomi, blocchi occupati, permessi, date e struttura delle cartelle.</p>
-<p>File system diversi hanno caratteristiche diverse. Alcuni sono pensati per compatibilità con molti dispositivi, altri per affidabilità, sicurezza, grandi dimensioni o prestazioni. Esempi comuni sono NTFS su Windows, ext4 su Linux, APFS su macOS, FAT32 ed exFAT per chiavette e dispositivi removibili.</p><table>
-<thead><tr><th>File system</th><th>Uso tipico</th></tr></thead>
-<tbody>
-<tr><td>NTFS</td><td>Dischi di sistema Windows, permessi avanzati</td></tr>
-<tr><td>ext4</td><td>Sistemi Linux, server e desktop</td></tr>
-<tr><td>APFS</td><td>Dispositivi Apple recenti</td></tr>
-<tr><td>exFAT</td><td>Chiavette e dischi esterni compatibili tra sistemi</td></tr>
-</tbody>
-</table>
+                    <p>Il file system stabilisce come i dati vengono organizzati sul dispositivo di memorizzazione. File system diversi scelgono strutture e regole diverse per compatibilità, prestazioni, sicurezza o affidabilità.</p><table><thead><tr><th>File system</th><th>Dove si trova spesso</th><th>Caratteristica utile</th></tr></thead><tbody><tr><td>NTFS</td><td>Windows</td><td>Permessi avanzati e journaling.</td></tr><tr><td>ext4</td><td>Linux</td><td>Affidabile e diffuso su server.</td></tr><tr><td>APFS</td><td>macOS</td><td>Ottimizzato per dispositivi Apple moderni.</td></tr><tr><td>exFAT</td><td>Chiavette e dischi esterni</td><td>Compatibile con sistemi diversi.</td></tr></tbody></table><aside class="simple-box"><strong>In parole semplici</strong><p>Il file system è come il metodo con cui una biblioteca ordina i libri. I dati sono i libri; indici e scaffali aiutano a trovarli senza cercare a caso.</p></aside>
                   </section>
 <section class="content-block">
-                    <h2>Operazioni sui file</h2>
-                    <p>Quando un programma apre un file, chiede al sistema operativo un canale di accesso. Il sistema controlla i permessi, individua i dati sul dispositivo e restituisce al processo un riferimento. Da quel momento il programma può leggere, scrivere o spostarsi nel file secondo le operazioni consentite.</p>
-<p>Questo livello di astrazione è prezioso: lo stesso programma può leggere un file senza conoscere i dettagli fisici dell'SSD, del disco esterno o della memoria di rete. Il sistema operativo nasconde la complessità dell'hardware e offre un'interfaccia uniforme.</p>
+                    <h2>Dal programma alla periferica</h2>
+                    <figure class="lesson-figure"><img src="../../../assets/diagrams/file-io-stack.svg" alt="Schema accesso a file system e driver"><figcaption>Figura 1: i programmi passano dal sistema operativo prima di raggiungere file e periferiche.</figcaption></figure><p>Quando un programma vuole leggere un file, non parla direttamente con il disco. Fa una richiesta al sistema operativo. Il sistema controlla permessi, file system, cache e driver, poi restituisce i dati. Lo stesso principio vale per stampanti, tastiere, webcam e rete.</p>
                   </section>
 <section class="content-block">
-                    <h2>Periferiche, driver e interrupt</h2>
-                    <p>Le periferiche sono dispositivi di input, output o memorizzazione: tastiera, mouse, monitor, stampante, scheda di rete, webcam, disco, sensori. Ogni periferica ha caratteristiche specifiche e comunica con il computer attraverso controller e bus.</p>
-<p>Il driver è il componente software che permette al sistema operativo di controllare una periferica. Le applicazioni non devono conoscere tutti i dettagli del dispositivo: chiedono al sistema operativo di stampare, leggere dati o inviare pacchetti, è il sistema operativo usa il driver corretto.</p>
-<p>Gli interrupt permettono alle periferiche di attirare l'attenzione della CPU quando serve. Invece di controllare continuamente se un dispositivo ha finito un'operazione, il processore può svolgere altro lavoro e reagire quando riceve il segnale.</p>
+                    <h2>Driver, interrupt, buffer e cache</h2>
+                    <table><thead><tr><th>Meccanismo</th><th>Funzione</th><th>Esempio</th></tr></thead><tbody><tr><td>Driver</td><td>Traduce richieste generiche in comandi specifici del dispositivo.</td><td>Driver della stampante.</td></tr><tr><td>Interrupt</td><td>Avvisa la CPU quando una periferica richiede attenzione.</td><td>La scheda di rete segnala dati ricevuti.</td></tr><tr><td>Buffer</td><td>Conserva temporaneamente dati in transito.</td><td>Coda di stampa.</td></tr><tr><td>Cache</td><td>Tiene copie veloci di dati usati spesso.</td><td>File letto di recente mantenuto in RAM.</td></tr></tbody></table><p>Questi meccanismi servono perché le periferiche hanno velocità diverse dalla CPU. Senza buffer e interrupt, il processore perderebbe tempo ad aspettare dispositivi più lenti.</p>
                   </section>
 <section class="content-block">
-                    <h2>Buffer, cache e prestazioni</h2>
-                    <p>Le periferiche spesso sono più lente della CPU. Per evitare sprechi, il sistema operativo usa buffer e cache. Un buffer raccoglie temporaneamente dati in ingresso o in uscita; una cache conserva dati usati di frequente per recuperarli più rapidamente.</p>
-<p>Quando copi un file grande, guardi un video o scarichi dati dalla rete, il sistema operativo coordina memoria, disco, driver e processi. L'utente vede un'operazione semplice, ma sotto ci sono molte componenti sincronizzate.</p>
+                    <h2>Esempio: stampare un documento</h2>
+                    <ol><li>L'applicazione chiede al sistema operativo di stampare.</li><li>Il sistema verifica permessi e stampante disponibile.</li><li>I dati vengono messi in una coda di stampa, cioè un buffer.</li><li>Il driver traduce il documento nel formato capito dalla stampante.</li><li>La stampante segnala avanzamento o errori al sistema.</li></ol>
                   </section>
 <section class="content-block">
-                    <h2>Esercizi</h2>
-                    <ol>
-<li>Che differenza c'è tra file, directory e file system?</li>
-<li>Perché un programma non dovrebbe controllare direttamente l'hardware della stampante?</li>
-<li>Spiega a cosa serve un driver usando un esempio concreto.</li>
-<li>Perché buffer e cache migliorano le prestazioni nelle operazioni di input/output?</li>
-</ol>
+                    <h2>Esercizi guidati</h2>
+                    <ol><li>Scegli un file sul tuo computer e individua almeno quattro metadati.</li><li>Spiega perché una chiavetta USB usa spesso exFAT.</li><li>Descrivi cosa succede, a grandi linee, quando salvi un documento.</li><li>Fai un esempio di buffer nella vita quotidiana e collegalo all'informatica.</li></ol>
                   </section>
+              <section class="qa-box"><h2>Domande con risposta semplice</h2><details><summary>Che cos'è un file system?</summary><p>È il modo con cui il sistema operativo organizza file, cartelle e metadati su un dispositivo.</p></details><details><summary>A cosa serve un driver?</summary><p>Serve a controllare una periferica specifica offrendo al sistema operativo un modo ordinato per usarla.</p></details><details><summary>Perché esistono buffer e cache?</summary><p>Per ridurre attese e rendere più efficiente il passaggio dei dati tra CPU, memoria e dispositivi.</p></details></section>
             </div>
             <section class="notes-box">
-              <h2>Per studiare</h2>
-              <p>Leggi prima le definizioni, poi collega ogni concetto a un esempio pratico sul computer che usi a scuola o a casa. Alla fine prova a rispondere agli esercizi senza guardare il testo.</p>
+              <h2>Per ripassare</h2>
+              <p>Prima osserva il diagramma, poi leggi la spiegazione. Se riesci a rispondere alle domande finali senza copiare le frasi del testo, hai capito davvero l'argomento.</p>
             </section>
           </article>
           <nav class="pager" aria-label="Capitoletti vicini">

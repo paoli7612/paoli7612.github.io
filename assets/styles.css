@@ -335,6 +335,77 @@ main {
   color: var(--ink);
 }
 
+.lesson-figure {
+  margin: 16px 0 20px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfb;
+}
+
+.lesson-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lesson-figure figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.simple-box,
+.qa-box {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.simple-box {
+  margin-top: 16px;
+  padding: 16px;
+  border-left: 5px solid var(--accent-2);
+}
+
+.simple-box strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent-2);
+}
+
+.qa-box {
+  padding: 24px;
+}
+
+.qa-box h2 {
+  margin: 0 0 14px;
+}
+
+.qa-box details {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+
+.qa-box details:first-of-type {
+  border-top: 0;
+}
+
+.qa-box summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.qa-box summary::marker {
+  color: var(--accent);
+}
+
+.qa-box p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
 .notes-box {
   margin-top: 18px;
   border-style: dashed;
@@ -392,6 +463,12 @@ main {
 
   .topic-list {
     columns: 1;
+  }
+
+  .content-block table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   .pager {
