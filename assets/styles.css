@@ -351,13 +351,17 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  width: min(900px, 100%);
+  margin: 0 auto;
   padding-top: 26px;
   color: var(--muted);
   font-size: 14px;
 }
 
 .study-page {
+  width: min(900px, 100%);
   max-width: 900px;
+  margin: 0 auto;
 }
 
 .study-page header {
@@ -522,8 +526,10 @@ main {
 
 .pager a,
 .pager-disabled {
-  justify-self: start;
-  max-width: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
   padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -531,9 +537,15 @@ main {
   text-decoration: none;
 }
 
+.pager a:first-child,
+.pager-disabled:first-child {
+  justify-content: flex-start;
+  text-align: left;
+}
+
 .pager a:last-child,
 .pager-disabled:last-child {
-  justify-self: end;
+  justify-content: flex-end;
   text-align: right;
 }
 
@@ -591,14 +603,13 @@ main {
 
   .pager a,
   .pager-disabled {
-    justify-self: stretch;
-    max-width: none;
+    justify-content: flex-start;
     text-align: left;
   }
 
   .pager a:last-child,
   .pager-disabled:last-child {
-    justify-self: stretch;
+    justify-content: flex-start;
     text-align: left;
   }
 }
