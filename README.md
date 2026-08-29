@@ -1,4 +1,4 @@
-# Programma di studio - sito statico
+# Programmi di studio A041 - sito statico
 
 Repository locale pronta per GitHub Pages.
 
@@ -13,6 +13,7 @@ Repository locale pronta per GitHub Pages.
 ## Struttura
 
 - `index.html`: indice generale.
+- `percorsi/`: pagine di ingresso per istituto tecnico, tecnico economico e scienze applicate.
 - `materie/`: pagine delle materie.
 - `capitoli/`: pagine riassuntive dei capitoli.
 - `pagine/`: una pagina HTML per ogni capitoletto.

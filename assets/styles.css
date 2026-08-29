@@ -52,12 +52,13 @@ a {
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 42px;
+  width: 50px;
   height: 42px;
   border-radius: 8px;
   background: var(--ink);
   color: white;
   font-weight: 700;
+  font-size: 13px;
 }
 
 .brand small {
@@ -178,6 +179,7 @@ main {
 }
 
 .subject-grid,
+.program-grid,
 .topic-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -185,6 +187,7 @@ main {
 }
 
 .subject-card,
+.program-card,
 .topic-card,
 .chapter-panel,
 .content-block,
@@ -195,8 +198,31 @@ main {
 }
 
 .subject-card,
+.program-card,
 .topic-card {
   min-height: 100%;
+}
+
+.program-card {
+  border-color: #cdd8d4;
+}
+
+.program-card-ready {
+  background: linear-gradient(180deg, #ffffff 0%, #edf6f2 100%);
+}
+
+.status-pill {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 5px 9px;
+  border: 1px solid rgba(0, 109, 119, 0.22);
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .card-link,
@@ -207,6 +233,7 @@ main {
 }
 
 .subject-card h3,
+.program-card h3,
 .topic-card h2 {
   margin: 0 0 8px;
   font-size: 22px;
@@ -214,6 +241,7 @@ main {
 }
 
 .subject-card p,
+.program-card p,
 .topic-card p {
   margin: 0;
   color: var(--muted);
