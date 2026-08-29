@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img" aria-labelledby="t d">
 <title id="t">Autenticazione e autorizzazione</title><desc id="d">Percorso da utente a risorsa: identificazione, controllo permessi e accesso.</desc>
-<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#006d77"/></marker><style>
+<defs><style>
   text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
   .title{font-size:24px;font-weight:700}
   .label{font-size:16px;font-weight:700}
@@ -8,12 +8,15 @@
   .box{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:10}
   .accent{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:10}
   .warn{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:10}
-  .line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}
+  .arrow-line{stroke:#006d77;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}
+  .arrow-head{fill:#006d77}
 </style></defs>
 <text x="40" y="48" class="title">Dall'accesso alla risorsa</text>
 <rect x="45" y="115" width="180" height="95" class="box"/><text x="135" y="155" text-anchor="middle" class="label">Utente</text><text x="135" y="180" text-anchor="middle" class="small">nome account</text>
 <rect x="285" y="115" width="210" height="95" class="accent"/><text x="390" y="155" text-anchor="middle" class="label">Autenticazione</text><text x="390" y="180" text-anchor="middle" class="small">password, PIN, 2FA</text>
 <rect x="555" y="115" width="230" height="95" class="warn"/><text x="670" y="155" text-anchor="middle" class="label">Autorizzazione</text><text x="670" y="180" text-anchor="middle" class="small">permessi e privilegi</text>
 <rect x="320" y="300" width="260" height="85" class="box"/><text x="450" y="335" text-anchor="middle" class="label">Risorsa</text><text x="450" y="360" text-anchor="middle" class="small">file, cartella, programma, rete</text>
-<path d="M225 162 H280" class="line"/><path d="M495 162 H550" class="line"/><path d="M670 210 C670 275 575 315 585 340" class="line"/>
+<line x1="225" y1="162" x2="268" y2="162" class="arrow-line"/><polygon points="282,162 264,152 264,172" class="arrow-head"/>
+<line x1="495" y1="162" x2="538" y2="162" class="arrow-line"/><polygon points="552,162 534,152 534,172" class="arrow-head"/>
+<polyline points="670,214 670,262 450,262 450,288" class="arrow-line"/><polygon points="450,300 441,284 459,284" class="arrow-head"/>
 </svg>

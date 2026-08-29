@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-labelledby="t d">
 <title id="t">GUI e CLI</title><desc id="d">Due modi di interagire con il sistema operativo: interfaccia grafica e riga di comando.</desc>
-<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#006d77"/></marker><style>
+<defs><style>
   text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
   .title{font-size:24px;font-weight:700}
   .label{font-size:16px;font-weight:700}
@@ -8,10 +8,11 @@
   .box{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:10}
   .accent{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:10}
   .warn{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:10}
-  .line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}
+  .arrow-line{stroke:#006d77;stroke-width:4;stroke-linecap:round}
+  .arrow-head{fill:#006d77}
 </style></defs>
 <text x="40" y="48" class="title">Due strade per dare ordini al sistema</text>
 <rect x="55" y="95" width="340" height="250" class="box"/><text x="225" y="135" text-anchor="middle" class="label">GUI</text><rect x="95" y="165" width="260" height="135" fill="#e7f0ed" stroke="#006d77" stroke-width="2" rx="8"/><circle cx="125" cy="190" r="9" fill="#c44f24"/><rect x="145" y="184" width="170" height="13" fill="#fff"/><rect x="120" y="220" width="210" height="45" fill="#fff" stroke="#d8dee5"/><text x="225" y="380" text-anchor="middle" class="small">Finestre, icone, pulsanti, menu</text>
 <rect x="505" y="95" width="340" height="250" class="box"/><text x="675" y="135" text-anchor="middle" class="label">CLI</text><rect x="545" y="165" width="260" height="135" fill="#17202a" rx="8"/><text x="570" y="205" fill="#fff" font-size="15">cd Documenti</text><text x="570" y="235" fill="#fff" font-size="15">mkdir esercizi</text><text x="570" y="265" fill="#fff" font-size="15">dir</text><text x="675" y="380" text-anchor="middle" class="small">Comandi scritti interpretati dalla shell</text>
-<path d="M225 410 H675" class="line"/><text x="450" y="445" text-anchor="middle" class="small">Entrambe arrivano ai servizi del sistema operativo</text>
+<line x1="225" y1="410" x2="658" y2="410" class="arrow-line"/><polygon points="675,410 655,399 655,421" class="arrow-head"/><text x="450" y="445" text-anchor="middle" class="small">Entrambe arrivano ai servizi del sistema operativo</text>
 </svg>

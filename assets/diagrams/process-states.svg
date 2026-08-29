@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="t d">
 <title id="t">Stati di un processo</title><desc id="d">Diagramma degli stati nuovo, pronto, in esecuzione, attesa e terminato.</desc>
-<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#006d77"/></marker><style>
+<defs><style>
   text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
   .title{font-size:24px;font-weight:700}
   .label{font-size:16px;font-weight:700}
@@ -8,7 +8,8 @@
   .box{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:10}
   .accent{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:10}
   .warn{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:10}
-  .line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}
+  .arrow-line{stroke:#006d77;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}
+  .arrow-head{fill:#006d77}
 </style></defs>
 <text x="40" y="48" class="title">Ciclo di vita semplificato di un processo</text>
 <rect x="55" y="235" width="150" height="70" class="box"/><text x="130" y="278" text-anchor="middle" class="label">Nuovo</text>
@@ -16,8 +17,10 @@
 <rect x="500" y="235" width="180" height="70" class="warn"/><text x="590" y="278" text-anchor="middle" class="label">In esecuzione</text>
 <rect x="500" y="385" width="180" height="70" class="box"/><text x="590" y="428" text-anchor="middle" class="label">In attesa</text>
 <rect x="730" y="235" width="140" height="70" class="box"/><text x="800" y="278" text-anchor="middle" class="label">Terminato</text>
-<path d="M205 270 H265" class="line"/><path d="M420 270 H495" class="line"/><path d="M680 270 H725" class="line"/>
-<path d="M590 305 V380" class="line"/><text x="610" y="348" class="small">I/O o evento</text>
-<path d="M500 420 C390 420 360 350 345 310" class="line"/><text x="390" y="405" class="small">evento completato</text>
-<path d="M565 235 C520 145 405 145 365 230" class="line"/><text x="435" y="145" class="small">time slice scaduto</text>
+<line x1="205" y1="270" x2="254" y2="270" class="arrow-line"/><polygon points="268,270 250,260 250,280" class="arrow-head"/>
+<line x1="420" y1="270" x2="488" y2="270" class="arrow-line"/><polygon points="502,270 484,260 484,280" class="arrow-head"/>
+<line x1="680" y1="270" x2="718" y2="270" class="arrow-line"/><polygon points="732,270 714,260 714,280" class="arrow-head"/>
+<line x1="590" y1="305" x2="590" y2="373" class="arrow-line"/><polygon points="590,387 581,371 599,371" class="arrow-head"/><text x="610" y="348" class="small">I/O o evento</text>
+<polyline points="500,420 345,420 345,318" class="arrow-line"/><polygon points="345,306 336,322 354,322" class="arrow-head"/><text x="372" y="405" class="small">evento completato</text>
+<polyline points="560,235 560,170 345,170 345,222" class="arrow-line"/><polygon points="345,234 336,218 354,218" class="arrow-head"/><text x="410" y="150" class="small">time slice scaduto</text>
 </svg>
