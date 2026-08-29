@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Condivisione delle risorse | Programma di studio</title>
+  <meta name="description" content="Programma di studio navigabile per informatica, sistemi e telecomunicazioni.">
+  <link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html" aria-label="Torna alla home">
+      <span class="brand-mark">IT</span>
+      <span>
+        <strong>Programma di studio</strong>
+        <small>Informatica e telecomunicazioni</small>
+      </span>
+    </a>
+    <nav class="top-nav" aria-label="Materie">
+      <a href="../../../materie/sistemi-e-reti.html">Sistemi e reti</a>
+<a aria-current="page" href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
+<a href="../../../materie/informatica.html">Informatica</a>
+<a href="../../../materie/telecomunicazioni.html">Telecomunicazioni</a>
+    </nav>
+  </header>
+  <main>
+    <section class="breadcrumbs" aria-label="Percorso">
+            <a href="../../../index.html">Home</a>
+            <span>/</span>
+            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
+            <span>/</span>
+            <a href="../../../capitoli/programmazione-concorrente.html">Programmazione concorrente</a>
+          </section>
+          <article class="study-page">
+            <header>
+              <p class="eyebrow">Capitoletto</p>
+              <h1>Condivisione delle risorse</h1>
+              <p>Programmazione concorrente</p>
+            </header>
+            <div class="content-blocks">
+              <section class="content-block">
+                    <h2>risorse condivise</h2>
+                    <p>Più attività concorrenti possono accedere agli stessi dati, file, dispositivi o altre risorse.</p>
+<p>Accessi non coordinati possono produrre risultati dipendenti dall'ordine imprevedibile delle operazioni.</p>
+                  </section>
+<section class="content-block">
+                    <h2>race condition</h2>
+                    <p>Una race condition si verifica quando il risultato dipende dalla temporizzazione relativa di più attività concorrenti.</p>
+<p>Individuare le sezioni in cui vengono manipolati dati condivisi è essenziale per progettare programmi concorrenti corretti.</p>
+                  </section>
+<section class="content-block">
+                    <h2>sezioni critiche</h2>
+                    <p>Una sezione critica è una parte di programma che accede a una risorsa condivisa e non può essere eseguita contemporaneamente da attività incompatibili.</p>
+<p>La corretta protezione delle sezioni critiche impedisce modifiche concorrenti incoerenti.</p>
+                  </section>
+<section class="content-block">
+                    <h2>mutua esclusione</h2>
+                    <p>La mutua esclusione garantisce che una risorsa critica venga utilizzata da una sola attività alla volta quando necessario.</p>
+<p>Meccanismi come lock, mutex e semafori permettono di coordinare l'accesso alle risorse condivise.</p>
+                  </section>
+            </div>
+            <section class="notes-box">
+              <h2>Spazio per aggiornamenti</h2>
+              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
+            </section>
+          </article>
+          <nav class="pager" aria-label="Capitoletti vicini">
+            <a href="concorrenza-e-parallelismo.html">Precedente: Concorrenza e parallelismo</a>
+            <a href="sincronizzazione.html">Successivo: Sincronizzazione</a>
+          </nav>
+  </main>
+  <footer class="site-footer">
+    <p>Sito statico pronto per GitHub Pages. Modifica direttamente i file HTML quando vuoi aggiornare i capitoletti.</p>
+  </footer>
+</body>
+</html>

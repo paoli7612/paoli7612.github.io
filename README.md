@@ -1,29 +1,21 @@
-# Anemone
+# Programma di studio - sito statico
 
-This template should help get you started developing with Vue 3 in Vite.
+Repository locale pronta per GitHub Pages.
 
-## Recommended IDE Setup
+## Pubblicazione su GitHub Pages
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+1. Crea un repository su GitHub, per esempio `tuo-username.github.io`.
+2. Carica tutti i file di questa cartella nel repository.
+3. In GitHub vai su `Settings -> Pages`.
+4. Scegli `Deploy from a branch`, branch `main`, cartella `/root`.
+5. Il sito sara disponibile all'indirizzo indicato da GitHub Pages.
 
-## Customize configuration
+## Struttura
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- `index.html`: indice generale.
+- `materie/`: pagine delle materie.
+- `capitoli/`: pagine riassuntive dei capitoli.
+- `pagine/`: una pagina HTML per ogni capitoletto.
+- `assets/styles.css`: stile grafico comune.
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Per modificare un capitoletto, apri il relativo file dentro `pagine/` e cambia il contenuto HTML.
