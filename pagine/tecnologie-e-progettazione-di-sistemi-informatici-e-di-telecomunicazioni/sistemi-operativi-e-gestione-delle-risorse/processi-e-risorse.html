@@ -47,7 +47,7 @@
                     <h2>Stati di un processo</h2>
                     <p>Durante la sua vita, un processo cambia stato. Quando viene creato, viene preparato dal sistema operativo. Se e pronto, aspetta di ottenere la CPU. Se e in esecuzione, sta usando effettivamente il processore. Se e in attesa, non può proseguire finche non avviene un evento, per esempio la lettura da disco o l'arrivo di dati dalla rete.</p>
 <p>Questi stati servono al sistema operativo per organizzare il lavoro. Anche se l'utente vede molte applicazioni aperte contemporaneamente, la CPU esegue istruzioni seguendo una pianificazione precisa è rapidissima.</p><ul>
-<li>Nuovo: il processo e stato creato ma non e ancora pronto.</li>
+<li>Nuovo: il processo è stato creato ma non è ancora pronto.</li>
 <li>Pronto: può essere eseguito appena lo scheduler gli assegna la CPU.</li>
 <li>In esecuzione: sta usando la CPU.</li>
 <li>In attesa: aspetta un evento o una risorsa.</li>
@@ -56,7 +56,7 @@
                   </section>
 <section class="content-block">
                     <h2>Scheduling della CPU</h2>
-                    <p>Lo scheduler è la parte del sistema operativo che decide quale processo o thread deve usare la CPU. La scelta non e casuale: dipende dalla politica di scheduling, dalle priorità, dal tempo già usato, dalle attese e dal tipo di sistema.</p>
+                    <p>Lo scheduler è la parte del sistema operativo che decide quale processo o thread deve usare la CPU. La scelta non è casuale: dipende dalla politica di scheduling, dalle priorità, dal tempo già usato, dalle attese e dal tipo di sistema.</p>
 <p>In un computer desktop e importante la reattivita: quando l'utente muove il mouse o scrive, il sistema deve rispondere subito. In un server conta anche il throughput, cioe la quantità di lavoro completata. In un sistema real-time può essere decisivo rispettare scadenze temporali.</p><table>
 <thead><tr><th>Obiettivo</th><th>Domanda guida</th></tr></thead>
 <tbody>
@@ -81,7 +81,7 @@
                     <h2>Esercizi</h2>
                     <ol>
 <li>Spiega la differenza tra programma e processo usando un esempio non informatico.</li>
-<li>Perche un processo può passare dallo stato in esecuzione allo stato in attesa?</li>
+<li>Perché un processo può passare dallo stato in esecuzione allo stato in attesa?</li>
 <li>Quale obiettivo dello scheduling e più importante in un videogioco? Quale in un server web?</li>
 <li>Descrivi una possibile situazione di deadlock con due processi e due risorse.</li>
 </ol>
