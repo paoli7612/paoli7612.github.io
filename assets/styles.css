@@ -173,6 +173,10 @@ main {
   margin: 0;
 }
 
+.content-block strong {
+  color: var(--ink);
+}
+
 .subject-grid,
 .topic-cards {
   display: grid;
@@ -333,6 +337,14 @@ main {
 .content-block th {
   background: var(--soft);
   color: var(--ink);
+}
+
+.content-block td code {
+  display: inline-block;
+  padding: 2px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #f6f7f4;
 }
 
 .lesson-figure {

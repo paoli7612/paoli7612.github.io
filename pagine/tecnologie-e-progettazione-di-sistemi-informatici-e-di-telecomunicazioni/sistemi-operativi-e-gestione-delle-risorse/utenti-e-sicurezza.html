@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Utenti e sicurezza | Programma di studio</title>
-  <meta name="description" content="Lezione illustrata di TPSIT sui sistemi operativi per studenti del triennio di informatica.">
+  <meta name="description" content="Capitolo illustrato di TPSIT su utenti, gruppi, autenticazione, permessi e sicurezza nei sistemi operativi.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -25,58 +25,164 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/sistemi-operativi-e-gestione-delle-risorse.html">Sistemi operativi e gestione delle risorse</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Utenti e sicurezza</h1>
-              <p>Come il sistema operativo riconosce gli utenti, assegna permessi e protegge file, programmi e configurazioni.</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>Obiettivi della lezione</h2>
-                    <ul><li>Distinguere utenti, gruppi e ruoli.</li><li>Capire la differenza tra autenticazione e autorizzazione.</li><li>Leggere il significato dei permessi principali.</li><li>Applicare il principio del minimo privilegio.</li></ul>
-                  </section>
-<section class="content-block">
-                    <h2>Account, gruppi e identità</h2>
-                    <p>Un account rappresenta un'identità riconosciuta dal sistema operativo. Quando accediamo con nome utente e password, il sistema sa quali file possiamo usare, quali programmi possiamo eseguire e quali impostazioni possiamo modificare.</p><p>I gruppi raccolgono utenti con esigenze simili. In un laboratorio, per esempio, gli studenti possono stare nel gruppo <code>studenti</code>, i docenti nel gruppo <code>docenti</code> e gli amministratori nel gruppo <code>admin</code>. I permessi assegnati al gruppo valgono per tutti i suoi membri.</p>
-                  </section>
-<section class="content-block">
-                    <h2>Autenticazione e autorizzazione</h2>
-                    <figure class="lesson-figure"><img src="../../../assets/diagrams/auth-permissions.svg" alt="Diagramma autenticazione autorizzazione risorsa"><figcaption>Figura 1: prima il sistema verifica chi sei, poi decide cosa puoi fare.</figcaption></figure><table><thead><tr><th>Fase</th><th>Domanda</th><th>Esempio</th></tr></thead><tbody><tr><td>Autenticazione</td><td>Chi sei?</td><td>Inserisci password o secondo fattore.</td></tr><tr><td>Autorizzazione</td><td>Cosa puoi fare?</td><td>Puoi leggere una cartella ma non modificarla.</td></tr><tr><td>Tracciamento</td><td>Che cosa è successo?</td><td>Il sistema registra accessi ed errori nei log.</td></tr></tbody></table><aside class="simple-box"><strong>In parole semplici</strong><p>La password non ti dà automaticamente il diritto di fare tutto. Prima dimostri chi sei, poi il sistema controlla i tuoi permessi.</p></aside>
-                  </section>
-<section class="content-block">
-                    <h2>Permessi principali</h2>
-                    <p>I permessi più comuni sono lettura, scrittura ed esecuzione. Su una directory, però, il loro significato cambia leggermente: leggere può voler dire vedere i nomi dei file, scrivere può voler dire creare o cancellare file, eseguire può voler dire attraversare la directory.</p><table><thead><tr><th>Permesso</th><th>Su un file</th><th>Su una directory</th></tr></thead><tbody><tr><td>Lettura</td><td>Aprire e leggere il contenuto.</td><td>Vedere l'elenco dei nomi.</td></tr><tr><td>Scrittura</td><td>Modificare il contenuto.</td><td>Creare, rinominare o eliminare elementi.</td></tr><tr><td>Esecuzione</td><td>Avviare il programma o lo script.</td><td>Entrare nella directory o attraversarla.</td></tr></tbody></table>
-                  </section>
-<section class="content-block">
-                    <h2>Minimo privilegio</h2>
-                    <p>Il principio del minimo privilegio afferma che ogni utente o processo deve avere solo i permessi necessari per svolgere il proprio compito. Non è una regola teorica: serve a limitare gli errori e i danni.</p><p>Se uno studente deve consegnare un file, può avere permesso di scrittura nella cartella delle consegne, ma non nella cartella del sistema operativo. Se un programma web deve leggere immagini, non dovrebbe poter modificare file di configurazione del server.</p>
-                  </section>
-<section class="content-block">
-                    <h2>Esempio in laboratorio</h2>
-                    <table><thead><tr><th>Ruolo</th><th>Può fare</th><th>Non dovrebbe fare</th></tr></thead><tbody><tr><td>Studente</td><td>Usare strumenti, salvare esercizi, consegnare file.</td><td>Installare driver o cambiare utenti.</td></tr><tr><td>Docente</td><td>Preparare materiali, leggere consegne, gestire cartelle di classe.</td><td>Modificare parti critiche del sistema senza necessità.</td></tr><tr><td>Amministratore</td><td>Creare account, installare software, configurare sicurezza.</td><td>Usare sempre l'account admin per navigare o scrivere documenti.</td></tr></tbody></table>
-                  </section>
-<section class="content-block">
-                    <h2>Esercizi guidati</h2>
-                    <ol><li>Spiega perché un account amministratore è più rischioso di un account standard.</li><li>Progetta tre gruppi per un laboratorio scolastico e assegna a ciascuno un permesso diverso.</li><li>Scrivi un esempio in cui autenticazione e autorizzazione sono due passaggi separati.</li><li>Indica quali permessi servono per leggere, modificare ed eseguire uno script.</li></ol>
-                  </section>
-              <section class="qa-box"><h2>Domande con risposta semplice</h2><details><summary>Che differenza c'è tra utente e gruppo?</summary><p>L'utente è una singola identità. Il gruppo raccoglie più utenti e semplifica l'assegnazione dei permessi.</p></details><details><summary>Che cos'è l'autenticazione?</summary><p>È il controllo che verifica chi sta accedendo, per esempio tramite password o secondo fattore.</p></details><details><summary>Perché il minimo privilegio è utile?</summary><p>Perché se un utente o un programma sbaglia, può fare meno danni.</p></details></section>
-            </div>
-            <section class="notes-box">
-              <h2>Per ripassare</h2>
-              <p>Prima osserva il diagramma, poi leggi la spiegazione. Se riesci a rispondere alle domande finali senza copiare le frasi del testo, hai capito davvero l'argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="interazione-con-il-sistema-operativo.html">Precedente: Interazione con il sistema operativo</a>
-            <a href="processi-e-risorse.html">Successivo: Processi e risorse</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
+      <span>/</span>
+      <a href="../../../capitoli/sistemi-operativi-e-gestione-delle-risorse.html">Sistemi operativi e gestione delle risorse</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto</p>
+        <h1>Utenti e sicurezza</h1>
+        <p>Il sistema operativo non deve solo avviare programmi: deve anche capire chi sta usando il computer, quali azioni sono consentite e come proteggere dati e configurazioni.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Capire perché un sistema operativo distingue utenti, gruppi e amministratori.</li>
+            <li>Distinguere autenticazione, autorizzazione e tracciamento delle attività.</li>
+            <li>Interpretare i permessi di lettura, scrittura ed esecuzione su file e cartelle.</li>
+            <li>Applicare il principio del minimo privilegio a esempi scolastici e reali.</li>
+            <li>Riconoscere buone pratiche di sicurezza nell'uso quotidiano del computer.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Perché esistono gli utenti</h2>
+          <p>Immagina un laboratorio informatico con venti studenti, un docente e un tecnico. Tutti usano gli stessi computer, ma non tutti devono poter fare le stesse cose. Uno studente deve salvare esercizi e consegnare file; il docente deve preparare materiali e correggere; il tecnico deve installare programmi e sistemare configurazioni.</p>
+          <p>Il sistema operativo usa gli <strong>account utente</strong> per riconoscere chi sta lavorando. Ogni account ha un nome, credenziali di accesso, cartelle personali, impostazioni e permessi. In questo modo il sistema può separare i dati e ridurre gli errori.</p>
+          <aside class="simple-box"><strong>In parole semplici</strong><p>Un account è come un banco assegnato: ti permette di lavorare con le tue cose, ma non ti dà automaticamente il diritto di aprire armadi, registri o strumenti riservati.</p></aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Utenti, gruppi e ruoli</h2>
+          <figure class="lesson-figure"><img src="../../../assets/diagrams/users-groups-lab.svg" alt="Schema con gruppi studenti, docenti e amministratori collegati a cartelle con permessi diversi"><figcaption>Figura 1: in un laboratorio i gruppi aiutano ad assegnare permessi senza configurare ogni utente uno per uno.</figcaption></figure>
+          <p>Un <strong>utente</strong> rappresenta una singola identità. Un <strong>gruppo</strong> raccoglie più utenti con compiti simili. Un <strong>ruolo</strong> descrive invece il livello di responsabilità: utente standard, docente, amministratore, servizio di sistema.</p>
+          <table>
+            <thead><tr><th>Elemento</th><th>Che cos'è</th><th>Esempio</th></tr></thead>
+            <tbody>
+              <tr><td>Utente</td><td>Identità singola che accede al sistema.</td><td><code>mario.rossi</code></td></tr>
+              <tr><td>Gruppo</td><td>Insieme di utenti con permessi comuni.</td><td><code>studenti</code>, <code>docenti</code></td></tr>
+              <tr><td>Ruolo</td><td>Responsabilità o livello di privilegio.</td><td>standard, docente, amministratore</td></tr>
+              <tr><td>Servizio</td><td>Account usato da un programma di sistema.</td><td>server web, database, backup</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Autenticazione, autorizzazione, tracciamento</h2>
+          <figure class="lesson-figure"><img src="../../../assets/diagrams/auth-permissions.svg" alt="Diagramma autenticazione autorizzazione risorsa"><figcaption>Figura 2: prima il sistema verifica chi sei, poi decide cosa puoi fare.</figcaption></figure>
+          <p>La sicurezza degli accessi si può dividere in tre momenti. Prima il sistema controlla l'identità dell'utente; poi verifica i suoi permessi; infine può registrare le azioni importanti nei log.</p>
+          <table>
+            <thead><tr><th>Fase</th><th>Domanda</th><th>Esempio</th></tr></thead>
+            <tbody>
+              <tr><td>Autenticazione</td><td>Chi sei?</td><td>Inserisci password, PIN, impronta o secondo fattore.</td></tr>
+              <tr><td>Autorizzazione</td><td>Cosa puoi fare?</td><td>Puoi leggere una cartella, ma non cancellarla.</td></tr>
+              <tr><td>Tracciamento</td><td>Che cosa è successo?</td><td>Il sistema registra accessi, errori e modifiche importanti.</td></tr>
+            </tbody>
+          </table>
+          <aside class="simple-box"><strong>Errore comune</strong><p>Dire “ho la password, quindi posso fare tutto” è sbagliato. La password serve a entrare; i permessi decidono cosa puoi fare dopo essere entrato.</p></aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Permessi su file e cartelle</h2>
+          <figure class="lesson-figure"><img src="../../../assets/diagrams/permission-matrix.svg" alt="Matrice dei permessi di lettura, scrittura ed esecuzione"><figcaption>Figura 3: i permessi possono cambiare in base a proprietario, gruppo e altri utenti.</figcaption></figure>
+          <p>I permessi indicano quali operazioni sono consentite su una risorsa. I tre permessi fondamentali sono <strong>lettura</strong>, <strong>scrittura</strong> ed <strong>esecuzione</strong>. Il loro significato cambia leggermente tra file e directory.</p>
+          <table>
+            <thead><tr><th>Permesso</th><th>Su un file</th><th>Su una directory</th></tr></thead>
+            <tbody>
+              <tr><td>Lettura</td><td>Aprire e leggere il contenuto.</td><td>Vedere l'elenco dei file contenuti.</td></tr>
+              <tr><td>Scrittura</td><td>Modificare o cancellare il contenuto.</td><td>Creare, rinominare o eliminare elementi.</td></tr>
+              <tr><td>Esecuzione</td><td>Avviare un programma o uno script.</td><td>Entrare nella directory o attraversarla in un percorso.</td></tr>
+            </tbody>
+          </table>
+          <p>Nei sistemi Unix/Linux questi permessi sono spesso indicati con le lettere <code>r</code>, <code>w</code>, <code>x</code>: read, write, execute. In Windows il modello è più ricco e usa elenchi di controllo accessi, ma l'idea di base resta simile: stabilire chi può fare cosa.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Il principio del minimo privilegio</h2>
+          <figure class="lesson-figure"><img src="../../../assets/diagrams/least-privilege.svg" alt="Confronto tra troppi privilegi e privilegi necessari"><figcaption>Figura 4: dare troppi privilegi rende ogni errore più pericoloso.</figcaption></figure>
+          <p>Il <strong>principio del minimo privilegio</strong> dice che un utente o un programma deve avere solo i permessi necessari per svolgere il proprio compito. È una delle regole più importanti della sicurezza informatica.</p>
+          <p>Se un programma deve soltanto leggere immagini, non dovrebbe poter modificare file di configurazione. Se uno studente deve consegnare un compito, non deve poter cancellare le consegne degli altri. Se un amministratore deve navigare sul web, è meglio che usi un account standard e passi ad amministratore solo quando serve.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Caso pratico: cartella di classe</h2>
+          <p>Supponiamo di voler organizzare una cartella condivisa per una classe. Vogliamo evitare confusione e proteggere i lavori degli studenti.</p>
+          <table>
+            <thead><tr><th>Cartella</th><th>Studenti</th><th>Docenti</th><th>Motivo</th></tr></thead>
+            <tbody>
+              <tr><td><code>/materiali</code></td><td>lettura</td><td>lettura e scrittura</td><td>Gli studenti scaricano dispense; i docenti le aggiornano.</td></tr>
+              <tr><td><code>/consegne</code></td><td>scrittura limitata</td><td>lettura e scrittura</td><td>Gli studenti consegnano; i docenti correggono.</td></tr>
+              <tr><td><code>/soluzioni</code></td><td>nessun accesso prima della verifica</td><td>lettura e scrittura</td><td>Le soluzioni non devono essere visibili in anticipo.</td></tr>
+              <tr><td><code>/sistema</code></td><td>nessun accesso</td><td>nessun accesso normale</td><td>Configurazioni gestite solo dal tecnico o dall'admin.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Buone pratiche quotidiane</h2>
+          <ul>
+            <li>Usare un account standard per le attività normali e l'account amministratore solo quando necessario.</li>
+            <li>Non condividere password, anche se il computer è “solo quello del laboratorio”.</li>
+            <li>Bloccare lo schermo quando ci si allontana dalla postazione.</li>
+            <li>Controllare bene a chi si danno permessi di scrittura, perché scrivere spesso significa anche poter cancellare.</li>
+            <li>Rimuovere account non più usati e rivedere periodicamente gruppi e permessi.</li>
+            <li>Leggere i messaggi di richiesta privilegi: se un programma chiede permessi amministrativi, deve esserci un motivo chiaro.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Mappa di ripasso</h2>
+          <table>
+            <thead><tr><th>Parola chiave</th><th>Definizione breve</th><th>Domanda da farsi</th></tr></thead>
+            <tbody>
+              <tr><td>Account</td><td>Identità usata per accedere al sistema.</td><td>Chi sta lavorando?</td></tr>
+              <tr><td>Gruppo</td><td>Insieme di account con permessi comuni.</td><td>A quale insieme appartiene?</td></tr>
+              <tr><td>Autenticazione</td><td>Verifica dell'identità.</td><td>Come dimostri chi sei?</td></tr>
+              <tr><td>Autorizzazione</td><td>Controllo dei permessi.</td><td>Che cosa puoi fare?</td></tr>
+              <tr><td>Log</td><td>Registrazione degli eventi.</td><td>Che cosa è successo?</td></tr>
+              <tr><td>Minimo privilegio</td><td>Solo i permessi necessari.</td><td>Questo permesso serve davvero?</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Disegna tre utenti e due gruppi per un laboratorio scolastico. Indica quali cartelle possono leggere o modificare.</li>
+            <li>Spiega la differenza tra autenticazione e autorizzazione usando l'esempio dell'ingresso a scuola.</li>
+            <li>Progetta i permessi per una cartella <code>/verifiche</code>: chi può leggere? chi può scrivere? quando?</li>
+            <li>Trova un esempio di minimo privilegio in un'app del telefono o del computer.</li>
+            <li>Scrivi tre regole di comportamento per evitare problemi di sicurezza in laboratorio.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details><summary>Perché il sistema operativo deve sapere chi sono?</summary><p>Per separare i dati, applicare i permessi corretti e impedire che una persona faccia azioni riservate ad altri.</p></details>
+          <details><summary>Che differenza c'è tra autenticazione e autorizzazione?</summary><p>L'autenticazione controlla chi sei. L'autorizzazione controlla che cosa puoi fare dopo essere entrato.</p></details>
+          <details><summary>Perché non conviene usare sempre l'account amministratore?</summary><p>Perché un errore o un programma dannoso avrebbe più potere e potrebbe modificare parti importanti del sistema.</p></details>
+          <details><summary>Un permesso di scrittura è pericoloso?</summary><p>Può esserlo, perché spesso chi può scrivere può anche modificare o cancellare dati. Va dato solo quando serve davvero.</p></details>
+          <details><summary>A cosa servono i gruppi?</summary><p>Servono a gestire molti utenti insieme. Invece di dare permessi a ogni studente uno per uno, assegni i permessi al gruppo studenti.</p></details>
+          <details><summary>Che cosa sono i log?</summary><p>Sono registri degli eventi. Aiutano a capire chi ha fatto un accesso, quando è avvenuto un errore o quale modifica è stata eseguita.</p></details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Ripeti il capitolo seguendo questa sequenza: account, gruppi, autenticazione, autorizzazione, permessi, minimo privilegio. Se riesci a inventare un esempio per ogni parola, l'argomento è entrato.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="interazione-con-il-sistema-operativo.html">Precedente: Interazione con il sistema operativo</a>
+      <a href="processi-e-risorse.html">Successivo: Processi e risorse</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Sito statico pronto per GitHub Pages. Modifica direttamente i file HTML quando vuoi aggiornare i capitoletti.</p>

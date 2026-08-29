@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-labelledby="t d">
+<title id="t">Matrice dei permessi</title><desc id="d">Tabella visuale dei permessi di lettura, scrittura ed esecuzione per proprietario, gruppo e altri.</desc><defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
+.title{font-size:24px;font-weight:700}.label{font-size:16px;font-weight:700}.small{font-size:13px;fill:#5f6c78}.tiny{font-size:11px;fill:#5f6c78}
+.box{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:10}.accent{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:10}.warn{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:10}.blue{fill:#edf5ff;stroke:#1473e6;stroke-width:2;rx:10}
+.line{stroke:#006d77;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}.head{fill:#006d77}.deny{stroke:#c44f24;stroke-width:5;stroke-linecap:round}
+</style></defs>
+<text x="40" y="48" class="title">Permessi: chi può fare cosa?</text>
+<rect x="65" y="90" width="770" height="330" class="box"/>
+<rect x="65" y="90" width="770" height="55" fill="#e7f0ed"/>
+<text x="185" y="124" class="label" text-anchor="middle">Soggetto</text><text x="360" y="124" class="label" text-anchor="middle">Lettura</text><text x="525" y="124" class="label" text-anchor="middle">Scrittura</text><text x="690" y="124" class="label" text-anchor="middle">Esecuzione</text>
+<line x1="65" y1="145" x2="835" y2="145" stroke="#d8dee5"/><line x1="285" y1="90" x2="285" y2="420" stroke="#d8dee5"/><line x1="445" y1="90" x2="445" y2="420" stroke="#d8dee5"/><line x1="610" y1="90" x2="610" y2="420" stroke="#d8dee5"/>
+<text x="185" y="200" class="label" text-anchor="middle">Proprietario</text><text x="360" y="200" class="label" text-anchor="middle">✓</text><text x="525" y="200" class="label" text-anchor="middle">✓</text><text x="690" y="200" class="label" text-anchor="middle">✓</text>
+<line x1="65" y1="235" x2="835" y2="235" stroke="#d8dee5"/>
+<text x="185" y="290" class="label" text-anchor="middle">Gruppo</text><text x="360" y="290" class="label" text-anchor="middle">✓</text><text x="525" y="290" class="label" text-anchor="middle">✓</text><text x="690" y="290" class="label" text-anchor="middle">-</text>
+<line x1="65" y1="325" x2="835" y2="325" stroke="#d8dee5"/>
+<text x="185" y="380" class="label" text-anchor="middle">Altri</text><text x="360" y="380" class="label" text-anchor="middle">✓</text><text x="525" y="380" class="label" text-anchor="middle">-</text><text x="690" y="380" class="label" text-anchor="middle">-</text>
+<text x="450" y="460" class="small" text-anchor="middle">Esempio didattico: il proprietario può fare tutto, il gruppo modifica, gli altri leggono soltanto.</text>
+</svg>

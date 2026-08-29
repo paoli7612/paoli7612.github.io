@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="t d">
+<title id="t">Principio del minimo privilegio</title><desc id="d">Confronto tra troppi privilegi e privilegi necessari.</desc><defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
+.title{font-size:24px;font-weight:700}.label{font-size:16px;font-weight:700}.small{font-size:13px;fill:#5f6c78}.tiny{font-size:11px;fill:#5f6c78}
+.box{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:10}.accent{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:10}.warn{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:10}.blue{fill:#edf5ff;stroke:#1473e6;stroke-width:2;rx:10}
+.line{stroke:#006d77;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}.head{fill:#006d77}.deny{stroke:#c44f24;stroke-width:5;stroke-linecap:round}
+</style></defs>
+<text x="40" y="48" class="title">Minimo privilegio: dare solo ciò che serve</text>
+<rect x="70" y="105" width="330" height="210" class="warn"/><text x="235" y="145" class="label" text-anchor="middle">Troppi privilegi</text><text x="235" y="182" class="small" text-anchor="middle">utente standard con permessi admin</text><text x="235" y="214" class="small" text-anchor="middle">un errore può modificare il sistema</text><text x="235" y="246" class="small" text-anchor="middle">un malware fa più danni</text><line x1="190" y1="270" x2="280" y2="270" class="deny"/><line x1="280" y1="270" x2="190" y2="270" class="deny"/>
+<rect x="500" y="105" width="330" height="210" class="accent"/><text x="665" y="145" class="label" text-anchor="middle">Privilegi necessari</text><text x="665" y="182" class="small" text-anchor="middle">utente standard per uso quotidiano</text><text x="665" y="214" class="small" text-anchor="middle">admin solo quando serve</text><text x="665" y="246" class="small" text-anchor="middle">danni limitati in caso di errore</text><circle cx="665" cy="275" r="24" fill="#006d77"/><path d="M652 275 L662 286 L681 264" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

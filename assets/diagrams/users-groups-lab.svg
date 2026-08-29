@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" role="img" aria-labelledby="t d">
+<title id="t">Utenti, gruppi e cartelle in laboratorio</title><desc id="d">Schema di studenti, docenti e amministratori collegati a cartelle con permessi diversi.</desc><defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
+.title{font-size:24px;font-weight:700}.label{font-size:16px;font-weight:700}.small{font-size:13px;fill:#5f6c78}.tiny{font-size:11px;fill:#5f6c78}
+.box{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:10}.accent{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:10}.warn{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:10}.blue{fill:#edf5ff;stroke:#1473e6;stroke-width:2;rx:10}
+.line{stroke:#006d77;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}.head{fill:#006d77}.deny{stroke:#c44f24;stroke-width:5;stroke-linecap:round}
+</style></defs>
+<text x="40" y="48" class="title">Esempio: gestione utenti in un laboratorio scolastico</text>
+<rect x="55" y="95" width="220" height="110" class="box"/><text x="165" y="130" class="label" text-anchor="middle">Gruppo studenti</text><text x="165" y="158" class="small" text-anchor="middle">legge materiali</text><text x="165" y="180" class="small" text-anchor="middle">scrive consegne</text>
+<rect x="340" y="95" width="220" height="110" class="accent"/><text x="450" y="130" class="label" text-anchor="middle">Gruppo docenti</text><text x="450" y="158" class="small" text-anchor="middle">pubblica materiali</text><text x="450" y="180" class="small" text-anchor="middle">corregge consegne</text>
+<rect x="625" y="95" width="220" height="110" class="warn"/><text x="735" y="130" class="label" text-anchor="middle">Amministratori</text><text x="735" y="158" class="small" text-anchor="middle">installano software</text><text x="735" y="180" class="small" text-anchor="middle">gestiscono account</text>
+<rect x="80" y="320" width="210" height="95" class="blue"/><text x="185" y="356" class="label" text-anchor="middle">/materiali</text><text x="185" y="382" class="small" text-anchor="middle">lettura studenti</text>
+<rect x="345" y="320" width="210" height="95" class="blue"/><text x="450" y="356" class="label" text-anchor="middle">/consegne</text><text x="450" y="382" class="small" text-anchor="middle">scrittura studenti</text>
+<rect x="610" y="320" width="210" height="95" class="blue"/><text x="715" y="356" class="label" text-anchor="middle">/sistema</text><text x="715" y="382" class="small" text-anchor="middle">solo admin</text>
+<polyline points="165,205 165,285 185,285 185,310" class="line"/><polygon points="185,322 176,306 194,306" class="head"/>
+<polyline points="165,205 165,285 450,285 450,310" class="line"/><polygon points="450,322 441,306 459,306" class="head"/>
+<polyline points="450,205 450,300 450,310" class="line"/><polygon points="450,322 441,306 459,306" class="head"/>
+<polyline points="735,205 735,285 715,285 715,310" class="line"/><polygon points="715,322 706,306 724,306" class="head"/>
+<line x1="250" y1="235" x2="315" y2="300" class="deny"/><line x1="315" y1="235" x2="250" y2="300" class="deny"/><text x="282" y="330" class="small" text-anchor="middle">studenti non admin</text>
+</svg>
