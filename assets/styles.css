@@ -425,19 +425,27 @@ main {
 }
 
 .pager {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 16px;
+  width: min(900px, 100%);
+  margin: 0 auto;
   padding: 0 0 48px;
 }
 
 .pager a {
-  max-width: 48%;
+  justify-self: start;
+  max-width: 100%;
   padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
   text-decoration: none;
+}
+
+.pager a:last-child {
+  justify-self: end;
+  text-align: right;
 }
 
 .site-footer {
@@ -488,6 +496,13 @@ main {
   }
 
   .pager a {
+    justify-self: stretch;
     max-width: none;
+    text-align: left;
+  }
+
+  .pager a:last-child {
+    justify-self: stretch;
+    text-align: left;
   }
 }
