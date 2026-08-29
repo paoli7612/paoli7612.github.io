@@ -289,6 +289,52 @@ main {
   color: var(--muted);
 }
 
+.content-block ul,
+.content-block ol {
+  margin: 14px 0 0;
+  padding-left: 24px;
+  color: var(--muted);
+}
+
+.content-block li + li {
+  margin-top: 8px;
+}
+
+.content-block pre {
+  overflow-x: auto;
+  margin: 16px 0 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17202a;
+  color: #ffffff;
+}
+
+.content-block code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+}
+
+.content-block table {
+  width: 100%;
+  margin-top: 16px;
+  border-collapse: collapse;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.content-block th,
+.content-block td {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.content-block th {
+  background: var(--soft);
+  color: var(--ink);
+}
+
 .notes-box {
   margin-top: 18px;
   border-style: dashed;

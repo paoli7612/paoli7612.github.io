@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Utenti e sicurezza | Programma di studio</title>
-  <meta name="description" content="Programma di studio navigabile per informatica, sistemi e telecomunicazioni.">
+  <meta name="description" content="Lezione di TPSIT sui sistemi operativi per studenti del triennio di informatica.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
     </a>
     <nav class="top-nav" aria-label="Materie">
       <a href="../../../materie/sistemi-e-reti.html">Sistemi e reti</a>
-<a aria-current="page" href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
+<a aria-current="page" href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
 <a href="../../../materie/informatica.html">Informatica</a>
 <a href="../../../materie/telecomunicazioni.html">Telecomunicazioni</a>
     </nav>
@@ -39,29 +39,59 @@
             </header>
             <div class="content-blocks">
               <section class="content-block">
-                    <h2>utenti e gruppi</h2>
-                    <p>Il sistema operativo identifica gli utenti e può organizzarli in gruppi per semplificare la gestione delle autorizzazioni.</p>
-<p>Ogni processo opera con determinati privilegi derivanti dall'identità con cui viene eseguito.</p>
+                    <h2>Identita digitale nel sistema operativo</h2>
+                    <p>Un sistema operativo moderno non considera tutti gli utenti uguali. Ogni persona o servizio accede con una propria identità, rappresentata da un account. L'account permette al sistema di sapere chi sta usando la macchina e quali operazioni può eseguire.</p>
+<p>Questa distinzione e fondamentale nei laboratori scolastici, nei server aziendali e anche nei computer personali. Separare gli account evita che un utente modifichi per errore i file di un altro, installi software non autorizzato o acceda a dati riservati.</p>
                   </section>
 <section class="content-block">
-                    <h2>autenticazione</h2>
-                    <p>L'autenticazione verifica l'identità di chi richiede l'accesso al sistema.</p>
-<p>Password e altri fattori di autenticazione devono essere gestiti secondo politiche che riducano il rischio di accessi non autorizzati.</p>
+                    <h2>Utenti, gruppi e ruoli</h2>
+                    <p>Un utente è una singola identità del sistema. Un gruppo raccoglie più utenti con esigenze simili. Assegnare permessi a un gruppo e più ordinato che assegnarli uno per uno: se dieci studenti devono accedere alla stessa cartella di progetto, basta inserirli nel gruppo corretto.</p>
+<p>Nei sistemi operativi esistono ruoli con privilegi diversi. Un utente standard può svolgere le attività quotidiane; un amministratore può installare software, modificare configurazioni di sistema e gestire altri account. Separare i ruoli riduce il rischio di danni accidentali.</p>
                   </section>
 <section class="content-block">
-                    <h2>permessi e privilegi</h2>
-                    <p>I permessi stabiliscono quali operazioni possono essere eseguite su file, directory e altre risorse.</p>
-<p>Il principio del minimo privilegio prevede di concedere solamente le autorizzazioni necessarie allo svolgimento delle attività.</p>
+                    <h2>Autenticazione e autorizzazione</h2>
+                    <p>Autenticazione significa dimostrare la propria identità. Il metodo più comune è la password, ma possono esistere anche PIN, impronte digitali, token, app di conferma o chiavi hardware. Più fattori rendono l'accesso più sicuro perché un attaccante dovrebbe superare controlli diversi.</p>
+<p>Autorizzazione significa stabilire cosa può fare un utente dopo l'accesso. Un utente può essere autenticato correttamente ma non avere il permesso di leggere una cartella, modificare una configurazione o eseguire un programma come amministratore.</p><ul>
+<li>Autenticazione: chi sei?</li>
+<li>Autorizzazione: cosa puoi fare?</li>
+<li>Accounting o tracciamento: quali azioni hai compiuto?</li>
+</ul>
                   </section>
 <section class="content-block">
-                    <h2>amministrazione degli utenti</h2>
-                    <p>Gli amministratori possono creare, modificare e rimuovere account e gruppi assegnando ruoli e autorizzazioni.</p>
-<p>La gestione degli account comprende anche password, directory personali, appartenenza ai gruppi e privilegi amministrativi.</p>
+                    <h2>Permessi e principio del minimo privilegio</h2>
+                    <p>I permessi definiscono operazioni come lettura, scrittura ed esecuzione. Su un file di testo, leggere significa visualizzare il contenuto; scrivere significa modificarlo; eseguire ha senso soprattutto per programmi o script.</p>
+<p>Il principio del minimo privilegio dice che ogni utente e ogni processo devono avere solo i permessi necessari per svolgere il proprio compito, non di piu. Se un programma viene compromesso, permessi limitati riducono i danni possibili.</p><table>
+<thead><tr><th>Permesso</th><th>Significato</th><th>Esempio</th></tr></thead>
+<tbody>
+<tr><td>Lettura</td><td>Consultare un contenuto</td><td>Aprire una relazione</td></tr>
+<tr><td>Scrittura</td><td>Modificare o cancellare</td><td>Aggiornare un file</td></tr>
+<tr><td>Esecuzione</td><td>Avviare un programma</td><td>Lanciare uno script</td></tr>
+</tbody>
+</table>
+                  </section>
+<section class="content-block">
+                    <h2>Buone pratiche</h2>
+                    <ul>
+<li>Usare account amministratore solo quando serve davvero.</li>
+<li>Scegliere password robuste e non riutilizzarle su servizi diversi.</li>
+<li>Bloccare lo schermo quando ci si allontana dal computer.</li>
+<li>Tenere separati dati personali, dati condivisi e configurazioni di sistema.</li>
+<li>Controllare periodicamente utenti, gruppi e permessi nelle macchine condivise.</li>
+</ul>
+                  </section>
+<section class="content-block">
+                    <h2>Esercizi</h2>
+                    <ol>
+<li>Fai un esempio di autenticazione e uno di autorizzazione.</li>
+<li>Perche in un laboratorio scolastico non tutti dovrebbero essere amministratori?</li>
+<li>Descrivi una situazione in cui usare un gruppo semplifica la gestione dei permessi.</li>
+<li>Spiega il principio del minimo privilegio con un esempio concreto.</li>
+</ol>
                   </section>
             </div>
             <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
+              <h2>Per studiare</h2>
+              <p>Leggi prima le definizioni, poi collega ogni concetto a un esempio pratico sul computer che usi a scuola o a casa. Alla fine prova a rispondere agli esercizi senza guardare il testo.</p>
             </section>
           </article>
           <nav class="pager" aria-label="Capitoletti vicini">
