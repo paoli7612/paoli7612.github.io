@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>File e periferiche | Programmi di studio A041</title>
-  <meta name="description" content="Lezione illustrata di TPSIT sui sistemi operativi per studenti del triennio di informatica.">
+  <meta name="description" content="Pagina-libro di TPSIT su file, directory, file system, driver, buffer, cache e periferiche.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -26,58 +26,215 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/sistemi-operativi-e-gestione-delle-risorse.html">Sistemi operativi e gestione delle risorse</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>File e periferiche</h1>
-              <p>Come il sistema operativo organizza i dati persistenti e permette ai programmi di usare dispositivi diversi senza conoscere l'hardware nel dettaglio.</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>Obiettivi della lezione</h2>
-                    <ul><li>Distinguere file, directory e file system.</li><li>Capire a cosa servono metadati e percorsi.</li><li>Spiegare il ruolo di driver, buffer, cache e interrupt.</li><li>Descrivere come un programma accede a file e periferiche.</li></ul>
-                  </section>
-<section class="content-block">
-                    <h2>File, directory e metadati</h2>
-                    <p>Un file conserva dati in modo persistente: resta disponibile anche dopo lo spegnimento del computer. Una directory organizza file e altre directory in una struttura ordinata. Il sistema operativo non memorizza solo il contenuto, ma anche metadati: nome, dimensione, data, proprietario, permessi e posizione dei blocchi su disco.</p><table><thead><tr><th>Elemento</th><th>A cosa serve</th><th>Esempio</th></tr></thead><tbody><tr><td>File</td><td>Contiene informazioni.</td><td>relazione.txt, foto.jpg, programma.exe</td></tr><tr><td>Directory</td><td>Organizza file e sottocartelle.</td><td>Documenti, Immagini, Progetti</td></tr><tr><td>Metadati</td><td>Descrivono e gestiscono il file.</td><td>Dimensione, data modifica, permessi</td></tr></tbody></table>
-                  </section>
-<section class="content-block">
-                    <h2>File system</h2>
-                    <p>Il file system stabilisce come i dati vengono organizzati sul dispositivo di memorizzazione. File system diversi scelgono strutture e regole diverse per compatibilità, prestazioni, sicurezza o affidabilità.</p><table><thead><tr><th>File system</th><th>Dove si trova spesso</th><th>Caratteristica utile</th></tr></thead><tbody><tr><td>NTFS</td><td>Windows</td><td>Permessi avanzati e journaling.</td></tr><tr><td>ext4</td><td>Linux</td><td>Affidabile e diffuso su server.</td></tr><tr><td>APFS</td><td>macOS</td><td>Ottimizzato per dispositivi Apple moderni.</td></tr><tr><td>exFAT</td><td>Chiavette e dischi esterni</td><td>Compatibile con sistemi diversi.</td></tr></tbody></table><aside class="simple-box"><strong>In parole semplici</strong><p>Il file system è come il metodo con cui una biblioteca ordina i libri. I dati sono i libri; indici e scaffali aiutano a trovarli senza cercare a caso.</p></aside>
-                  </section>
-<section class="content-block">
-                    <h2>Dal programma alla periferica</h2>
-                    <figure class="lesson-figure"><img src="../../../assets/diagrams/file-io-stack.svg" alt="Schema accesso a file system e driver"><figcaption>Figura 1: i programmi passano dal sistema operativo prima di raggiungere file e periferiche.</figcaption></figure><p>Quando un programma vuole leggere un file, non parla direttamente con il disco. Fa una richiesta al sistema operativo. Il sistema controlla permessi, file system, cache e driver, poi restituisce i dati. Lo stesso principio vale per stampanti, tastiere, webcam e rete.</p>
-                  </section>
-<section class="content-block">
-                    <h2>Driver, interrupt, buffer e cache</h2>
-                    <table><thead><tr><th>Meccanismo</th><th>Funzione</th><th>Esempio</th></tr></thead><tbody><tr><td>Driver</td><td>Traduce richieste generiche in comandi specifici del dispositivo.</td><td>Driver della stampante.</td></tr><tr><td>Interrupt</td><td>Avvisa la CPU quando una periferica richiede attenzione.</td><td>La scheda di rete segnala dati ricevuti.</td></tr><tr><td>Buffer</td><td>Conserva temporaneamente dati in transito.</td><td>Coda di stampa.</td></tr><tr><td>Cache</td><td>Tiene copie veloci di dati usati spesso.</td><td>File letto di recente mantenuto in RAM.</td></tr></tbody></table><p>Questi meccanismi servono perché le periferiche hanno velocità diverse dalla CPU. Senza buffer e interrupt, il processore perderebbe tempo ad aspettare dispositivi più lenti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>Esempio: stampare un documento</h2>
-                    <ol><li>L'applicazione chiede al sistema operativo di stampare.</li><li>Il sistema verifica permessi e stampante disponibile.</li><li>I dati vengono messi in una coda di stampa, cioè un buffer.</li><li>Il driver traduce il documento nel formato capito dalla stampante.</li><li>La stampante segnala avanzamento o errori al sistema.</li></ol>
-                  </section>
-<section class="content-block">
-                    <h2>Esercizi guidati</h2>
-                    <ol><li>Scegli un file sul tuo computer e individua almeno quattro metadati.</li><li>Spiega perché una chiavetta USB usa spesso exFAT.</li><li>Descrivi cosa succede, a grandi linee, quando salvi un documento.</li><li>Fai un esempio di buffer nella vita quotidiana e collegalo all'informatica.</li></ol>
-                  </section>
-              <section class="qa-box"><h2>Domande con risposta semplice</h2><details><summary>Che cos'è un file system?</summary><p>È il modo con cui il sistema operativo organizza file, cartelle e metadati su un dispositivo.</p></details><details><summary>A cosa serve un driver?</summary><p>Serve a controllare una periferica specifica offrendo al sistema operativo un modo ordinato per usarla.</p></details><details><summary>Perché esistono buffer e cache?</summary><p>Per ridurre attese e rendere più efficiente il passaggio dei dati tra CPU, memoria e dispositivi.</p></details></section>
-            </div>
-            <section class="notes-box">
-              <h2>Per ripassare</h2>
-              <p>Prima osserva il diagramma, poi leggi la spiegazione. Se riesci a rispondere alle domande finali senza copiare le frasi del testo, hai capito davvero l'argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="processi-e-risorse.html">Precedente: Processi e risorse</a>
-            <span></span>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/sistemi-operativi-e-gestione-delle-risorse.html">Sistemi operativi e gestione delle risorse</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 4</p>
+        <h1>File e periferiche</h1>
+        <p>Il sistema operativo conserva i dati in file e cartelle, controlla i permessi e permette ai programmi di usare dispositivi diversi senza conoscere i dettagli dell'hardware.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Distinguere file, directory, percorso e file system.</li>
+            <li>Capire perché i metadati sono importanti.</li>
+            <li>Descrivere cosa succede quando un programma legge o salva un file.</li>
+            <li>Spiegare il ruolo di driver, buffer, cache e interrupt.</li>
+            <li>Collegare file e periferiche alla sicurezza del sistema operativo.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>File, directory e percorsi</h2>
+          <p>Un <strong>file</strong> contiene dati: testo, immagini, programmi, video, configurazioni. Una <strong>directory</strong>, o cartella, serve a organizzare file e altre directory. Il <strong>percorso</strong> indica dove si trova un elemento dentro questa struttura.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/directory-tree.svg" alt="Albero di directory con cartelle e file">
+            <figcaption>Figura 1: le directory organizzano file e sottodirectory in una struttura ad albero.</figcaption>
+          </figure>
+          <table>
+            <thead>
+              <tr><th>Elemento</th><th>Significato</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>File</td><td>Unità logica che contiene dati.</td><td><code>relazione.txt</code>, <code>foto.jpg</code>, <code>main.py</code></td></tr>
+              <tr><td>Directory</td><td>Contenitore che organizza file e cartelle.</td><td><code>Documenti</code>, <code>Progetti</code>, <code>Download</code></td></tr>
+              <tr><td>Percorso assoluto</td><td>Parte dalla radice del file system.</td><td><code>C:\Utenti\Alberto\Documenti\relazione.txt</code></td></tr>
+              <tr><td>Percorso relativo</td><td>Parte dalla cartella corrente.</td><td><code>../immagini/logo.png</code></td></tr>
+            </tbody>
+          </table>
+          <aside class="simple-box">
+            <strong>In parole semplici</strong>
+            <p>Il file è il contenuto, la cartella è il contenitore, il percorso è l'indirizzo per arrivarci.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Metadati e permessi</h2>
+          <p>Il sistema operativo non salva solo il contenuto del file. Salva anche informazioni che servono per gestirlo: nome, dimensione, data di creazione, data di modifica, proprietario, permessi e posizione fisica dei blocchi sul disco.</p>
+          <table>
+            <thead>
+              <tr><th>Metadato</th><th>A cosa serve</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Nome</td><td>Permette all'utente e ai programmi di riconoscere il file.</td></tr>
+              <tr><td>Estensione</td><td>Suggerisce il tipo di contenuto, per esempio <code>.txt</code>, <code>.html</code>, <code>.jpg</code>.</td></tr>
+              <tr><td>Dimensione</td><td>Indica quanto spazio occupa.</td></tr>
+              <tr><td>Date</td><td>Aiutano a capire quando il file è stato creato o modificato.</td></tr>
+              <tr><td>Proprietario</td><td>Collega il file a un utente o a un gruppo.</td></tr>
+              <tr><td>Permessi</td><td>Stabiliscono chi può leggere, scrivere o eseguire.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>File system</h2>
+          <p>Il <strong>file system</strong> stabilisce come i dati vengono organizzati sul dispositivo di memorizzazione. Decide come nominare i file, come tenere l'indice delle directory, come gestire lo spazio libero e come recuperare i dati dopo un errore.</p>
+          <table>
+            <thead>
+              <tr><th>File system</th><th>Dove si trova spesso</th><th>Caratteristica utile</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>NTFS</td><td>Windows</td><td>Permessi avanzati, journaling e gestione affidabile dei dischi.</td></tr>
+              <tr><td>ext4</td><td>Linux</td><td>Molto diffuso su server e sistemi Linux.</td></tr>
+              <tr><td>APFS</td><td>macOS</td><td>Ottimizzato per dispositivi Apple moderni e unità SSD.</td></tr>
+              <tr><td>exFAT</td><td>Chiavette USB e dischi esterni</td><td>Compatibile con molti sistemi operativi.</td></tr>
+            </tbody>
+          </table>
+          <aside class="simple-box">
+            <strong>Analogia</strong>
+            <p>Il file system è come l'organizzazione di una biblioteca: non contiene solo i libri, ma anche scaffali, etichette, indici e regole di prestito.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Dal programma al disco</h2>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/file-io-stack.svg" alt="Schema accesso a file system e driver">
+            <figcaption>Figura 2: un programma passa attraverso il sistema operativo prima di raggiungere file e periferiche.</figcaption>
+          </figure>
+          <p>Quando un programma vuole leggere o salvare un file, non modifica direttamente il disco. Chiede al sistema operativo di farlo. Il sistema controlla i permessi, consulta il file system, usa cache e driver, poi restituisce il risultato al programma.</p>
+          <ol>
+            <li>Il programma chiama una funzione di sistema, per esempio “apri file”.</li>
+            <li>Il sistema operativo controlla se l'utente ha il permesso.</li>
+            <li>Il file system trova i blocchi in cui sono salvati i dati.</li>
+            <li>Il driver comunica con il dispositivo fisico.</li>
+            <li>I dati arrivano al programma, spesso passando da buffer o cache.</li>
+          </ol>
+        </section>
+
+        <section class="content-block">
+          <h2>Periferiche e driver</h2>
+          <p>Una <strong>periferica</strong> è un dispositivo collegato al computer: tastiera, mouse, monitor, stampante, disco, scheda di rete, webcam. Il sistema operativo offre ai programmi un modo uniforme per usarle; il <strong>driver</strong> traduce le richieste generiche in comandi specifici per quel modello di dispositivo.</p>
+          <table>
+            <thead>
+              <tr><th>Periferica</th><th>Tipo di operazione</th><th>Esempio di richiesta</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tastiera</td><td>Input</td><td>Rilevare il tasto premuto.</td></tr>
+              <tr><td>Monitor</td><td>Output</td><td>Disegnare finestre, testo e immagini.</td></tr>
+              <tr><td>Stampante</td><td>Output lento</td><td>Mettere un documento in coda di stampa.</td></tr>
+              <tr><td>Disco</td><td>Memorizzazione</td><td>Leggere o scrivere blocchi di dati.</td></tr>
+              <tr><td>Scheda di rete</td><td>Comunicazione</td><td>Inviare e ricevere pacchetti.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Buffer, cache e interrupt</h2>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/device-buffer-cache.svg" alt="Schema di buffer, cache, driver e periferica">
+            <figcaption>Figura 3: buffer e cache aiutano a gestire la differenza di velocità tra CPU e periferiche.</figcaption>
+          </figure>
+          <table>
+            <thead>
+              <tr><th>Meccanismo</th><th>Funzione</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Driver</td><td>Controlla una periferica specifica.</td><td>Driver della stampante o della scheda video.</td></tr>
+              <tr><td>Interrupt</td><td>Avvisa la CPU che una periferica richiede attenzione.</td><td>La scheda di rete segnala l'arrivo di dati.</td></tr>
+              <tr><td>Buffer</td><td>Memorizza temporaneamente dati in transito.</td><td>La coda di stampa.</td></tr>
+              <tr><td>Cache</td><td>Conserva copie veloci di dati usati spesso.</td><td>File letto di recente mantenuto in RAM.</td></tr>
+            </tbody>
+          </table>
+          <p>Questi meccanismi evitano che la CPU perda tempo ad aspettare dispositivi più lenti. Il sistema operativo prepara, mette in coda e riutilizza dati quando conviene.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: salvare e stampare</h2>
+          <p>Immagina di scrivere una relazione e premere “Salva”, poi “Stampa”. In pochi secondi entrano in gioco file, permessi, file system, driver e periferiche.</p>
+          <table>
+            <thead>
+              <tr><th>Azione</th><th>Cosa fa il sistema operativo</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Salva il documento</td><td>Controlla i permessi e scrive i dati nel file system.</td></tr>
+              <tr><td>Aggiorna i metadati</td><td>Modifica dimensione e data di ultima modifica.</td></tr>
+              <tr><td>Invia alla stampante</td><td>Mette il lavoro in una coda di stampa.</td></tr>
+              <tr><td>Usa il driver</td><td>Traduce il documento in comandi comprensibili dalla stampante.</td></tr>
+              <tr><td>Gestisce errori</td><td>Segnala carta esaurita, stampante offline o accesso negato.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Scegli un file sul tuo computer e individua almeno quattro metadati.</li>
+            <li>Scrivi un percorso assoluto e un percorso relativo riferiti a una cartella di lavoro.</li>
+            <li>Spiega perché una chiavetta USB usa spesso exFAT.</li>
+            <li>Descrivi cosa succede, a grandi linee, quando salvi un documento.</li>
+            <li>Fai un esempio di buffer nella vita quotidiana e collegalo all'informatica.</li>
+            <li>Spiega perché un programma non dovrebbe accedere direttamente all'hardware.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>Che cos'è un file?</summary>
+            <p>È un contenitore logico di dati, per esempio un testo, un'immagine, un programma o una configurazione.</p>
+          </details>
+          <details>
+            <summary>Che cos'è un file system?</summary>
+            <p>È il metodo con cui il sistema operativo organizza file, directory, metadati e spazio libero su un dispositivo.</p>
+          </details>
+          <details>
+            <summary>A cosa serve un driver?</summary>
+            <p>Serve a far comunicare il sistema operativo con una periferica specifica, traducendo le richieste in comandi adatti a quel dispositivo.</p>
+          </details>
+          <details>
+            <summary>Perché esistono buffer e cache?</summary>
+            <p>Per rendere più efficiente il passaggio dei dati: il buffer mette in attesa, la cache evita di rileggere dati già usati spesso.</p>
+          </details>
+          <details>
+            <summary>Che cos'è un interrupt?</summary>
+            <p>È un segnale con cui una periferica avvisa la CPU o il sistema operativo che è successo qualcosa.</p>
+          </details>
+          <details>
+            <summary>Perché i permessi sui file sono importanti?</summary>
+            <p>Perché impediscono accessi non autorizzati: non tutti devono poter leggere, modificare o eseguire qualunque file.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Ripeti in questo ordine: file, directory, percorso, metadati, file system, driver, buffer, cache, interrupt. Poi prova a spiegare cosa succede quando salvi un documento: se riesci a usare questi termini, la lezione è chiara.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="processi-e-risorse.html">Precedente: Processi e risorse</a>
+      <span class="pager-disabled" aria-disabled="true">Capitolo completato</span>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>
