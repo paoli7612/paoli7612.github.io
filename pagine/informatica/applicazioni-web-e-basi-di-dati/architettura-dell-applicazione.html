@@ -1,91 +1,42 @@
 <!doctype html>
 <html lang="it">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Architettura dell'applicazione | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
-  <link rel="stylesheet" href="../../../assets/styles.css">
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Architettura dell&#x27;applicazione | Informatica</title><meta name="description" content="Pagina-libro di Informatica: Architettura dell&#x27;applicazione."><link rel="stylesheet" href="../../../assets/styles.css"></head>
 <body>
   <header class="site-header">
     <a class="brand" href="../../../index.html" aria-label="Torna alla home">
       <span class="brand-mark">A041</span>
-      <span>
-        <strong>Programmi di studio A041</strong>
-        <small>Informatica nella scuola secondaria</small>
-      </span>
+      <span><strong>Programmi di studio A041</strong><small>Informatica nella scuola secondaria</small></span>
     </a>
     <nav class="top-nav" aria-label="Navigazione principale">
       <a href="../../../index.html">Home</a>
-      <details class="nav-menu">
-        <summary>I.T. tecnologico</summary>
-        <div class="nav-menu-list">
-          <a href="../../../materie/informatica.html">Informatica</a>
-          <a href="../../../materie/sistemi-e-reti.html">Sistemi e reti</a>
-          <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
-          <a href="../../../materie/telecomunicazioni.html">Telecomunicazioni</a>
-        </div>
-      </details>
-      <details class="nav-menu">
-        <summary>Tecnico economico</summary>
-        <div class="nav-menu-list">
-          <span class="nav-disabled" aria-disabled="true">Informatica</span>
-        </div>
-      </details>
-      <details class="nav-menu">
-        <summary>Liceo scienze applicate</summary>
-        <div class="nav-menu-list">
-          <span class="nav-disabled" aria-disabled="true">Informatica</span>
-        </div>
-      </details>
+      <details class="nav-menu"><summary>I.T. tecnologico</summary><div class="nav-menu-list">
+        <a href="../../../materie/informatica.html">Informatica</a>
+        <a href="../../../materie/sistemi-e-reti.html">Sistemi e reti</a>
+        <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+        <a href="../../../materie/telecomunicazioni.html">Telecomunicazioni</a>
+      </div></details>
+      <details class="nav-menu"><summary>Tecnico economico</summary><div class="nav-menu-list"><span class="nav-disabled" aria-disabled="true">Informatica</span></div></details>
+      <details class="nav-menu"><summary>Liceo scienze applicate</summary><div class="nav-menu-list"><span class="nav-disabled" aria-disabled="true">Informatica</span></div></details>
     </nav>
   </header>
   <main>
-    <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/informatica.html">Informatica</a>
-            <span>/</span>
-            <a href="../../../capitoli/applicazioni-web-e-basi-di-dati.html">Applicazioni Web e basi di dati</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Architettura dell'applicazione</h1>
-              <p>Applicazioni Web e basi di dati</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>presentazione</h2>
-                    <p>Il livello di presentazione gestisce l'interazione con l'utente e la visualizzazione delle informazioni.</p>
-<p>Nelle applicazioni Web comprende principalmente pagine, componenti dell'interfaccia e codice eseguito nel browser.</p>
-                  </section>
-<section class="content-block">
-                    <h2>logica applicativa</h2>
-                    <p>La logica applicativa implementa le regole e le operazioni specifiche del problema affrontato.</p>
-<p>Separarla dalla presentazione e dalla persistenza rende il software più semplice da verificare e modificare.</p>
-                  </section>
-<section class="content-block">
-                    <h2>persistenza</h2>
-                    <p>Il livello di persistenza gestisce l'accesso ai dati memorizzati.</p>
-<p>Centralizzare l'interazione con il database evita di distribuire query e dettagli del DBMS in tutta l'applicazione.</p>
-                  </section>
-<section class="content-block">
-                    <h2>integrazione client-server-database</h2>
-                    <p>Una tipica applicazione Web combina interfaccia client, logica eseguita sul server e dati persistenti gestiti da un DBMS.</p>
-<p>Comprendere il percorso completo richiesta-elaborazione-query-risposta permette di progettare e diagnosticare l'intero sistema.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="applicazioni-crud.html">Precedente: Applicazioni CRUD</a>
-            <span></span>
-          </nav>
+    <section class="breadcrumbs" aria-label="Percorso"><a href="../../../index.html">Home</a><span>/</span><a href="../../../materie/informatica.html">Informatica</a><span>/</span><a href="../../../capitoli/applicazioni-web-e-basi-di-dati.html">Applicazioni Web e basi di dati</a></section>
+    <article class="study-page">
+      <header><p class="eyebrow">Capitoletto 6.4</p><h1>Architettura dell&#x27;applicazione</h1><p>L&#x27;architettura separa presentazione, logica, accesso ai dati e persistenza.</p></header>
+      <figure class="lesson-figure diagram-focus"><img src="../../../assets/diagrams/software-layers.svg" alt="Schema a livelli di presentazione, logica applicativa, accesso ai dati e persistenza"><figcaption>Figura 1: Applicazioni server, database, operazioni CRUD e architettura a livelli.</figcaption></figure>
+      <div class="content-blocks">
+        <section class="content-block"><h2>Che cosa devi sapere</h2><p>L&#x27;architettura separa presentazione, logica, accesso ai dati e persistenza. In informatica questo argomento serve a costruire programmi più chiari, verificabili e adatti a problemi reali del percorso tecnico.</p><p>Quando studi il tema, non fermarti alla definizione: chiediti quali dati entrano in gioco, quali regole devono essere rispettate, quali errori possono comparire e come si può controllare il risultato.</p></section>
+        <section class="content-block"><h2>Quando si usa</h2><p>Separare i livelli permette di cambiare interfaccia senza riscrivere tutta la gestione dei dati.</p><p>Nel triennio superiore questa idea ricorre nei compiti di laboratorio, nella progettazione di applicazioni, nella lettura di codice scritto da altri e nella documentazione tecnica.</p></section>
+        <section class="content-block"><h2>Concetti fondamentali</h2><ul><li><strong>presentazione</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>logica applicativa</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>repository</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>database</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>layer</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>manutenibilità</strong>: concetto da saper definire e riconoscere in un esercizio.</li></ul></section>
+        <section class="content-block"><h2>Esempio guidato</h2><p>L'esempio seguente mostra il ragionamento prima del linguaggio specifico: nomi chiari, passi ordinati e risultato controllabile.</p><pre><code>Browser -&gt; Controller -&gt; Servizio -&gt; Repository -&gt; Database</code></pre></section>
+        <section class="content-block"><h2>Parole chiave</h2><table><thead><tr><th>Termine</th><th>Significato nello studio</th></tr></thead><tbody><tr><td>presentazione</td><td>Serve per ragionare su architettura dell&#x27;applicazione in modo preciso.</td></tr><tr><td>logica applicativa</td><td>Serve per ragionare su architettura dell&#x27;applicazione in modo preciso.</td></tr><tr><td>repository</td><td>Serve per ragionare su architettura dell&#x27;applicazione in modo preciso.</td></tr><tr><td>database</td><td>Serve per ragionare su architettura dell&#x27;applicazione in modo preciso.</td></tr></tbody></table></section>
+        <section class="content-block"><h2>Errori frequenti</h2><ul><li>Memorizzare la definizione senza saper fare un esempio.</li><li>Usare nomi generici che nascondono il significato dei dati.</li><li>Non controllare casi limite, input errati o situazioni vuote.</li></ul></section>
+        <section class="content-block"><h2>Esercizi per studiare</h2><ol><li>Riscrivi la definizione con parole tue e aggiungi un esempio scolastico.</li><li>Costruisci una tabella con almeno tre casi di prova: uno normale, uno minimo e uno critico.</li><li>Spiega quale errore potrebbe nascere se l'argomento venisse applicato male in un programma.</li></ol></section>
+      </div>
+      <section class="qa-box"><h2>Domande con risposta semplice</h2><details><summary>Qual è l'idea centrale?</summary><p>L&#x27;architettura separa presentazione, logica, accesso ai dati e persistenza.</p></details><details><summary>Perché è utile?</summary><p>Per trasformare un problema informatico in una soluzione più ordinata, controllabile e documentabile.</p></details><details><summary>Come lo riconosco in laboratorio?</summary><p>Lo riconosci quando devi scegliere dati, istruzioni, controlli, struttura del codice o modo di salvare le informazioni.</p></details><details><summary>Che cosa devo saper fare all'interrogazione?</summary><p>Definire i termini principali, leggere un piccolo esempio e spiegare perché la soluzione funziona.</p></details></section>
+      <section class="notes-box"><h2>Per ripassare</h2><p>Studia definizione, esempio e parole chiave. Poi inventa un caso nuovo: se riesci a risolverlo e a spiegare il perché delle scelte, l'argomento è capito.</p></section>
+    </article>
+    <nav class="pager" aria-label="Capitoletti vicini"><a href="applicazioni-crud.html">Precedente: Applicazioni CRUD</a><span></span></nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

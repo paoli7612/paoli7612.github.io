@@ -1,157 +1,45 @@
 <!doctype html>
 <html lang="it">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fondamenti degli algoritmi | Programmi di studio A041</title>
-  <meta name="description" content="Lezione di Informatica sui fondamenti degli algoritmi, con input, output, variabili, tipi, operatori, pseudocodice ed esempi.">
-  <link rel="stylesheet" href="../../../assets/styles.css">
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Fondamenti degli algoritmi | Informatica</title><meta name="description" content="Pagina-libro di Informatica: Fondamenti degli algoritmi."><link rel="stylesheet" href="../../../assets/styles.css"></head>
 <body>
   <header class="site-header">
     <a class="brand" href="../../../index.html" aria-label="Torna alla home">
       <span class="brand-mark">A041</span>
-      <span>
-        <strong>Programmi di studio A041</strong>
-        <small>Informatica nella scuola secondaria</small>
-      </span>
+      <span><strong>Programmi di studio A041</strong><small>Informatica nella scuola secondaria</small></span>
     </a>
     <nav class="top-nav" aria-label="Navigazione principale">
       <a href="../../../index.html">Home</a>
-      <details class="nav-menu">
-        <summary>I.T. tecnologico</summary>
-        <div class="nav-menu-list">
-          <a href="../../../materie/informatica.html">Informatica</a>
-          <a href="../../../materie/sistemi-e-reti.html">Sistemi e reti</a>
-          <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
-          <a href="../../../materie/telecomunicazioni.html">Telecomunicazioni</a>
-        </div>
-      </details>
-      <details class="nav-menu">
-        <summary>Tecnico economico</summary>
-        <div class="nav-menu-list">
-          <span class="nav-disabled" aria-disabled="true">Informatica</span>
-        </div>
-      </details>
-      <details class="nav-menu">
-        <summary>Liceo scienze applicate</summary>
-        <div class="nav-menu-list">
-          <span class="nav-disabled" aria-disabled="true">Informatica</span>
-        </div>
-      </details>
+      <details class="nav-menu"><summary>I.T. tecnologico</summary><div class="nav-menu-list">
+        <a href="../../../materie/informatica.html">Informatica</a>
+        <a href="../../../materie/sistemi-e-reti.html">Sistemi e reti</a>
+        <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+        <a href="../../../materie/telecomunicazioni.html">Telecomunicazioni</a>
+      </div></details>
+      <details class="nav-menu"><summary>Tecnico economico</summary><div class="nav-menu-list"><span class="nav-disabled" aria-disabled="true">Informatica</span></div></details>
+      <details class="nav-menu"><summary>Liceo scienze applicate</summary><div class="nav-menu-list"><span class="nav-disabled" aria-disabled="true">Informatica</span></div></details>
     </nav>
   </header>
   <main>
-    <section class="breadcrumbs" aria-label="Percorso">
-      <a href="../../../index.html">Home</a>
-      <span>/</span>
-      <a href="../../../materie/informatica.html">Informatica</a>
-      <span>/</span>
-      <a href="../../../capitoli/algoritmi-e-programmazione.html">Algoritmi e programmazione</a>
-    </section>
+    <section class="breadcrumbs" aria-label="Percorso"><a href="../../../index.html">Home</a><span>/</span><a href="../../../materie/informatica.html">Informatica</a><span>/</span><a href="../../../capitoli/algoritmi-e-programmazione.html">Algoritmi e programmazione</a></section>
     <article class="study-page">
-      <header>
-        <p class="eyebrow">Capitoletto 1.1</p>
-        <h1>Fondamenti degli algoritmi</h1>
-        <p>Un algoritmo è il modo ordinato con cui trasformiamo un problema in una procedura eseguibile, controllabile e poi traducibile in programma.</p>
-      </header>
-      <figure class="lesson-figure diagram-focus">
-        <img src="../../../assets/diagrams/algorithm-flow.svg" alt="Schema di un problema trasformato in input, passi dell'algoritmo, output e verifica">
-        <figcaption>Figura 1: progettare un algoritmo significa chiarire problema, dati disponibili, passi da compiere, risultato atteso e verifica.</figcaption>
-      </figure>
+      <header><p class="eyebrow">Capitoletto 1.1</p><h1>Fondamenti degli algoritmi</h1><p>Un algoritmo trasforma un problema in una procedura finita, ordinata e controllabile.</p></header>
+      <figure class="lesson-figure diagram-focus"><img src="../../../assets/diagrams/algorithm-flow.svg" alt="Schema che collega problema, input, algoritmo, output e verifica"><figcaption>Figura 1: Dalle istruzioni elementari alla progettazione di soluzioni corrette, leggibili e traducibili in codice.</figcaption></figure>
       <div class="content-blocks">
-        <section class="content-block">
-          <h2>Problemi e algoritmi</h2>
-          <p>In informatica un <strong>problema</strong> descrive un obiettivo da raggiungere partendo da dati, condizioni e vincoli. Un <strong>algoritmo</strong> è una sequenza finita, ordinata e non ambigua di istruzioni che risolve quel problema per tutti i casi previsti.</p>
-          <p>Un algoritmo non è ancora necessariamente un programma: può essere scritto in linguaggio naturale, in pseudocodice o con un diagramma. Diventa programma quando viene tradotto in un linguaggio eseguibile dal computer.</p>
-        </section>
-        <section class="content-block">
-          <h2>Proprietà di un buon algoritmo</h2>
-          <table>
-            <thead><tr><th>Proprietà</th><th>Significato</th><th>Esempio</th></tr></thead>
-            <tbody>
-              <tr><td>Finitezza</td><td>Deve terminare dopo un numero limitato di passi.</td><td>Non può ripetere per sempre la stessa istruzione.</td></tr>
-              <tr><td>Non ambiguità</td><td>Ogni passo deve essere interpretabile in un solo modo.</td><td>“Somma i due numeri” è chiaro; “sistema i dati” è vago.</td></tr>
-              <tr><td>Eseguibilità</td><td>Ogni istruzione deve poter essere svolta dall'esecutore.</td><td>Un computer può confrontare numeri, ma non intuire intenzioni.</td></tr>
-              <tr><td>Generalità</td><td>Deve risolvere una classe di casi, non un solo esempio.</td><td>Calcolare l'area di qualunque rettangolo, non solo 3 per 4.</td></tr>
-            </tbody>
-          </table>
-        </section>
-        <section class="content-block">
-          <h2>Input, elaborazione e output</h2>
-          <p>L'<strong>input</strong> è l'insieme dei dati forniti all'algoritmo. L'<strong>elaborazione</strong> è la sequenza di operazioni che trasforma quei dati. L'<strong>output</strong> è il risultato prodotto.</p>
-          <div class="simple-box">
-            <strong>Esempio</strong>
-            <p>Problema: calcolare l'area di un rettangolo. Input: base e altezza. Elaborazione: base * altezza. Output: area.</p>
-          </div>
-        </section>
-        <section class="content-block">
-          <h2>Variabili, costanti e tipi</h2>
-          <p>Una <strong>variabile</strong> è uno spazio di memoria identificato da un nome, il cui valore può cambiare durante l'esecuzione. Una <strong>costante</strong> ha invece un valore che non deve cambiare.</p>
-          <p>Il <strong>tipo</strong> stabilisce quali valori sono ammessi e quali operazioni hanno senso: numeri interi, numeri reali, stringhe, valori booleani e altri tipi più complessi.</p>
-          <table>
-            <thead><tr><th>Tipo</th><th>Valori</th><th>Operazioni tipiche</th></tr></thead>
-            <tbody>
-              <tr><td>Intero</td><td>0, 1, -7, 125</td><td>somma, sottrazione, confronto</td></tr>
-              <tr><td>Reale</td><td>3.14, -0.5</td><td>calcoli con decimali</td></tr>
-              <tr><td>Stringa</td><td>"Mario", "classe 3A"</td><td>concatenazione, lunghezza</td></tr>
-              <tr><td>Booleano</td><td>vero, falso</td><td>AND, OR, NOT</td></tr>
-            </tbody>
-          </table>
-        </section>
-        <section class="content-block">
-          <h2>Operatori ed espressioni</h2>
-          <p>Gli operatori combinano valori e variabili per produrre nuovi valori. Gli operatori aritmetici eseguono calcoli, quelli relazionali confrontano valori, quelli logici combinano condizioni.</p>
-          <pre><code>base = 8
-altezza = 5
-area = base * altezza
-rettangolo_grande = area &gt; 30</code></pre>
-          <p>Nell'esempio <code>base * altezza</code> è un'espressione aritmetica; <code>area &gt; 30</code> è un'espressione relazionale che produce un valore booleano.</p>
-        </section>
-        <section class="content-block">
-          <h2>Pseudocodice</h2>
-          <p>Lo pseudocodice descrive un algoritmo in modo vicino al linguaggio umano, ma con una struttura abbastanza precisa da poter essere trasformata in programma.</p>
-          <pre><code>leggi base
+        <section class="content-block"><h2>Che cosa devi sapere</h2><p>Un algoritmo trasforma un problema in una procedura finita, ordinata e controllabile. In informatica questo argomento serve a costruire programmi più chiari, verificabili e adatti a problemi reali del percorso tecnico.</p><p>Quando studi il tema, non fermarti alla definizione: chiediti quali dati entrano in gioco, quali regole devono essere rispettate, quali errori possono comparire e come si può controllare il risultato.</p></section>
+        <section class="content-block"><h2>Quando si usa</h2><p>Calcolare l&#x27;area di un rettangolo chiarisce bene il modello input, elaborazione e output.</p><p>Nel triennio superiore questa idea ricorre nei compiti di laboratorio, nella progettazione di applicazioni, nella lettura di codice scritto da altri e nella documentazione tecnica.</p></section>
+        <section class="content-block"><h2>Concetti fondamentali</h2><ul><li><strong>problema</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>input</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>output</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>variabile</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>tipo di dato</strong>: concetto da saper definire e riconoscere in un esercizio.</li><li><strong>pseudocodice</strong>: concetto da saper definire e riconoscere in un esercizio.</li></ul></section>
+        <section class="content-block"><h2>Esempio guidato</h2><p>L'esempio seguente mostra il ragionamento prima del linguaggio specifico: nomi chiari, passi ordinati e risultato controllabile.</p><pre><code>leggi base
 leggi altezza
 area = base * altezza
-scrivi area</code></pre>
-          <p>Scrivere prima lo pseudocodice aiuta a concentrarsi sul ragionamento, prima dei dettagli di sintassi di Python, Java, C++ o altri linguaggi.</p>
-        </section>
-        <section class="content-block">
-          <h2>Errori frequenti</h2>
-          <ul>
-            <li>Confondere il problema con un singolo esempio numerico.</li>
-            <li>Usare istruzioni vaghe, come “calcola bene” o “sistema il dato”.</li>
-            <li>Dimenticare quali input servono davvero.</li>
-            <li>Non controllare se l'output è coerente con il problema iniziale.</li>
-          </ul>
-        </section>
-        <section class="content-block">
-          <h2>Esercizi guidati</h2>
-          <ol>
-            <li>Descrivi input, elaborazione e output per calcolare la media di tre voti.</li>
-            <li>Scrivi lo pseudocodice per convertire una temperatura da gradi Celsius a Fahrenheit.</li>
-            <li>Indica almeno due tipi di dati necessari per registrare nome, età e media di uno studente.</li>
-            <li>Spiega perché “prepara una verifica” non è un algoritmo sufficientemente preciso.</li>
-          </ol>
-        </section>
+scrivi area</code></pre></section>
+        <section class="content-block"><h2>Parole chiave</h2><table><thead><tr><th>Termine</th><th>Significato nello studio</th></tr></thead><tbody><tr><td>problema</td><td>Serve per ragionare su fondamenti degli algoritmi in modo preciso.</td></tr><tr><td>input</td><td>Serve per ragionare su fondamenti degli algoritmi in modo preciso.</td></tr><tr><td>output</td><td>Serve per ragionare su fondamenti degli algoritmi in modo preciso.</td></tr><tr><td>variabile</td><td>Serve per ragionare su fondamenti degli algoritmi in modo preciso.</td></tr></tbody></table></section>
+        <section class="content-block"><h2>Errori frequenti</h2><ul><li>Memorizzare la definizione senza saper fare un esempio.</li><li>Usare nomi generici che nascondono il significato dei dati.</li><li>Non controllare casi limite, input errati o situazioni vuote.</li></ul></section>
+        <section class="content-block"><h2>Esercizi per studiare</h2><ol><li>Riscrivi la definizione con parole tue e aggiungi un esempio scolastico.</li><li>Costruisci una tabella con almeno tre casi di prova: uno normale, uno minimo e uno critico.</li><li>Spiega quale errore potrebbe nascere se l'argomento venisse applicato male in un programma.</li></ol></section>
       </div>
-      <section class="qa-box">
-        <h2>Domande con risposta semplice</h2>
-        <details><summary>Che differenza c'è tra algoritmo e programma?</summary><p>L'algoritmo descrive la procedura logica; il programma è la sua traduzione in un linguaggio eseguibile dal computer.</p></details>
-        <details><summary>Perché un algoritmo deve essere finito?</summary><p>Perché deve produrre un risultato e terminare; altrimenti non risolve davvero il problema.</p></details>
-        <details><summary>A cosa serve il tipo di una variabile?</summary><p>Serve a stabilire quali valori può contenere e quali operazioni possono essere applicate.</p></details>
-        <details><summary>Perché si usa lo pseudocodice?</summary><p>Per progettare la soluzione senza essere subito vincolati alla sintassi di un linguaggio di programmazione.</p></details>
-      </section>
-      <section class="notes-box">
-        <h2>Per ripassare</h2>
-        <p>Prendi un problema semplice, individua input ed output, scrivi i passi in pseudocodice e poi prova con almeno due esempi diversi. Se funziona solo con un esempio, l'algoritmo non è ancora generale.</p>
-      </section>
+      <section class="qa-box"><h2>Domande con risposta semplice</h2><details><summary>Qual è l'idea centrale?</summary><p>Un algoritmo trasforma un problema in una procedura finita, ordinata e controllabile.</p></details><details><summary>Perché è utile?</summary><p>Per trasformare un problema informatico in una soluzione più ordinata, controllabile e documentabile.</p></details><details><summary>Come lo riconosco in laboratorio?</summary><p>Lo riconosci quando devi scegliere dati, istruzioni, controlli, struttura del codice o modo di salvare le informazioni.</p></details><details><summary>Che cosa devo saper fare all'interrogazione?</summary><p>Definire i termini principali, leggere un piccolo esempio e spiegare perché la soluzione funziona.</p></details></section>
+      <section class="notes-box"><h2>Per ripassare</h2><p>Studia definizione, esempio e parole chiave. Poi inventa un caso nuovo: se riesci a risolverlo e a spiegare il perché delle scelte, l'argomento è capito.</p></section>
     </article>
-    <nav class="pager" aria-label="Capitoletti vicini">
-      <span></span>
-      <a href="strutture-di-controllo.html">Successivo: Strutture di controllo</a>
-    </nav>
+    <nav class="pager" aria-label="Capitoletti vicini"><span></span><a href="strutture-di-controllo.html">Successivo: Strutture di controllo</a></nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>
