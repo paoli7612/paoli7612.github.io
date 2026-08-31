@@ -1,45 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="t d">
 <title id="t">Albero di directory</title><desc id="d">Esempio di organizzazione gerarchica di cartelle e file.</desc>
 <defs><style>
   text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
   .title{font-size:24px;font-weight:700}
   .label{font-size:16px;font-weight:700}
   .small{font-size:13px;fill:#5f6c78}
-  .folder{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:8}
-  .file{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:8}
-  .accent{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:8}
-  .line{stroke:#7b8794;stroke-width:3;stroke-linecap:round;fill:none}
+  .folder{fill:#e7f0ed;stroke:#006d77;stroke-width:2}
+  .file{fill:#fff;stroke:#d8dee5;stroke-width:2}
+  .accent{fill:#fff3ea;stroke:#c44f24;stroke-width:2}
+  .line{stroke:#7b8794;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;fill:none}
+  .file-line{stroke:#b7c0ca;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
 </style></defs>
 <text x="40" y="48" class="title">File e directory formano un albero</text>
 <text x="40" y="82" class="small">Ogni elemento ha una posizione: il percorso dice come raggiungerlo.</text>
 
-<rect x="365" y="110" width="170" height="58" class="folder"/>
+<rect x="365" y="110" width="170" height="58" rx="8" class="folder"/>
 <text x="450" y="146" text-anchor="middle" class="label">C:\Utenti</text>
 
 <path d="M450 168 V205 M450 205 H220 M450 205 H680" class="line"/>
 
-<rect x="140" y="225" width="160" height="58" class="folder"/>
+<rect x="140" y="225" width="160" height="58" rx="8" class="folder"/>
 <text x="220" y="261" text-anchor="middle" class="label">Alberto</text>
-<rect x="600" y="225" width="160" height="58" class="folder"/>
+<rect x="600" y="225" width="160" height="58" rx="8" class="folder"/>
 <text x="680" y="261" text-anchor="middle" class="label">Studenti</text>
 
 <path d="M220 283 V320 M220 320 H115 M220 320 H325" class="line"/>
 <path d="M680 283 V320 M680 320 H575 M680 320 H785" class="line"/>
 
-<rect x="50" y="345" width="130" height="58" class="folder"/>
+<rect x="50" y="345" width="130" height="58" rx="8" class="folder"/>
 <text x="115" y="381" text-anchor="middle" class="label">Documenti</text>
-<rect x="260" y="345" width="130" height="58" class="folder"/>
+<rect x="260" y="345" width="130" height="58" rx="8" class="folder"/>
 <text x="325" y="381" text-anchor="middle" class="label">Progetti</text>
-<rect x="510" y="345" width="130" height="58" class="folder"/>
+<rect x="510" y="345" width="130" height="58" rx="8" class="folder"/>
 <text x="575" y="381" text-anchor="middle" class="label">Classe</text>
-<rect x="720" y="345" width="130" height="58" class="accent"/>
+<rect x="720" y="345" width="130" height="58" rx="8" class="accent"/>
 <text x="785" y="381" text-anchor="middle" class="label">Condivisi</text>
 
-<path d="M115 403 V435 H225" class="line"/>
-<rect x="225" y="415" width="170" height="50" class="file"/>
-<text x="310" y="446" text-anchor="middle" class="small">relazione.txt</text>
+<path d="M115 403 V440" class="file-line"/>
+<rect x="37" y="440" width="156" height="48" rx="8" class="file"/>
+<text x="115" y="470" text-anchor="middle" class="small">relazione.txt</text>
 
-<path d="M325 403 V435 H435" class="line"/>
-<rect x="435" y="415" width="170" height="50" class="file"/>
-<text x="520" y="446" text-anchor="middle" class="small">main.py</text>
+<path d="M325 403 V440" class="file-line"/>
+<rect x="247" y="440" width="156" height="48" rx="8" class="file"/>
+<text x="325" y="470" text-anchor="middle" class="small">main.py</text>
 </svg>

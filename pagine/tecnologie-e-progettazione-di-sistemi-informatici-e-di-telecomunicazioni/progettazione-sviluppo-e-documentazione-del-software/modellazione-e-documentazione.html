@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Modellazione e documentazione | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro di TPSIT su specifiche, modellazione UML, casi d'uso, diagrammi e documentazione del software.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -26,49 +26,170 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/progettazione-sviluppo-e-documentazione-del-software.html">Progettazione, sviluppo e documentazione del software</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Modellazione e documentazione</h1>
-              <p>Progettazione, sviluppo e documentazione del software</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>specifiche</h2>
-                    <p>Le specifiche descrivono in modo sufficientemente preciso il comportamento richiesto al sistema e ai suoi componenti.</p>
-<p>Costituiscono un riferimento comune durante progettazione, implementazione, verifica e manutenzione.</p>
-                  </section>
-<section class="content-block">
-                    <h2>modellazione del sistema</h2>
-                    <p>I modelli rappresentano aspetti significativi del sistema riducendone la complessità.</p>
-<p>Diagrammi e rappresentazioni strutturate possono descrivere componenti, relazioni, comportamenti e interazioni.</p>
-                  </section>
-<section class="content-block">
-                    <h2>documentazione tecnica</h2>
-                    <p>La documentazione tecnica descrive architettura, componenti, configurazione, interfacce e modalità di utilizzo del software.</p>
-<p>Una documentazione aggiornata facilita collaborazione, manutenzione e riuso del sistema.</p>
-                  </section>
-<section class="content-block">
-                    <h2>documentazione del codice</h2>
-                    <p>Nomi significativi, commenti appropriati e documentazione delle interfacce rendono il codice più comprensibile.</p>
-<p>La documentazione deve chiarire responsabilità e modalità d'uso senza sostituire una struttura del codice correttamente progettata.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="ciclo-di-sviluppo.html">Precedente: Ciclo di sviluppo</a>
-            <a href="organizzazione-del-software.html">Successivo: Organizzazione del software</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/progettazione-sviluppo-e-documentazione-del-software.html">Progettazione, sviluppo e documentazione del software</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 2</p>
+        <h1>Modellazione e documentazione</h1>
+        <p>Un modello descrive un sistema prima o durante la costruzione. La documentazione conserva le decisioni importanti e permette a studenti, sviluppatori e utenti di capire come funziona il software.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Capire perché si modellano sistemi complessi.</li>
+            <li>Distinguere specifiche, modelli e documentazione.</li>
+            <li>Leggere un semplice diagramma dei casi d'uso.</li>
+            <li>Riconoscere le informazioni essenziali di un diagramma delle classi.</li>
+            <li>Scrivere documentazione tecnica utile, sintetica e aggiornata.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Specifiche: il contratto del sistema</h2>
+          <p>Le specifiche descrivono in modo preciso che cosa il software deve fare. Sono un riferimento comune tra chi commissiona il lavoro, chi progetta, chi programma, chi testa e chi usera il sistema.</p>
+          <p>Una specifica efficace non deve essere ambigua. Se due persone la leggono, dovrebbero arrivare alla stessa interpretazione. Per questo conviene usare frasi controllabili e verificabili.</p>
+          <table>
+            <thead>
+              <tr><th>Frase debole</th><th>Frase migliore</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Il sistema deve essere veloce.</td><td>La ricerca di un libro deve mostrare i risultati entro due secondi con almeno 10.000 record.</td></tr>
+              <tr><td>L'accesso deve essere sicuro.</td><td>Solo gli utenti autenticati con ruolo bibliotecario possono modificare i prestiti.</td></tr>
+              <tr><td>La schermata deve essere semplice.</td><td>La registrazione di un prestito deve richiedere al massimo tre campi obbligatori.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>perché usare i modelli</h2>
+          <p>Un sistema software può diventare difficile da comprendere perché contiene dati, regole, interfacce, utenti, controlli e comunicazioni con altri sistemi. Un modello riduce la complessità concentrandosi su un punto di vista.</p>
+          <table>
+            <thead>
+              <tr><th>Modello</th><th>Risponde alla domanda</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Casi d'uso</td><td>Chi usa il sistema e per fare cosa?</td><td>Studente consulta catalogo, bibliotecario registra prestito.</td></tr>
+              <tr><td>Classi</td><td>Quali entita e relazioni descrivono il dominio?</td><td>Libro, Utente, Prestito.</td></tr>
+              <tr><td>Sequenza</td><td>In quale ordine collaborano gli oggetti o componenti?</td><td>Utente invia richiesta, server controlla dati, database salva.</td></tr>
+              <tr><td>attività</td><td>Quali passaggi compongono una procedura?</td><td>Dal controllo disponibilità alla conferma del prestito.</td></tr>
+            </tbody>
+          </table>
+          <aside class="simple-box">
+            <strong>Da ricordare</strong>
+            <p>Un modello non è il sistema completo. È una rappresentazione selettiva che aiuta a ragionare, comunicare e verificare.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Diagramma dei casi d'uso</h2>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/software-use-cases.svg" alt="Diagramma dei casi d'uso per una biblioteca scolastica">
+            <figcaption>Figura 1: i casi d'uso collegano gli attori alle funzioni principali offerte dal sistema.</figcaption>
+          </figure>
+          <p>Il diagramma dei casi d'uso rappresenta gli attori esterni e le funzionalità che usano. Non descrive il codice interno, ma aiuta a delimitare il sistema e a capire quali funzioni sono necessarie.</p>
+          <table>
+            <thead>
+              <tr><th>Elemento</th><th>Significato</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Attore</td><td>Ruolo esterno che interagisce con il sistema, per esempio Studente o Bibliotecario.</td></tr>
+              <tr><td>Caso d'uso</td><td>Funzione osservabile dall'esterno, per esempio Cercare libro o Registrare prestito.</td></tr>
+              <tr><td>Confine del sistema</td><td>Indica quali funzionalità appartengono al software progettato.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Diagramma delle classi</h2>
+          <p>Il diagramma delle classi rappresenta le entita principali del sistema, i loro attributi, le operazioni e le relazioni. E molto utile quando il software gestisce dati strutturati e regole di dominio.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/software-class-model.svg" alt="Diagramma delle classi per libri, utenti e prestiti">
+            <figcaption>Figura 2: Libro, Utente e Prestito sono entita collegate da relazioni significative.</figcaption>
+          </figure>
+          <p>Per leggere un diagramma delle classi bisogna chiedersi: quali oggetti esistono nel dominio? Quali informazioni conservano? Quali operazioni possono compiere? Quali relazioni hanno tra loro?</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Documentazione tecnica</h2>
+          <p>La documentazione tecnica spiega come è organizzato il software. Deve aiutare chi dovrà modificarlo, installarlo, testarlo o integrarlo con altri sistemi. Non deve essere un romanzo: deve contenere le informazioni che evitano equivoci e perdite di tempo.</p>
+          <table>
+            <thead>
+              <tr><th>Documento</th><th>Contenuto tipico</th><th>Destinatario</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Documento dei requisiti</td><td>Funzioni richieste, vincoli, priorita, criteri di accettazione.</td><td>Team, docente, committente.</td></tr>
+              <tr><td>Documento di progetto</td><td>Architettura, moduli, dati, interfacce, scelte tecniche.</td><td>Sviluppatori e manutentori.</td></tr>
+              <tr><td>Manuale utente</td><td>Procedure per usare il sistema e risolvere problemi comuni.</td><td>Utenti finali.</td></tr>
+              <tr><td>README</td><td>Descrizione del progetto, installazione, avvio, struttura delle cartelle.</td><td>Chi apre il repository.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Documentazione del codice</h2>
+          <p>Il codice si documenta prima di tutto con una buona struttura: nomi chiari, funzioni brevi, responsabilità separate e file organizzati. I commenti servono quando il codice non basta a spiegare una scelta, un vincolo o una regola particolare.</p>
+          <pre><code>// Utile: spiega il motivo della scelta
+// La prenotazione termina alle 18:00 perché il laboratorio chiude a quell'ora.
+
+// Poco utile: ripete quello che il codice dice già
+// Aumenta contatore di 1
+contatore = contatore + 1;</code></pre>
+          <aside class="simple-box">
+            <strong>Regola pratica</strong>
+            <p>Commenta il perché, non l'ovvio. Se per capire una funzione serve un commento enorme, forse la funzione va divisa o rinominata.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Scrivi tre specifiche verificabili per un'app di prenotazione del laboratorio.</li>
+            <li>Individua gli attori di un sistema per gestire verifiche e interrogazioni.</li>
+            <li>Disegna un semplice diagramma dei casi d'uso per la biblioteca scolastica.</li>
+            <li>Elenca le classi principali di un'app per gestire prestiti di libri.</li>
+            <li>Scrivi l'indice di un README per un progetto realizzato in laboratorio.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>A che cosa serve un modello?</summary>
+            <p>Serve a rappresentare un aspetto del sistema in modo più semplice, così da capirlo, discuterlo e correggerlo prima o durante lo sviluppo.</p>
+          </details>
+          <details>
+            <summary>Che cosa mostra un diagramma dei casi d'uso?</summary>
+            <p>Mostra gli attori esterni e le funzioni principali che essi usano nel sistema.</p>
+          </details>
+          <details>
+            <summary>La documentazione sostituisce il codice ben scritto?</summary>
+            <p>No. La documentazione aiuta, ma il codice deve comunque avere struttura, nomi e responsabilità chiari.</p>
+          </details>
+          <details>
+            <summary>perché la documentazione deve essere aggiornata?</summary>
+            <p>perché una documentazione vecchia può far prendere decisioni sbagliate e rendere più difficile la manutenzione.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Collega ogni documento al suo scopo: requisiti per dire cosa serve, modelli per ragionare sulla soluzione, documentazione tecnica per mantenere il sistema, manuale utente per spiegare l'uso.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="ciclo-di-sviluppo.html">Precedente: Ciclo di sviluppo</a>
+      <a href="organizzazione-del-software.html">Successivo: Organizzazione del software</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

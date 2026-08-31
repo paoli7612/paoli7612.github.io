@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ciclo di sviluppo | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro di TPSIT sul ciclo di sviluppo del software: analisi, requisiti, progettazione, implementazione, test, rilascio e manutenzione.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -26,49 +26,199 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/progettazione-sviluppo-e-documentazione-del-software.html">Progettazione, sviluppo e documentazione del software</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Ciclo di sviluppo</h1>
-              <p>Progettazione, sviluppo e documentazione del software</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>analisi del problema</h2>
-                    <p>Lo sviluppo parte dalla comprensione del problema, degli utenti coinvolti e del contesto nel quale il sistema dovrà operare.</p>
-<p>Una corretta analisi permette di individuare obiettivi, vincoli e funzionalità prima di procedere all'implementazione.</p>
-                  </section>
-<section class="content-block">
-                    <h2>analisi dei requisiti</h2>
-                    <p>I requisiti descrivono le funzionalità e le caratteristiche che il sistema deve possedere.</p>
-<p>È possibile distinguere requisiti funzionali, relativi ai servizi offerti, e non funzionali, relativi ad aspetti come prestazioni, sicurezza e affidabilità.</p>
-                  </section>
-<section class="content-block">
-                    <h2>progettazione e implementazione</h2>
-                    <p>La progettazione trasforma i requisiti in una struttura software definendo componenti, interfacce e responsabilità.</p>
-<p>L'implementazione traduce il progetto in codice utilizzando linguaggi, librerie e strumenti appropriati.</p>
-                  </section>
-<section class="content-block">
-                    <h2>testing, rilascio e manutenzione</h2>
-                    <p>Il testing verifica il comportamento del software rispetto ai requisiti e permette di individuare errori prima del rilascio.</p>
-<p>Dopo la distribuzione il software viene mantenuto attraverso correzioni, aggiornamenti e introduzione di nuove funzionalità.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <span></span>
-            <a href="modellazione-e-documentazione.html">Successivo: Modellazione e documentazione</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/progettazione-sviluppo-e-documentazione-del-software.html">Progettazione, sviluppo e documentazione del software</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 1</p>
+        <h1>Ciclo di sviluppo</h1>
+        <p>Il software non nasce direttamente dal codice. Prima si capisce il problema, poi si definisce cosa deve fare il sistema, si progetta una soluzione, la si realizza, la si verifica e la si mantiene nel tempo.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Comprendere le fasi principali del ciclo di vita del software.</li>
+            <li>Distinguere analisi del problema e analisi dei requisiti.</li>
+            <li>Riconoscere requisiti funzionali e non funzionali.</li>
+            <li>Collegare progettazione, implementazione, testing e manutenzione.</li>
+            <li>Capire perché un progetto software deve essere documentato mentre viene costruito.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Che cosa significa sviluppare software</h2>
+          <p>Sviluppare software significa costruire un sistema informatico capace di risolvere un problema reale. Il risultato finale può essere un'applicazione web, un programma desktop, un'app mobile, un servizio di rete, un gestionale scolastico o un sistema embedded.</p>
+          <p>La parte visibile è il codice, ma dietro il codice ci sono decisioni: quali utenti useranno il sistema, quali dati verranno trattati, quali funzioni sono necessarie, quali errori vanno evitati e quali vincoli devono essere rispettati.</p>
+          <aside class="simple-box">
+            <strong>Idea chiave</strong>
+            <p>Programmare e scrivere istruzioni. Sviluppare software e trasformare un bisogno in un sistema corretto, comprensibile, verificabile e modificabile.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Le fasi del ciclo di sviluppo</h2>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/software-lifecycle.svg" alt="Schema del ciclo di sviluppo del software">
+            <figcaption>Figura 1: il ciclo di sviluppo procede per fasi, ma nella pratica spesso si torna indietro per correggere o migliorare.</figcaption>
+          </figure>
+          <table>
+            <thead>
+              <tr><th>Fase</th><th>Domanda principale</th><th>Risultato atteso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Analisi del problema</td><td>Quale problema dobbiamo risolvere?</td><td>Descrizione del contesto, degli utenti e degli obiettivi.</td></tr>
+              <tr><td>Analisi dei requisiti</td><td>Che cosa deve fare il sistema?</td><td>Elenco ordinato dei requisiti funzionali e non funzionali.</td></tr>
+              <tr><td>Progettazione</td><td>Come sarà organizzata la soluzione?</td><td>Architettura, moduli, interfacce, dati e scelte tecniche.</td></tr>
+              <tr><td>Implementazione</td><td>Come traduciamo il progetto in codice?</td><td>Codice sorgente, configurazioni e risorse dell'applicazione.</td></tr>
+              <tr><td>Testing</td><td>Il sistema funziona come richiesto?</td><td>Test, correzioni e maggiore fiducia nel comportamento.</td></tr>
+              <tr><td>Rilascio e manutenzione</td><td>Come lo mettiamo in uso e lo aggiorniamo?</td><td>Distribuzione, assistenza, patch e nuove versioni.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Analisi del problema</h2>
+          <p>L'analisi del problema serve a capire la situazione prima di immaginare la soluzione. In questa fase non si dovrebbe partire subito dal linguaggio di programmazione o dalla grafica, perché il rischio e costruire bene qualcosa che non risolve il bisogno corretto.</p>
+          <p>Un buon punto di partenza e descrivere gli attori coinvolti. Gli attori sono persone, ruoli o sistemi esterni che interagiscono con il software: studenti, docenti, segreteria, amministratori, clienti, magazzinieri, sensori, servizi web e così via.</p>
+          <table>
+            <thead>
+              <tr><th>Elemento da chiarire</th><th>Esempio per un registro di prestiti in biblioteca</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Problema</td><td>I prestiti vengono annotati su carta e si perdono informazioni.</td></tr>
+              <tr><td>Utenti</td><td>Bibliotecario, studente, docente responsabile.</td></tr>
+              <tr><td>Obiettivo</td><td>Registrare prestiti, restituzioni e libri disponibili.</td></tr>
+              <tr><td>Vincoli</td><td>Uso da browser, dati leggibili solo dagli utenti autorizzati.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Requisiti funzionali e non funzionali</h2>
+          <p>I <strong>requisiti funzionali</strong> descrivono le funzioni offerte dal sistema: cosa l'utente può fare e quali risposte deve ottenere. I <strong>requisiti non funzionali</strong> descrivono qualità e vincoli: sicurezza, prestazioni, usabilità, compatibilità, affidabilità, privacy e manutenibilità.</p>
+          <table>
+            <thead>
+              <tr><th>Tipo</th><th>Formula tipica</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Funzionale</td><td>Il sistema deve permettere di...</td><td>Il sistema deve permettere al bibliotecario di registrare un nuovo prestito.</td></tr>
+              <tr><td>Funzionale</td><td>Quando accade X, il sistema deve...</td><td>Quando un libro viene restituito, il sistema deve aggiornare la disponibilità.</td></tr>
+              <tr><td>Non funzionale</td><td>Il sistema deve garantire...</td><td>Solo gli utenti autorizzati possono modificare i prestiti.</td></tr>
+              <tr><td>Non funzionale</td><td>Il sistema deve essere...</td><td>Le pagine principali devono caricarsi in tempi accettabili anche con molti libri.</td></tr>
+            </tbody>
+          </table>
+          <aside class="simple-box">
+            <strong>Errore comune</strong>
+            <p>Scrivere "il sistema deve essere bello" non è un buon requisito. Meglio precisare: "l'utente deve poter completare la registrazione di un prestito in massimo tre passaggi".</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Progettazione e implementazione</h2>
+          <p>La progettazione trasforma i requisiti in una struttura. Si decide quali componenti servono, quali dati devono essere memorizzati, quali schermate sono necessarie, quali interfacce collegano le parti del sistema e quali responsabilità ha ogni modulo.</p>
+          <p>L'implementazione è la scrittura del codice secondo il progetto. In questa fase si usano linguaggi, librerie, framework, ambienti di sviluppo e strumenti di controllo versione. Anche durante l'implementazione possono emergere problemi: per questo il ciclo di sviluppo non è rigido, ma richiede verifiche continue.</p>
+          <pre><code>Problema: gestire i prestiti dei libri
+Requisito: registrare un prestito
+Progettazione: pagina "Nuovo prestito", tabella Prestiti, controllo disponibilità
+Implementazione: codice HTML, CSS, JavaScript e database
+Test: provo libro disponibile, libro già prestato, utente non autorizzato</code></pre>
+        </section>
+
+        <section class="content-block">
+          <h2>Testing, rilascio e manutenzione</h2>
+          <p>Il testing verifica che il software si comporti come previsto. Non serve solo a trovare errori: serve anche a dimostrare che i requisiti sono stati rispettati. Si possono eseguire test manuali, test automatici, test sulle singole funzioni, test di integrazione tra moduli e test di accettazione con utenti reali.</p>
+          <p>Il rilascio porta il software nell'ambiente in cui verrà usato. Dopo il rilascio inizia la manutenzione: correzione di difetti, aggiornamento delle dipendenze, miglioramento delle prestazioni, adeguamento a nuove regole e aggiunta di funzionalità.</p>
+          <table>
+            <thead>
+              <tr><th>attività</th><th>Scopo</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Test</td><td>Verificare il comportamento</td><td>Controllare che non si possa prestare un libro già occupato.</td></tr>
+              <tr><td>Rilascio</td><td>Rendere disponibile il sistema</td><td>Pubblicare l'applicazione sul server della scuola.</td></tr>
+              <tr><td>Manutenzione correttiva</td><td>Correggere errori</td><td>Sistemare un calcolo errato nelle date di restituzione.</td></tr>
+              <tr><td>Manutenzione evolutiva</td><td>Aggiungere funzioni</td><td>Introdurre una ricerca avanzata per autore e categoria.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Modelli di sviluppo</h2>
+          <p>Un modello di sviluppo descrive come organizzare le fasi del lavoro. Non esiste un modello sempre migliore: la scelta dipende da dimensione del progetto, stabilità dei requisiti, esperienza del team, tempi disponibili e livello di rischio.</p>
+          <table>
+            <thead>
+              <tr><th>Modello</th><th>Idea di base</th><th>Quando è utile</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cascata</td><td>Le fasi procedono in ordine: analisi, progetto, codice, test, rilascio.</td><td>Progetti con requisiti molto chiari e poche variazioni.</td></tr>
+              <tr><td>Iterativo</td><td>Il sistema cresce attraverso versioni successive.</td><td>Progetti in cui si vuole migliorare gradualmente.</td></tr>
+              <tr><td>Incrementale</td><td>Ogni incremento aggiunge un gruppo di funzionalità utilizzabili.</td><td>Quando si vuole consegnare valore poco alla volta.</td></tr>
+              <tr><td>Agile</td><td>Si lavora in cicli brevi, con feedback frequente e adattamento.</td><td>Progetti in cui i requisiti possono cambiare.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: app per prenotare il laboratorio</h2>
+          <ol>
+            <li>Analisi: i docenti devono prenotare il laboratorio senza sovrapposizioni.</li>
+            <li>Requisiti: un docente vede il calendario, inserisce una prenotazione, modifica solo le proprie prenotazioni.</li>
+            <li>Progettazione: servono utenti, calendario, tabella prenotazioni, controlli sui conflitti.</li>
+            <li>Implementazione: si realizzano interfaccia, logica applicativa e salvataggio dati.</li>
+            <li>Testing: si provano prenotazioni valide, doppie prenotazioni, utenti senza permessi.</li>
+            <li>Rilascio: l'app viene pubblicata e spiegata ai docenti.</li>
+            <li>Manutenzione: si aggiunge l'esportazione del calendario o la notifica via email.</li>
+          </ol>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Scegli un'applicazione scolastica e scrivi il problema che dovrebbe risolvere in massimo tre righe.</li>
+            <li>Individua tre attori e spiega che cosa fanno nel sistema.</li>
+            <li>Scrivi quattro requisiti funzionali e due requisiti non funzionali.</li>
+            <li>Indica quali dati dovrebbero essere memorizzati.</li>
+            <li>Descrivi almeno tre test da eseguire prima del rilascio.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>perché non si parte subito dal codice?</summary>
+            <p>perché prima bisogna capire problema, utenti, obiettivi e vincoli. Altrimenti si rischia di programmare una soluzione sbagliata.</p>
+          </details>
+          <details>
+            <summary>Che differenza c'e tra requisito funzionale e non funzionale?</summary>
+            <p>Un requisito funzionale dice che cosa il sistema deve fare. Un requisito non funzionale dice come deve comportarsi o quali qualità deve avere.</p>
+          </details>
+          <details>
+            <summary>Il ciclo di sviluppo finisce con il rilascio?</summary>
+            <p>No. Dopo il rilascio il software deve essere corretto, aggiornato e adattato a nuove esigenze.</p>
+          </details>
+          <details>
+            <summary>A che cosa serve il testing?</summary>
+            <p>Serve a verificare che il software rispetti i requisiti e a individuare errori prima o dopo il rilascio.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Memorizza la sequenza: problema, requisiti, progetto, codice, test, rilascio, manutenzione. Per ogni fase devi saper dire quale domanda risolve e quale documento o risultato produce.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <span></span>
+      <a href="modellazione-e-documentazione.html">Successivo: Modellazione e documentazione</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

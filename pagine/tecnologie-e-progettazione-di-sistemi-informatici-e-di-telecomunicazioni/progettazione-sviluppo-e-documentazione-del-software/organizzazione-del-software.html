@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Organizzazione del software | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro di TPSIT su moduli, librerie, interfacce, dipendenze, architettura a livelli e riuso del software.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -26,49 +26,176 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/progettazione-sviluppo-e-documentazione-del-software.html">Progettazione, sviluppo e documentazione del software</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Organizzazione del software</h1>
-              <p>Progettazione, sviluppo e documentazione del software</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>moduli e librerie</h2>
-                    <p>I moduli raggruppano funzionalità correlate e permettono di suddividere un sistema in componenti più piccoli.</p>
-<p>Le librerie forniscono funzionalità riutilizzabili che possono essere integrate in applicazioni differenti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>separazione delle responsabilità</h2>
-                    <p>Ogni componente dovrebbe occuparsi di un insieme limitato e coerente di compiti.</p>
-<p>La separazione delle responsabilità riduce le dipendenze e facilita sviluppo, verifica e manutenzione.</p>
-                  </section>
-<section class="content-block">
-                    <h2>interfacce e dipendenze</h2>
-                    <p>Le interfacce definiscono come i componenti possono comunicare senza richiedere la conoscenza completa della loro implementazione.</p>
-<p>Gestire correttamente le dipendenze limita l'accoppiamento e rende più semplice sostituire o modificare i componenti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>riuso</h2>
-                    <p>Il riuso permette di utilizzare componenti esistenti per risolvere problemi già affrontati.</p>
-<p>Moduli, librerie, framework e servizi possono ridurre duplicazioni e accelerare lo sviluppo.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="modellazione-e-documentazione.html">Precedente: Modellazione e documentazione</a>
-            <a href="strumenti-e-gestione-del-progetto.html">Successivo: Strumenti e gestione del progetto</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/progettazione-sviluppo-e-documentazione-del-software.html">Progettazione, sviluppo e documentazione del software</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 3</p>
+        <h1>Organizzazione del software</h1>
+          <p>Un software ben organizzato è più facile da capire, testare, modificare e riusare. L'obiettivo non è solo far funzionare il programma oggi, ma renderlo sostenibile anche domani.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Capire il ruolo di moduli, librerie e componenti.</li>
+            <li>Spiegare il principio di separazione delle responsabilità.</li>
+            <li>Distinguere interfaccia e implementazione.</li>
+            <li>Riconoscere dipendenze e accoppiamento tra parti del sistema.</li>
+            <li>Leggere una semplice architettura a livelli.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Moduli e componenti</h2>
+          <p>Un modulo è una parte del software che raggruppa funzionalità collegate. Un componente è una parte del sistema con una responsabilità riconoscibile e un'interfaccia attraverso cui collabora con le altre parti.</p>
+          <p>Dividere un programma in moduli non significa spezzarlo a caso. Significa individuare responsabilità coerenti: gestione utenti, gestione prestiti, validazione dati, accesso al database, interfaccia grafica, comunicazione di rete.</p>
+          <table>
+            <thead>
+              <tr><th>Parte</th><th>responsabilità</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Modulo utenti</td><td>Gestisce login, ruoli e profili.</td><td>Controlla se un docente può prenotare.</td></tr>
+              <tr><td>Modulo calendario</td><td>Gestisce date, orari e disponibilità.</td><td>Evita due prenotazioni nello stesso orario.</td></tr>
+              <tr><td>Modulo dati</td><td>Legge e salva informazioni persistenti.</td><td>Memorizza prenotazioni nel database.</td></tr>
+              <tr><td>Interfaccia</td><td>Mostra informazioni e raccoglie input.</td><td>Pagina per creare una nuova prenotazione.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Separazione delle responsabilità</h2>
+          <p>La separazione delle responsabilità afferma che ogni parte del software dovrebbe occuparsi di un compito preciso. Quando una funzione o una classe fa troppe cose, diventa difficile da leggere, testare e correggere.</p>
+          <aside class="simple-box">
+            <strong>Esempio</strong>
+            <p>Una funzione che legge dati dal form, controlla i permessi, salva nel database e genera una pagina HTML ha troppe responsabilità. Conviene separare input, regole, persistenza e presentazione.</p>
+          </aside>
+          <table>
+            <thead>
+              <tr><th>Situazione</th><th>Problema</th><th>Miglioramento</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tutto il codice in un unico file.</td><td>Orientarsi diventa difficile.</td><td>Separare file per funzionalità o livelli.</td></tr>
+              <tr><td>Una funzione contiene molte regole diverse.</td><td>Modificare una regola può rompere le altre.</td><td>Dividere in funzioni più piccole.</td></tr>
+              <tr><td>La grafica contiene query al database.</td><td>Interfaccia e dati sono troppo legati.</td><td>Creare un livello dedicato all'accesso ai dati.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Architettura a livelli</h2>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/software-layers.svg" alt="Schema di un'architettura software a livelli">
+            <figcaption>Figura 1: dividere l'applicazione in livelli aiuta a isolare presentazione, regole e dati.</figcaption>
+          </figure>
+          <p>Una scelta comune e organizzare l'applicazione in livelli. Ogni livello ha un ruolo e comunica con livelli vicini attraverso interfacce definite.</p>
+          <table>
+            <thead>
+              <tr><th>Livello</th><th>Compito</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Presentazione</td><td>Mostra dati e riceve input dall'utente.</td><td>Pagina web, form, pulsanti, messaggi.</td></tr>
+              <tr><td>Logica applicativa</td><td>Applica le regole del sistema.</td><td>Controlla se una prenotazione e valida.</td></tr>
+              <tr><td>Accesso ai dati</td><td>Legge e scrive dati in modo controllato.</td><td>Funzioni che interrogano il database.</td></tr>
+              <tr><td>Persistenza</td><td>Conserva dati nel tempo.</td><td>Database, file, archivio remoto.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Interfaccia e implementazione</h2>
+          <p>L'interfaccia descrive come usare un componente; l'implementazione descrive come il componente svolge realmente il lavoro. Questa separazione permette di cambiare l'interno di un modulo senza obbligare tutte le altre parti del software a cambiare.</p>
+          <pre><code>Interfaccia del modulo Prestiti
+- registraPrestito(idLibro, idUtente)
+- registraRestituzione(idPrestito)
+- cercaPrestitiUtente(idUtente)
+
+Implementazione possibile
+- controlla disponibilità
+- salva i dati nel database
+- restituisce conferma o errore</code></pre>
+          <p>Chi usa il modulo deve sapere quali operazioni può chiamare e quali dati deve fornire. Non deve conoscere per forza tutte le query, i controlli interni o i dettagli del salvataggio.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Dipendenze e accoppiamento</h2>
+          <p>Una dipendenza nasce quando una parte del software ha bisogno di un'altra per funzionare. Le dipendenze sono normali, ma devono essere gestite. Se ogni modulo conosce troppi dettagli degli altri, il sistema diventa fragile.</p>
+          <table>
+            <thead>
+              <tr><th>Concetto</th><th>Significato</th><th>Effetto</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Accoppiamento alto</td><td>I moduli dipendono molto dai dettagli interni degli altri.</td><td>Una modifica locale può causare molti errori.</td></tr>
+              <tr><td>Accoppiamento basso</td><td>I moduli comunicano tramite interfacce chiare.</td><td>Il sistema è più facile da modificare.</td></tr>
+              <tr><td>Coesione alta</td><td>Le funzioni di un modulo sono legate allo stesso scopo.</td><td>Il codice è più comprensibile.</td></tr>
+              <tr><td>Coesione bassa</td><td>Un modulo contiene funzioni non correlate.</td><td>Il modulo diventa confuso e difficile da testare.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Librerie, framework e riuso</h2>
+          <p>Il riuso permette di sfruttare soluzioni già disponibili invece di riscrivere tutto da zero. Una libreria offre funzioni pronte; un framework fornisce una struttura più ampia dentro cui costruire l'applicazione.</p>
+          <table>
+            <thead>
+              <tr><th>Strumento</th><th>Che cosa offre</th><th>Attenzione</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Libreria</td><td>Funzioni riutilizzabili chiamate dal programma.</td><td>Va scelta e aggiornata con cura.</td></tr>
+              <tr><td>Framework</td><td>Struttura e regole per costruire l'applicazione.</td><td>Richiede di rispettare un modo di lavorare.</td></tr>
+              <tr><td>API</td><td>Interfaccia per usare servizi o componenti esterni.</td><td>Bisogna gestire errori, limiti e sicurezza.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Dividi un'app per prenotare il laboratorio in almeno quattro moduli.</li>
+            <li>Per ogni modulo scrivi una responsabilità precisa.</li>
+            <li>Indica due dipendenze inevitabili e spiega perché esistono.</li>
+            <li>Disegna un'architettura a livelli per un'app con interfaccia web e database.</li>
+            <li>Scrivi un esempio di funzione troppo grande e proponi come dividerla.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>perché si divide un programma in moduli?</summary>
+            <p>Per rendere il software più comprensibile, modificabile, testabile e riutilizzabile.</p>
+          </details>
+          <details>
+            <summary>Che cos'è un'interfaccia?</summary>
+            <p>E il modo in cui un componente espone le proprie operazioni agli altri componenti, senza mostrare tutti i dettagli interni.</p>
+          </details>
+          <details>
+            <summary>Che cosa significa accoppiamento alto?</summary>
+            <p>Significa che i moduli dipendono troppo dai dettagli degli altri, quindi una modifica può avere molti effetti indesiderati.</p>
+          </details>
+          <details>
+            <summary>Una libreria e un framework sono la stessa cosa?</summary>
+            <p>No. Una libreria offre funzioni da usare; un framework impone anche una struttura generale all'applicazione.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Studia insieme questi termini: modulo, componente, responsabilità, interfaccia, implementazione, dipendenza, accoppiamento, coesione, livello, libreria e framework.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="modellazione-e-documentazione.html">Precedente: Modellazione e documentazione</a>
+      <a href="strumenti-e-gestione-del-progetto.html">Successivo: Strumenti e gestione del progetto</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Strumenti e gestione del progetto | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro di TPSIT su IDE, debugging, Git, branch, merge, build, packaging, deployment e gestione del progetto software.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -26,49 +26,188 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/progettazione-sviluppo-e-documentazione-del-software.html">Progettazione, sviluppo e documentazione del software</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Strumenti e gestione del progetto</h1>
-              <p>Progettazione, sviluppo e documentazione del software</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>IDE e debugging</h2>
-                    <p>Gli ambienti di sviluppo integrano strumenti per scrittura, esecuzione, analisi e debugging del codice.</p>
-<p>Il debugger permette di controllare passo per passo l'esecuzione e osservare lo stato del programma per individuare errori.</p>
-                  </section>
-<section class="content-block">
-                    <h2>controllo di versione</h2>
-                    <p>Un sistema di versionamento conserva la storia delle modifiche e permette di recuperare versioni precedenti del progetto.</p>
-<p>Git utilizza repository e commit per rappresentare l'evoluzione del codice nel tempo.</p>
-                  </section>
-<section class="content-block">
-                    <h2>branch, merge e collaborazione</h2>
-                    <p>I branch permettono di sviluppare modifiche in linee di lavoro separate.</p>
-<p>Il merge integra modifiche provenienti da branch differenti e può richiedere la risoluzione di conflitti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>build, packaging e distribuzione</h2>
-                    <p>Il processo di build trasforma il codice sorgente e le risorse nella forma necessaria all'esecuzione o alla distribuzione.</p>
-<p>Packaging, dipendenze e procedure di deployment permettono di installare e aggiornare l'applicazione negli ambienti destinatari.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="organizzazione-del-software.html">Precedente: Organizzazione del software</a>
-            <span></span>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/progettazione-sviluppo-e-documentazione-del-software.html">Progettazione, sviluppo e documentazione del software</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 4</p>
+        <h1>Strumenti e gestione del progetto</h1>
+        <p>Un progetto software richiede strumenti per scrivere codice, provarlo, salvarne la storia, collaborare, costruire una versione distribuibile e organizzare il lavoro del gruppo.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Conoscere le funzioni principali di un ambiente di sviluppo.</li>
+            <li>Usare il debugging come metodo di indagine sugli errori.</li>
+            <li>Comprendere repository, commit, branch e merge.</li>
+            <li>Distinguere build, packaging, distribuzione e deployment.</li>
+            <li>Organizzare attività, ruoli e documentazione di progetto.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Ambiente di sviluppo</h2>
+          <p>Un ambiente di sviluppo è l'insieme degli strumenti usati per scrivere, eseguire e controllare il software. Può essere semplice, come un editor di testo con terminale, oppure integrato, come un IDE completo.</p>
+          <table>
+            <thead>
+              <tr><th>Strumento</th><th>A cosa serve</th><th>In laboratorio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Editor o IDE</td><td>Scrivere e organizzare il codice.</td><td>Visual Studio Code, Eclipse, IntelliJ, NetBeans.</td></tr>
+              <tr><td>Compilatore o interprete</td><td>Trasformare o eseguire il codice.</td><td>Java, Python, C, JavaScript.</td></tr>
+              <tr><td>Terminale</td><td>Lanciare comandi, script e strumenti.</td><td>Eseguire test, avviare server, usare Git.</td></tr>
+              <tr><td>Debugger</td><td>Controllare il programma passo per passo.</td><td>Osservare variabili, chiamate e condizioni.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Debugging</h2>
+          <p>Il debugging è l'attività con cui si individua e si corregge un errore. Non significa provare modifiche a caso: significa formulare un'ipotesi, osservare il comportamento del programma e verificare dove l'ipotesi fallisce.</p>
+          <table>
+            <thead>
+              <tr><th>Funzione</th><th>Significato</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Breakpoint</td><td>Punto in cui l'esecuzione si ferma.</td><td>Bloccare il programma prima della riga sospetta.</td></tr>
+              <tr><td>Step over</td><td>Esegue una riga senza entrare nelle funzioni chiamate.</td><td>Procedere lentamente nel flusso principale.</td></tr>
+              <tr><td>Step into</td><td>Entra dentro una funzione chiamata.</td><td>Controllare il comportamento interno.</td></tr>
+              <tr><td>Watch</td><td>Mostra il valore di una variabile o espressione.</td><td>Capire quando un valore diventa sbagliato.</td></tr>
+            </tbody>
+          </table>
+          <aside class="simple-box">
+            <strong>Metodo</strong>
+            <p>Prima riproduci l'errore, poi restringi la zona sospetta, osserva i dati, correggi una cosa alla volta e riprova.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Controllo di versione</h2>
+          <p>Un sistema di controllo versione conserva la storia delle modifiche del progetto. Git è uno degli strumenti più usati: permette di salvare commit, confrontare versioni, lavorare su branch e collaborare senza perdere il lavoro precedente.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/git-workflow.svg" alt="Schema di commit, branch e merge in Git">
+            <figcaption>Figura 1: i commit registrano la storia; i branch permettono linee di lavoro separate; il merge integra le modifiche.</figcaption>
+          </figure>
+          <table>
+            <thead>
+              <tr><th>Termine</th><th>Spiegazione semplice</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Repository</td><td>Cartella di progetto controllata da Git, con codice e cronologia.</td></tr>
+              <tr><td>Commit</td><td>Fotografia ragionata delle modifiche in un certo momento.</td></tr>
+              <tr><td>Branch</td><td>Linea di sviluppo separata per lavorare senza disturbare il ramo principale.</td></tr>
+              <tr><td>Merge</td><td>Operazione che integra modifiche provenienti da un branch in un altro.</td></tr>
+              <tr><td>Conflitto</td><td>Situazione in cui Git non sa unire automaticamente modifiche incompatibili.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Branch, merge e collaborazione</h2>
+          <p>I branch aiutano a lavorare su funzioni diverse, correzioni o esperimenti. In un gruppo, ogni studente può sviluppare una parte del progetto e poi integrare il risultato nel ramo principale dopo controllo e test.</p>
+          <pre><code>Flusso semplice di lavoro
+1. Creo un branch per la nuova funzione
+2. Modifico i file necessari
+3. Eseguo test e controllo il risultato
+4. Salvo uno o più commit
+5. Integro il branch nel ramo principale
+6. Risolvo eventuali conflitti</code></pre>
+          <p>Un buon commit dovrebbe avere modifiche coerenti e un messaggio chiaro. Messaggi come "update" o "fix" dicono poco; meglio scrivere "Aggiunge controllo disponibilità laboratorio" o "Corregge validazione data prenotazione".</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Build, packaging e distribuzione</h2>
+          <p>La build prepara il software per l'esecuzione o la distribuzione. In alcuni linguaggi significa compilare; in applicazioni web può significare minificare file, generare risorse ottimizzate e controllare errori. Il packaging raccoglie ciò che serve per installare o consegnare l'applicazione.</p>
+          <table>
+            <thead>
+              <tr><th>Fase</th><th>Scopo</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Build</td><td>Preparare una versione eseguibile o pubblicabile.</td><td>Compilare Java, generare file statici per un sito.</td></tr>
+              <tr><td>Packaging</td><td>Raccogliere file, librerie e configurazioni.</td><td>Creare un archivio, un installer o un'immagine container.</td></tr>
+              <tr><td>Deployment</td><td>Installare o pubblicare l'app nell'ambiente finale.</td><td>Caricare un sito su GitHub Pages o su un server.</td></tr>
+              <tr><td>Rollback</td><td>Tornare a una versione precedente se qualcosa non funziona.</td><td>Ripristinare l'ultima versione stabile.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Gestione del progetto</h2>
+          <p>Gestire un progetto significa decidere che cosa va fatto, in quale ordine, da chi e con quali criteri di completamento. Anche nei piccoli progetti scolastici è utile dividere il lavoro in attività chiare.</p>
+          <table>
+            <thead>
+              <tr><th>Elemento</th><th>Domanda</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Task</td><td>Quale attività concreta va completata?</td><td>Creare il form di prenotazione.</td></tr>
+              <tr><td>Priorita</td><td>Che cosa serve prima?</td><td>Il login viene prima delle funzioni riservate.</td></tr>
+              <tr><td>Responsabile</td><td>Chi se ne occupa?</td><td>Uno studente cura interfaccia, uno database, uno test.</td></tr>
+              <tr><td>Definition of done</td><td>Quando possiamo dire che e finito?</td><td>La funzione e implementata, testata e documentata.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: mini progetto scolastico</h2>
+          <ol>
+            <li>Il gruppo crea un repository condiviso.</li>
+            <li>Si scrive un README con obiettivo, avvio del progetto e ruoli.</li>
+            <li>Ogni funzione viene descritta come task.</li>
+            <li>Ogni studente lavora su un branch dedicato.</li>
+            <li>Prima del merge si eseguono test manuali o automatici.</li>
+            <li>Alla consegna si prepara una versione stabile e una breve relazione tecnica.</li>
+          </ol>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Scrivi cinque task per realizzare un'app di gestione biblioteca.</li>
+            <li>Per ogni task indica priorita, responsabile e criterio di completamento.</li>
+            <li>Descrivi un errore che potresti analizzare con breakpoint e watch.</li>
+            <li>Scrivi tre messaggi di commit chiari per modifiche realistiche.</li>
+            <li>Spiega la differenza tra build e deployment usando un esempio.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>A che cosa serve un IDE?</summary>
+            <p>Serve a scrivere, organizzare, eseguire e controllare il codice con strumenti integrati.</p>
+          </details>
+          <details>
+            <summary>Che cos'è un commit?</summary>
+            <p>E una registrazione delle modifiche del progetto in un determinato momento, accompagnata da un messaggio.</p>
+          </details>
+          <details>
+            <summary>perché si usano i branch?</summary>
+            <p>Per lavorare su modifiche separate senza compromettere subito il ramo principale del progetto.</p>
+          </details>
+          <details>
+            <summary>Che differenza c'e tra build e deployment?</summary>
+            <p>La build prepara il software; il deployment lo installa o lo pubblica nell'ambiente in cui verrà usato.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Collega gli strumenti alle fasi: IDE e debugger aiutano durante implementazione e correzione; Git protegge la storia del progetto; build e deployment preparano e pubblicano la versione finale.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="organizzazione-del-software.html">Precedente: Organizzazione del software</a>
+      <span></span>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

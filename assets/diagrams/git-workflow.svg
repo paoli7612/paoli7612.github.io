@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 360" role="img" aria-labelledby="title desc">
+  <title id="title">Workflow Git con branch e merge</title>
+  <desc id="desc">Linea principale con commit, branch di sviluppo e merge finale.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#006d77"/>
+    </marker>
+    <style>
+      .line{stroke:#006d77;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .branch{stroke:#c44f24;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .dot{fill:#fff;stroke:#006d77;stroke-width:4}
+      .bdot{fill:#fff;stroke:#c44f24;stroke-width:4}
+      .label{font:700 16px Arial, sans-serif;fill:#17202a}
+      .small{font:14px Arial, sans-serif;fill:#5f6c78}
+    </style>
+  </defs>
+  <rect width="920" height="360" rx="18" fill="#fbfcfb"/>
+  <path class="line" d="M90 220 H805"/>
+  <circle class="dot" cx="120" cy="220" r="14"/>
+  <circle class="dot" cx="260" cy="220" r="14"/>
+  <circle class="dot" cx="720" cy="220" r="14"/>
+  <text class="label" x="120" y="260" text-anchor="middle">commit</text>
+  <text class="label" x="260" y="260" text-anchor="middle">commit</text>
+  <text class="label" x="720" y="260" text-anchor="middle">merge</text>
+  <text class="small" x="450" y="305" text-anchor="middle">ramo principale</text>
+
+  <path class="branch" d="M260 220 C330 120 440 100 520 130 S650 185 720 220"/>
+  <circle class="bdot" cx="385" cy="135" r="14"/>
+  <circle class="bdot" cx="520" cy="130" r="14"/>
+  <circle class="bdot" cx="625" cy="165" r="14"/>
+  <text class="small" x="505" y="84" text-anchor="middle">branch: nuova funzione</text>
+  <text class="label" x="385" y="108" text-anchor="middle">A</text>
+  <text class="label" x="520" y="103" text-anchor="middle">B</text>
+  <text class="label" x="625" y="138" text-anchor="middle">C</text>
+</svg>

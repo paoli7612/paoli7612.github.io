@@ -3,7 +3,7 @@
 text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
 .title{font-size:24px;font-weight:700}.label{font-size:16px;font-weight:700}.small{font-size:13px;fill:#5f6c78}.tiny{font-size:11px;fill:#5f6c78}
 .box{fill:#fff;stroke:#d8dee5;stroke-width:2;rx:10}.accent{fill:#e7f0ed;stroke:#006d77;stroke-width:2;rx:10}.warn{fill:#fff3ea;stroke:#c44f24;stroke-width:2;rx:10}.blue{fill:#edf5ff;stroke:#1473e6;stroke-width:2;rx:10}
-.line{stroke:#006d77;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}.head{fill:#006d77}.deny{stroke:#c44f24;stroke-width:5;stroke-linecap:round}
+.line{stroke:#006d77;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}.head{fill:#006d77}.deny-path{stroke:#c44f24;stroke-width:3;stroke-linecap:round;stroke-dasharray:8 8;fill:none}.deny{stroke:#c44f24;stroke-width:5;stroke-linecap:round}.deny-label{font-size:12px;font-weight:700;fill:#c44f24}
 </style></defs>
 <text x="40" y="48" class="title">Esempio: gestione utenti in un laboratorio scolastico</text>
 <rect x="55" y="95" width="220" height="110" class="box"/><text x="165" y="130" class="label" text-anchor="middle">Gruppo studenti</text><text x="165" y="158" class="small" text-anchor="middle">legge materiali</text><text x="165" y="180" class="small" text-anchor="middle">scrive consegne</text>
@@ -12,9 +12,12 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}
 <rect x="80" y="320" width="210" height="95" class="blue"/><text x="185" y="356" class="label" text-anchor="middle">/materiali</text><text x="185" y="382" class="small" text-anchor="middle">lettura studenti</text>
 <rect x="345" y="320" width="210" height="95" class="blue"/><text x="450" y="356" class="label" text-anchor="middle">/consegne</text><text x="450" y="382" class="small" text-anchor="middle">scrittura studenti</text>
 <rect x="610" y="320" width="210" height="95" class="blue"/><text x="715" y="356" class="label" text-anchor="middle">/sistema</text><text x="715" y="382" class="small" text-anchor="middle">solo admin</text>
-<polyline points="165,205 165,285 185,285 185,310" class="line"/><polygon points="185,322 176,306 194,306" class="head"/>
-<polyline points="165,205 165,285 450,285 450,310" class="line"/><polygon points="450,322 441,306 459,306" class="head"/>
-<polyline points="450,205 450,300 450,310" class="line"/><polygon points="450,322 441,306 459,306" class="head"/>
-<polyline points="735,205 735,285 715,285 715,310" class="line"/><polygon points="715,322 706,306 724,306" class="head"/>
-<line x1="250" y1="235" x2="315" y2="300" class="deny"/><line x1="315" y1="235" x2="250" y2="300" class="deny"/><text x="282" y="330" class="small" text-anchor="middle">studenti non admin</text>
+<polyline points="145,205 145,280 185,280 185,310" class="line"/><polygon points="185,322 176,306 194,306" class="head"/>
+<polyline points="185,205 185,250 410,250 410,310" class="line"/><polygon points="410,322 401,306 419,306" class="head"/>
+<polyline points="450,205 450,310" class="line"/><polygon points="450,322 441,306 459,306" class="head"/>
+<polyline points="735,205 735,280 715,280 715,310" class="line"/><polygon points="715,322 706,306 724,306" class="head"/>
+<path d="M250 210 C390 205 505 240 610 320" class="deny-path"/>
+<line x1="548" y1="252" x2="598" y2="302" class="deny"/><line x1="598" y1="252" x2="548" y2="302" class="deny"/>
+<rect x="505" y="215" width="135" height="34" rx="8" fill="#fff3ea" stroke="#c44f24"/>
+<text x="572" y="237" class="deny-label" text-anchor="middle">studenti non admin</text>
 </svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 420" role="img" aria-labelledby="title desc">
+  <title id="title">Modello delle classi biblioteca</title>
+  <desc id="desc">Schema UML semplificato con classi Libro, Utente e Prestito collegate da relazioni.</desc>
+  <style>
+    .class{fill:#fff;stroke:#d8dee5;stroke-width:2}
+    .head{fill:#e7f0ed}
+    .title{font:700 18px Arial, sans-serif;fill:#17202a}
+    .text{font:14px Arial, sans-serif;fill:#5f6c78}
+    .line{stroke:#006d77;stroke-width:3;fill:none}
+    .mult{font:700 14px Arial, sans-serif;fill:#c44f24}
+  </style>
+  <rect width="940" height="420" rx="18" fill="#fbfcfb"/>
+  <g transform="translate(56 72)">
+    <rect class="class" x="0" y="0" width="230" height="190" rx="10"/>
+    <path class="head" d="M10 0 H220 Q230 0 230 10 V48 H0 V10 Q0 0 10 0"/>
+    <text class="title" x="115" y="31" text-anchor="middle">Libro</text>
+    <text class="text" x="18" y="76">- id</text>
+    <text class="text" x="18" y="102">- titolo</text>
+    <text class="text" x="18" y="128">- autore</text>
+    <text class="text" x="18" y="154">- disponibile</text>
+
+    <rect class="class" x="300" y="0" width="230" height="190" rx="10"/>
+    <path class="head" d="M310 0 H520 Q530 0 530 10 V48 H300 V10 Q300 0 310 0"/>
+    <text class="title" x="415" y="31" text-anchor="middle">Prestito</text>
+    <text class="text" x="318" y="76">- id</text>
+    <text class="text" x="318" y="102">- dataInizio</text>
+    <text class="text" x="318" y="128">- dataScadenza</text>
+    <text class="text" x="318" y="154">+ chiudi()</text>
+
+    <rect class="class" x="600" y="0" width="230" height="190" rx="10"/>
+    <path class="head" d="M610 0 H820 Q830 0 830 10 V48 H600 V10 Q600 0 610 0"/>
+    <text class="title" x="715" y="31" text-anchor="middle">Utente</text>
+    <text class="text" x="618" y="76">- id</text>
+    <text class="text" x="618" y="102">- nome</text>
+    <text class="text" x="618" y="128">- classe</text>
+    <text class="text" x="618" y="154">+ puoPrendereLibro()</text>
+
+    <path class="line" d="M230 95 H300"/>
+    <path class="line" d="M530 95 H600"/>
+    <text class="mult" x="244" y="84">1</text>
+    <text class="mult" x="280" y="84">0..*</text>
+    <text class="mult" x="544" y="84">0..*</text>
+    <text class="mult" x="582" y="84">1</text>
+    <text class="text" x="415" y="236" text-anchor="middle">Un prestito collega un libro a un utente in un intervallo di tempo.</text>
+  </g>
+</svg>
