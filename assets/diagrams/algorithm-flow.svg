@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Schema di un algoritmo</title>
+  <desc id="desc">Un problema viene trasformato in input, passi dell'algoritmo, output e verifica.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006d77"/></marker>
+    <style>.box{fill:#fff;stroke:#d8dee5;stroke-width:2}.soft{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.warn{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial,Helvetica,sans-serif;fill:#17202a}.s{font:14px Arial,Helvetica,sans-serif;fill:#2f4150}.line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="box"/>
+  <text x="56" y="66" class="t">Un algoritmo risolve una classe di problemi con passi chiari</text>
+  <rect x="60" y="142" width="120" height="70" rx="8" class="soft"/><text x="120" y="171" text-anchor="middle" class="t">Problema</text><text x="120" y="194" text-anchor="middle" class="s">obiettivo</text>
+  <rect x="224" y="142" width="120" height="70" rx="8" class="soft"/><text x="284" y="171" text-anchor="middle" class="t">Input</text><text x="284" y="194" text-anchor="middle" class="s">dati iniziali</text>
+  <rect x="388" y="122" width="150" height="110" rx="8" class="warn"/><text x="463" y="154" text-anchor="middle" class="t">Passi</text><text x="463" y="180" text-anchor="middle" class="s">istruzioni finite</text><text x="463" y="204" text-anchor="middle" class="s">e non ambigue</text>
+  <rect x="582" y="142" width="120" height="70" rx="8" class="soft"/><text x="642" y="171" text-anchor="middle" class="t">Output</text><text x="642" y="194" text-anchor="middle" class="s">risultato</text>
+  <path d="M180 177 H215" class="line"/><path d="M344 177 H379" class="line"/><path d="M538 177 H573" class="line"/>
+  <rect x="306" y="266" width="148" height="42" rx="8" fill="#f6f7f4" stroke="#d8dee5" stroke-width="2"/><text x="380" y="292" text-anchor="middle" class="s">verifica e correzione</text>
+  <path d="M642 212 C625 282 473 288 463 236" class="line"/>
+  <text x="56" y="326" class="s">Figura 1: progettare un algoritmo significa chiarire dati, passi, risultati e criteri di correttezza.</text>
+</svg>
