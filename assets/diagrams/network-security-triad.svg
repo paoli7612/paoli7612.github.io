@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
-  <title id="title">Obiettivi della sicurezza</title><desc id="desc">Triangolo con riservatezza, integrita e disponibilita.</desc>
+  <title id="title">Obiettivi della sicurezza</title><desc id="desc">Triangolo con riservatezza, integrità e disponibilità.</desc>
   <defs><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none}</style></defs>
   <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">La sicurezza protegge tre obiettivi principali</text>
   <polygon points="380,96 570,260 190,260" fill="#f6f7f4" stroke="#d8dee5" stroke-width="2"/>

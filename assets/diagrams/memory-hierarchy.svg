@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
   <title id="title">Gerarchia della memoria</title>
-  <desc id="desc">Piramide con registri, cache, RAM, SSD e backup ordinati per velocita e capacita.</desc>
+  <desc id="desc">Piramide con registri, cache, RAM, SSD e backup ordinati per velocità e capacità.</desc>
   <defs><style>.box{fill:#fff;stroke:#d8dee5;stroke-width:2}.a{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.b{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 17px Arial,Helvetica,sans-serif;fill:#17202a}.s{font:14px Arial,Helvetica,sans-serif;fill:#2f4150}.line{stroke:#5f6c78;stroke-width:2}</style></defs>
   <rect x="24" y="24" width="712" height="312" rx="8" class="box"/><text x="56" y="66" class="t">Memorie diverse risolvono esigenze diverse</text>
   <polygon points="380,92 470,150 290,150" class="a"/><text x="380" y="132" text-anchor="middle" class="t">Registri</text>
   <polygon points="290,158 470,158 535,206 225,206" class="a"/><text x="380" y="190" text-anchor="middle" class="t">Cache</text>
   <polygon points="225,214 535,214 610,262 150,262" class="b"/><text x="380" y="246" text-anchor="middle" class="t">RAM</text>
   <rect x="86" y="274" width="588" height="38" rx="8" fill="#f6f7f4" stroke="#d8dee5" stroke-width="2"/><text x="380" y="299" text-anchor="middle" class="t">SSD, hard disk, backup e archivi remoti</text>
-  <text x="70" y="138" class="s">piu veloce</text><line x1="122" y1="150" x2="122" y2="280" class="line"/><text x="72" y="292" class="s">piu capiente</text>
+  <text x="70" y="138" class="s">più veloce</text><line x1="122" y1="150" x2="122" y2="280" class="line"/><text x="72" y="292" class="s">più capiente</text>
   <text x="548" y="138" class="s">volatile</text><line x1="602" y1="150" x2="602" y2="280" class="line"/><text x="548" y="292" class="s">persistente</text>
-  <text x="56" y="326" class="s">Figura 1: la gerarchia bilancia tempo di accesso, costo, capacita e permanenza dei dati.</text>
+  <text x="56" y="326" class="s">Figura 1: la gerarchia bilancia tempo di accesso, costo, capacità e permanenza dei dati.</text>
 </svg>

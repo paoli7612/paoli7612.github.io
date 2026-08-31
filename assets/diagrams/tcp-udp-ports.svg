@@ -9,5 +9,5 @@
   <rect x="270" y="206" width="220" height="72" rx="8" class="warn"/><text x="380" y="236" text-anchor="middle" class="t">UDP</text><text x="380" y="259" text-anchor="middle" class="s">datagrammi rapidi, meno controlli</text>
   <path d="M200 156 C235 130 235 130 261 140" class="line"/><path d="M490 140 C525 130 525 130 551 156" class="line"/><path d="M200 184 C235 230 235 230 261 242" class="line"/><path d="M490 242 C525 230 525 230 551 184" class="line"/>
   <text x="78" y="256" class="s">Esempi: HTTP 80, HTTPS 443, DNS 53, SSH 22</text>
-  <text x="56" y="326" class="s">Figura 1: le porte permettono a piu applicazioni di condividere lo stesso indirizzo IP.</text>
+  <text x="56" y="326" class="s">Figura 1: le porte permettono a più applicazioni di condividere lo stesso indirizzo IP.</text>
 </svg>

@@ -674,10 +674,18 @@ main {
   }
 
   main {
-    width: min(358px, calc(100% - 32px));
-    max-width: min(358px, calc(100% - 32px));
-    margin-right: 16px;
-    margin-left: 16px;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .breadcrumbs,
+  .pager {
+    width: 100%;
+    max-width: 100%;
   }
 
   .study-page {
@@ -724,7 +732,12 @@ main {
   .hero h1,
   .page-title h1,
   .study-page h1 {
-    font-size: 40px;
+    font-size: 34px;
+    overflow-wrap: anywhere;
+  }
+
+  .lesson-figure.diagram-focus {
+    padding: 10px;
   }
 
   .stats {

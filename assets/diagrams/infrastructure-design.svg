@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
-  <title id="title">Progettazione di infrastrutture</title><desc id="desc">Schema da requisiti a rete, servizi, sicurezza, continuita e documentazione.</desc>
+  <title id="title">Progettazione di infrastrutture</title><desc id="desc">Schema da requisiti a rete, servizi, sicurezza, continuità e documentazione.</desc>
   <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006d77"/></marker><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
   <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">La progettazione traduce bisogni in scelte tecniche</text>
   <rect x="58" y="148" width="120" height="58" rx="8" class="n"/><text x="118" y="182" text-anchor="middle" class="t">Requisiti</text>
