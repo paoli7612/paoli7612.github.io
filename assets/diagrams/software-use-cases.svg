@@ -1,37 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
   <title id="title">Casi d'uso biblioteca scolastica</title>
-  <desc id="desc">Studente e bibliotecario collegati ai casi d'uso cercare libro, consultare disponibilita, registrare prestito e registrare restituzione.</desc>
+  <desc id="desc">Studente e bibliotecario collegati ai casi d'uso cercare libro, consultare disponibilità, registrare prestito e registrare restituzione.</desc>
   <style>
     .person{stroke:#17202a;stroke-width:3;fill:none}
     .system{fill:#fbfcfb;stroke:#d8dee5;stroke-width:2}
     .use{fill:#e7f0ed;stroke:#006d77;stroke-width:2}
-    .line{stroke:#5f6c78;stroke-width:2}
+    .line{stroke:#5f6c78;stroke-width:2;stroke-linecap:round}
     .label{font:700 17px Arial, sans-serif;fill:#17202a}
     .small{font:14px Arial, sans-serif;fill:#5f6c78}
   </style>
   <rect width="900" height="420" rx="18" fill="#fff"/>
-  <rect class="system" x="250" y="45" width="420" height="320" rx="16"/>
+  <rect class="system" x="220" y="45" width="470" height="320" rx="16"/>
   <text class="label" x="460" y="78" text-anchor="middle">Sistema biblioteca</text>
 
-  <circle class="person" cx="105" cy="115" r="24"/>
-  <path class="person" d="M105 139 V215 M62 165 H148 M105 215 L70 270 M105 215 L140 270"/>
-  <text class="label" x="105" y="305" text-anchor="middle">Studente</text>
+  <circle class="person" cx="92" cy="125" r="24"/>
+  <path class="person" d="M92 149 V225 M49 175 H135 M92 225 L57 280 M92 225 L127 280"/>
+  <text class="label" x="92" y="316" text-anchor="middle">Studente</text>
 
-  <circle class="person" cx="785" cy="115" r="24"/>
-  <path class="person" d="M785 139 V215 M742 165 H828 M785 215 L750 270 M785 215 L820 270"/>
-  <text class="label" x="785" y="305" text-anchor="middle">Bibliotecario</text>
+  <circle class="person" cx="808" cy="125" r="24"/>
+  <path class="person" d="M808 149 V225 M765 175 H851 M808 225 L773 280 M808 225 L843 280"/>
+  <text class="label" x="808" y="316" text-anchor="middle">Bibliotecario</text>
 
-  <ellipse class="use" cx="460" cy="130" rx="125" ry="36"/>
-  <text class="small" x="460" y="135" text-anchor="middle">Cercare libro</text>
-  <ellipse class="use" cx="460" cy="205" rx="125" ry="36"/>
-  <text class="small" x="460" y="210" text-anchor="middle">Consultare disponibilita</text>
-  <ellipse class="use" cx="460" cy="280" rx="125" ry="36"/>
-  <text class="small" x="460" y="285" text-anchor="middle">Registrare prestito</text>
-  <ellipse class="use" cx="460" cy="340" rx="125" ry="28"/>
-  <text class="small" x="460" y="345" text-anchor="middle">Registrare restituzione</text>
+  <ellipse class="use" cx="455" cy="126" rx="132" ry="36"/>
+  <text class="small" x="455" y="131" text-anchor="middle">Cercare libro</text>
+  <ellipse class="use" cx="455" cy="202" rx="132" ry="36"/>
+  <text class="small" x="455" y="207" text-anchor="middle">Consultare disponibilità</text>
+  <ellipse class="use" cx="455" cy="278" rx="132" ry="36"/>
+  <text class="small" x="455" y="283" text-anchor="middle">Registrare prestito</text>
+  <ellipse class="use" cx="455" cy="342" rx="132" ry="28"/>
+  <text class="small" x="455" y="347" text-anchor="middle">Registrare restituzione</text>
 
-  <path class="line" d="M148 150 L335 130"/>
-  <path class="line" d="M148 180 L335 205"/>
-  <path class="line" d="M742 150 L585 280"/>
-  <path class="line" d="M742 195 L585 340"/>
+  <path class="line" d="M136 150 L325 126"/>
+  <path class="line" d="M136 188 L323 202"/>
+  <path class="line" d="M764 178 L586 278"/>
+  <path class="line" d="M764 218 L587 342"/>
 </svg>
