@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 440" role="img" aria-labelledby="title desc">
   <title id="title">Ciclo di sviluppo del software</title>
   <desc id="desc">Schema con le fasi: analisi del problema, requisiti, progettazione, implementazione, testing, rilascio e manutenzione.</desc>
   <defs>
@@ -9,11 +9,12 @@
       .box{fill:#fff;stroke:#d8dee5;stroke-width:2}
       .main{font:700 18px Arial, sans-serif;fill:#17202a}
       .small{font:14px Arial, sans-serif;fill:#5f6c78}
-      .arrow{fill:none;stroke:#006d77;stroke-width:3;marker-end:url(#arrow)}
-      .loop{fill:none;stroke:#c44f24;stroke-width:3;stroke-dasharray:8 8;marker-end:url(#arrow)}
+      .arrow{fill:none;stroke:#006d77;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .loop{fill:none;stroke:#c44f24;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:8 8;marker-end:url(#arrow)}
+      .note{fill:#fff3ea;stroke:#c44f24;stroke-width:1.5}
     </style>
   </defs>
-  <rect width="980" height="380" rx="18" fill="#fbfcfb"/>
+  <rect width="980" height="440" rx="18" fill="#fbfcfb"/>
   <g transform="translate(38 46)">
     <rect class="box" x="0" y="0" width="180" height="92" rx="10"/>
     <text class="main" x="90" y="34" text-anchor="middle">Analisi</text>
@@ -31,21 +32,22 @@
     <text class="main" x="780" y="34" text-anchor="middle">Codice</text>
     <text class="small" x="780" y="60" text-anchor="middle">implementazione</text>
 
-    <rect class="box" x="460" y="190" width="180" height="92" rx="10"/>
-    <text class="main" x="550" y="224" text-anchor="middle">Testing</text>
-    <text class="small" x="550" y="250" text-anchor="middle">verifica e correzioni</text>
+    <rect class="box" x="460" y="205" width="180" height="92" rx="10"/>
+    <text class="main" x="550" y="239" text-anchor="middle">Testing</text>
+    <text class="small" x="550" y="265" text-anchor="middle">verifica e correzioni</text>
 
-    <rect class="box" x="690" y="190" width="180" height="92" rx="10"/>
-    <text class="main" x="780" y="224" text-anchor="middle">Rilascio</text>
-    <text class="small" x="780" y="250" text-anchor="middle">uso e manutenzione</text>
+    <rect class="box" x="690" y="205" width="180" height="92" rx="10"/>
+    <text class="main" x="780" y="239" text-anchor="middle">Rilascio</text>
+    <text class="small" x="780" y="265" text-anchor="middle">uso e manutenzione</text>
 
     <path class="arrow" d="M180 46 H222"/>
     <path class="arrow" d="M410 46 H452"/>
     <path class="arrow" d="M640 46 H682"/>
-    <path class="arrow" d="M780 92 V180"/>
-    <path class="arrow" d="M690 236 H648"/>
-    <path class="loop" d="M460 236 C280 236 220 150 304 96"/>
-    <path class="loop" d="M550 190 C520 140 540 118 550 96"/>
-    <text class="small" x="318" y="270">feedback: i test possono far rivedere requisiti e progetto</text>
+    <path class="arrow" d="M780 92 V195"/>
+    <path class="arrow" d="M690 251 H648"/>
+    <path class="loop" d="M460 275 C345 325 215 260 303 96"/>
+    <path class="loop" d="M550 205 C514 160 524 124 550 96"/>
+    <rect class="note" x="208" y="326" width="520" height="36" rx="9"/>
+    <text class="small" x="468" y="349" text-anchor="middle">feedback: i test possono far rivedere requisiti e progetto</text>
   </g>
 </svg>
