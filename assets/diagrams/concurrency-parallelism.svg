@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-labelledby="title desc">
+  <title id="title">Concorrenza e parallelismo</title>
+  <desc id="desc">Confronto tra attività concorrenti su una CPU e attività parallele su più CPU.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#006d77"/>
+    </marker>
+  </defs>
+  <rect x="18" y="18" width="724" height="294" rx="12" fill="#fff" stroke="#d8dee5"/>
+  <text x="60" y="58" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#17202a">Concorrenza</text>
+  <text x="455" y="58" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#17202a">Parallelismo</text>
+
+  <rect x="58" y="84" width="260" height="74" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <text x="188" y="115" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Una CPU</text>
+  <text x="188" y="138" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">alterna rapidamente le attività</text>
+  <line x1="70" y1="195" x2="310" y2="195" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="82" y="178" width="48" height="34" rx="6" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
+  <rect x="142" y="178" width="48" height="34" rx="6" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <rect x="202" y="178" width="48" height="34" rx="6" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
+  <rect x="262" y="178" width="36" height="34" rx="6" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="106" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">A</text>
+  <text x="166" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">B</text>
+  <text x="226" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">A</text>
+  <text x="280" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">B</text>
+  <text x="188" y="246" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Le attività avanzano entrambe, ma non nello stesso istante.</text>
+
+  <rect x="442" y="84" width="260" height="74" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <text x="572" y="115" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Più CPU o core</text>
+  <text x="572" y="138" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">eseguono attività nello stesso momento</text>
+  <line x1="462" y1="190" x2="690" y2="190" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="462" y1="236" x2="690" y2="236" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="485" y="173" width="150" height="34" rx="6" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
+  <rect x="485" y="219" width="150" height="34" rx="6" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="560" y="195" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">Attività A</text>
+  <text x="560" y="241" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">Attività B</text>
+  <text x="572" y="283" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Attività simultanee su risorse hardware separate.</text>
+</svg>

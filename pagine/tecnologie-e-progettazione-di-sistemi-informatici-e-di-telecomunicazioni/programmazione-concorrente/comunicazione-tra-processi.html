@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Comunicazione tra processi | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro TPSIT sulla comunicazione tra processi: IPC, memoria condivisa, pipe, code di messaggi e socket.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -43,49 +43,186 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/programmazione-concorrente.html">Programmazione concorrente</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Comunicazione tra processi</h1>
-              <p>Programmazione concorrente</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>IPC</h2>
-                    <p>L'Inter-Process Communication comprende i meccanismi attraverso cui processi distinti possono scambiarsi informazioni.</p>
-<p>La scelta del meccanismo dipende dal sistema operativo, dalla quantità di dati e dalla relazione tra i processi.</p>
-                  </section>
-<section class="content-block">
-                    <h2>memoria condivisa</h2>
-                    <p>La memoria condivisa permette a più processi di accedere a una stessa area di memoria.</p>
-<p>Offre comunicazioni efficienti ma richiede adeguati meccanismi di sincronizzazione.</p>
-                  </section>
-<section class="content-block">
-                    <h2>pipe e code di messaggi</h2>
-                    <p>Pipe e code permettono ai processi di comunicare trasferendo dati attraverso canali gestiti dal sistema.</p>
-<p>Il modello a messaggi può ridurre la necessità di condividere direttamente strutture dati.</p>
-                  </section>
-<section class="content-block">
-                    <h2>comunicazione locale e remota</h2>
-                    <p>La comunicazione tra processi può avvenire sulla stessa macchina oppure tra sistemi collegati in rete.</p>
-<p>Il passaggio alla comunicazione remota introduce problemi relativi a rete, protocolli, latenza e possibili guasti indipendenti.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="sincronizzazione.html">Precedente: Sincronizzazione</a>
-            <span></span>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/programmazione-concorrente.html">Programmazione concorrente</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 4</p>
+        <h1>Comunicazione tra processi</h1>
+        <p>Le attività concorrenti spesso devono scambiarsi informazioni. La comunicazione tra processi, chiamata anche IPC, comprende i meccanismi con cui processi o thread collaborano senza confondere dati, responsabilità e tempi di esecuzione.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Definire l'Inter-Process Communication.</li>
+            <li>Confrontare memoria condivisa e scambio di messaggi.</li>
+            <li>Capire a che cosa servono pipe, code di messaggi e socket.</li>
+            <li>Distinguere comunicazione locale e comunicazione remota.</li>
+            <li>Scegliere un meccanismo IPC in base al problema.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Che cos'è l'IPC</h2>
+          <p><strong>IPC</strong> significa Inter-Process Communication, cioè comunicazione tra processi. Due processi hanno normalmente spazi di memoria separati: questo aumenta isolamento e sicurezza, ma rende necessario un canale controllato per scambiare dati.</p>
+          <p>Anche i thread, pur condividendo memoria, hanno bisogno di regole di comunicazione. La comunicazione non riguarda solo il trasferimento di byte: riguarda anche il coordinamento, cioè sapere quando un dato è pronto, chi lo può usare e che cosa succede se qualcosa fallisce.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Tre modelli principali</h2>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/ipc-models.svg" alt="Schema dei modelli di comunicazione tra processi">
+            <figcaption>Figura 1: i processi possono comunicare tramite memoria condivisa, canali di messaggi o socket di rete.</figcaption>
+          </figure>
+          <table>
+            <thead>
+              <tr><th>Modello</th><th>Idea</th><th>Punto di attenzione</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Memoria condivisa</td><td>Più processi accedono a una stessa area dati.</td><td>Richiede sincronizzazione accurata.</td></tr>
+              <tr><td>Messaggi</td><td>I dati viaggiano in pipe o code gestite dal sistema.</td><td>Bisogna definire formato e ordine dei messaggi.</td></tr>
+              <tr><td>Socket</td><td>I processi comunicano tramite rete o interfaccia locale.</td><td>Servono protocolli, gestione di errori e timeout.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Memoria condivisa</h2>
+          <p>La memoria condivisa permette a processi diversi di leggere e scrivere una stessa area di memoria. È veloce perché evita di copiare continuamente grandi quantità di dati, ma proprio per questo è rischiosa: chi legge deve sapere quando il dato è valido e chi scrive deve evitare modifiche simultanee.</p>
+          <pre><code>Processo A:
+wait(mutex)
+scrive dati nell'area condivisa
+signal(mutex)
+signal(dato_pronto)
+
+Processo B:
+wait(dato_pronto)
+wait(mutex)
+legge dati dall'area condivisa
+signal(mutex)</code></pre>
+          <p>La memoria condivisa è adatta quando i processi devono scambiare molti dati sulla stessa macchina, per esempio immagini, buffer audio o grandi strutture numeriche.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Pipe e code di messaggi</h2>
+          <p>Una <strong>pipe</strong> è un canale attraverso cui un processo scrive dati e un altro li legge. Spesso funziona come un flusso ordinato: ciò che entra prima viene letto prima. È utile per collegare programmi semplici, come nei comandi da terminale.</p>
+          <p>Una <strong>coda di messaggi</strong> conserva messaggi separati, spesso con un tipo, una priorità o un destinatario. Riduce la necessità di condividere direttamente memoria: i processi si scambiano pacchetti informativi e il sistema gestisce l'attesa.</p>
+          <table>
+            <thead>
+              <tr><th>Meccanismo</th><th>Come comunica</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Pipe</td><td>Flusso di byte da produttore a consumatore.</td><td>Un programma genera righe e un altro le filtra.</td></tr>
+              <tr><td>Coda di messaggi</td><td>Messaggi distinti inseriti e prelevati.</td><td>Un servizio riceve richieste di elaborazione.</td></tr>
+              <tr><td>Eventi</td><td>Notifiche che indicano un cambiamento.</td><td>Un thread avvisa che un download è terminato.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Socket e comunicazione remota</h2>
+          <p>Un <strong>socket</strong> permette a due processi di comunicare anche se si trovano su macchine diverse. È la base di molte applicazioni di rete: browser e server web, chat, giochi online, sistemi client-server e servizi distribuiti.</p>
+          <p>Quando la comunicazione passa sulla rete compaiono nuovi problemi: latenza, pacchetti persi, connessioni interrotte, formati non compatibili, sicurezza e autenticazione. Per questo i socket sono collegati ai protocolli, cioè regole condivise sul formato e sul significato dei messaggi.</p>
+          <pre><code>Client:
+apre una connessione al server
+invia una richiesta
+attende una risposta
+chiude la connessione
+
+Server:
+ascolta su una porta
+accetta una connessione
+legge la richiesta
+invia la risposta</code></pre>
+        </section>
+
+        <section class="content-block">
+          <h2>Sincrono e asincrono</h2>
+          <p>Una comunicazione è <strong>sincrona</strong> quando chi invia resta in attesa della risposta o della ricezione. È semplice da ragionare, ma può bloccare l'attività chiamante. Una comunicazione è <strong>asincrona</strong> quando l'invio non obbliga ad aspettare subito il risultato: il programma potrà riceverlo più tardi tramite evento, callback, promessa o coda.</p>
+          <table>
+            <thead>
+              <tr><th>Tipo</th><th>Vantaggio</th><th>Svantaggio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sincrona</td><td>Sequenza chiara e facile da seguire.</td><td>Può bloccare se l'altra parte è lenta.</td></tr>
+              <tr><td>Asincrona</td><td>Migliora reattività e scalabilità.</td><td>Richiede gestione di eventi, stati e possibili errori.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Come scegliere il meccanismo giusto</h2>
+          <p>La scelta dipende dal contesto. Se i processi sono sulla stessa macchina e devono scambiare molti dati, la memoria condivisa può essere efficiente. Se è più importante isolare le parti e semplificare il controllo, conviene usare messaggi. Se le attività sono su macchine diverse, servono socket o protocolli di rete più adatti.</p>
+          <table>
+            <thead>
+              <tr><th>Domanda</th><th>Scelta probabile</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>I processi sono sulla stessa macchina?</td><td>Memoria condivisa, pipe o code.</td></tr>
+              <tr><td>Devono scambiare grandi quantità di dati?</td><td>Memoria condivisa con sincronizzazione.</td></tr>
+              <tr><td>Serve separare bene produttori e consumatori?</td><td>Coda di messaggi.</td></tr>
+              <tr><td>I processi sono su macchine diverse?</td><td>Socket e protocollo applicativo.</td></tr>
+              <tr><td>La risposta può arrivare più tardi?</td><td>Comunicazione asincrona.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: gestione compiti online</h2>
+          <p>In una piattaforma scolastica, il browser dello studente invia un compito al server. Il server salva il file, mette un messaggio in coda per l'antivirus, aggiorna il database e invia una notifica al docente. Non tutto deve accadere nello stesso istante.</p>
+          <ol>
+            <li>Browser e server comunicano tramite socket e protocollo HTTPS.</li>
+            <li>Il server salva il file in modo controllato.</li>
+            <li>Una coda invia il compito a un processo di scansione.</li>
+            <li>Il database memorizza stato, autore e data di consegna.</li>
+            <li>Un evento o messaggio avvisa il docente quando il controllo è terminato.</li>
+          </ol>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Confronta memoria condivisa e coda di messaggi usando due vantaggi e due rischi.</li>
+            <li>Descrivi una comunicazione client-server presente in un sito che usi spesso.</li>
+            <li>Spiega perché una comunicazione sincrona può rendere lenta un'interfaccia grafica.</li>
+            <li>Progetta un piccolo sistema con un produttore, una coda e due consumatori.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>Perché processi diversi non condividono automaticamente la memoria?</summary>
+            <p>Per isolamento e sicurezza. Ogni processo ha il proprio spazio di memoria, così un errore non modifica facilmente i dati di un altro processo.</p>
+          </details>
+          <details>
+            <summary>Quando conviene usare una coda di messaggi?</summary>
+            <p>Quando si vuole separare chi produce lavoro da chi lo esegue, mantenendo messaggi ordinati e gestiti dal sistema.</p>
+          </details>
+          <details>
+            <summary>Che differenza c'è tra pipe e socket?</summary>
+            <p>Una pipe collega processi, di solito sulla stessa macchina, tramite un flusso. Un socket può collegare processi anche su macchine diverse attraverso la rete.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>IPC significa comunicazione controllata tra attività. Ricorda tre famiglie: memoria condivisa quando conta la velocità, messaggi quando conta il disaccoppiamento, socket quando la comunicazione passa anche attraverso la rete.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="sincronizzazione.html">Precedente: Sincronizzazione</a>
+      <span></span>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sincronizzazione | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro TPSIT su sincronizzazione, lock, mutex, semafori, deadlock e produttore-consumatore.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -43,49 +43,161 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/programmazione-concorrente.html">Programmazione concorrente</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Sincronizzazione</h1>
-              <p>Programmazione concorrente</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>sincronizzazione delle attività</h2>
-                    <p>La sincronizzazione impone relazioni temporali tra attività concorrenti.</p>
-<p>Può essere necessario attendere il completamento di un'operazione o la disponibilità di una determinata condizione.</p>
-                  </section>
-<section class="content-block">
-                    <h2>semafori</h2>
-                    <p>I semafori sono primitive utilizzate per coordinare l'accesso a risorse e sincronizzare processi o thread.</p>
-<p>Il loro valore rappresenta una condizione o una quantità di risorse disponibili e viene modificato mediante operazioni atomiche.</p>
-                  </section>
-<section class="content-block">
-                    <h2>deadlock</h2>
-                    <p>Un deadlock può verificarsi quando più attività rimangono permanentemente in attesa reciproca delle risorse necessarie.</p>
-<p>La progettazione deve considerare condizioni e strategie che permettano di prevenire o gestire situazioni di blocco.</p>
-                  </section>
-<section class="content-block">
-                    <h2>problemi classici</h2>
-                    <p>Problemi come produttore-consumatore permettono di studiare concretamente sincronizzazione e condivisione delle risorse.</p>
-<p>La loro soluzione evidenzia l'utilizzo coordinato di buffer, semafori, lock e altre primitive.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="condivisione-delle-risorse.html">Precedente: Condivisione delle risorse</a>
-            <a href="comunicazione-tra-processi.html">Successivo: Comunicazione tra processi</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/programmazione-concorrente.html">Programmazione concorrente</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 3</p>
+        <h1>Sincronizzazione</h1>
+        <p>Sincronizzare significa coordinare attività concorrenti: decidere chi può entrare in una sezione critica, chi deve aspettare, quando una condizione è vera e come evitare blocchi permanenti.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Capire perché la sincronizzazione è necessaria nei programmi concorrenti.</li>
+            <li>Distinguere lock, mutex e semaforo.</li>
+            <li>Leggere semplici pseudocodici con acquisizione e rilascio.</li>
+            <li>Riconoscere deadlock, starvation e attese attive.</li>
+            <li>Applicare il modello produttore-consumatore a un buffer condiviso.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Che cosa vuol dire sincronizzare</h2>
+          <p>In un programma concorrente alcune attività possono procedere liberamente, mentre altre devono rispettare un ordine. La sincronizzazione serve a imporre queste regole temporali: "entra solo se la risorsa è libera", "aspetta finché ci sono dati", "avvisa quando hai terminato".</p>
+          <p>Senza sincronizzazione si rischiano race condition; con una sincronizzazione progettata male si rischiano rallentamenti o blocchi. L'obiettivo è trovare un equilibrio: proteggere ciò che serve, lasciando libero il resto del lavoro.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Lock e mutex</h2>
+          <p>Un <strong>lock</strong> è un meccanismo che permette a un'attività di bloccare l'accesso a una risorsa. Un <strong>mutex</strong>, cioè mutual exclusion, è un lock pensato per garantire che una sola attività alla volta esegua una sezione critica.</p>
+          <pre><code>acquisisci(lock)
+// sezione critica
+aggiorna_dato_condiviso()
+rilascia(lock)</code></pre>
+          <p>Il rilascio è essenziale. Se un thread acquisisce un lock e non lo libera più, gli altri thread che lo aspettano restano bloccati. Nei linguaggi moderni spesso si usano costrutti che rilasciano automaticamente il lock anche in caso di errore.</p>
+          <aside class="simple-box">
+            <strong>Regola pratica</strong>
+            <p>Acquisisci il lock il più tardi possibile e rilascialo il prima possibile. Dentro la sezione critica deve rimanere solo il codice davvero necessario.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Semafori</h2>
+          <p>Un <strong>semaforo</strong> è una variabile speciale gestita con operazioni atomiche. Serve a controllare l'accesso a una o più risorse disponibili. Se il valore del semaforo è zero, chi prova a entrare deve aspettare; se è positivo, può procedere e il valore viene diminuito.</p>
+          <table>
+            <thead>
+              <tr><th>Operazione</th><th>Significato</th><th>Effetto</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>wait()</code></td><td>Richiede una risorsa o una condizione.</td><td>Se possibile diminuisce il semaforo, altrimenti mette in attesa.</td></tr>
+              <tr><td><code>signal()</code></td><td>Libera una risorsa o segnala un evento.</td><td>Aumenta il semaforo e può svegliare un'attività in attesa.</td></tr>
+            </tbody>
+          </table>
+          <p>Un semaforo binario assume valori 0 o 1 ed è simile a un mutex. Un semaforo contatore può rappresentare più risorse uguali, per esempio cinque connessioni disponibili.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Produttore e consumatore</h2>
+          <p>Il problema produttore-consumatore è un modello classico: un'attività produce dati e li inserisce in un buffer; un'altra li preleva e li elabora. Il produttore deve fermarsi se il buffer è pieno, il consumatore deve aspettare se è vuoto.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/producer-consumer-semaphore.svg" alt="Schema produttore consumatore con buffer e semafori">
+            <figcaption>Figura 1: il buffer condiviso richiede un mutex per l'accesso e due semafori per indicare posti liberi e dati disponibili.</figcaption>
+          </figure>
+          <pre><code>Produttore:
+wait(vuoti)
+wait(mutex)
+inserisci_dato_nel_buffer()
+signal(mutex)
+signal(pieni)
+
+Consumatore:
+wait(pieni)
+wait(mutex)
+preleva_dato_dal_buffer()
+signal(mutex)
+signal(vuoti)</code></pre>
+        </section>
+
+        <section class="content-block">
+          <h2>Deadlock</h2>
+          <p>Un <strong>deadlock</strong> si verifica quando più attività restano bloccate perché ognuna aspetta una risorsa trattenuta da un'altra. È una situazione grave: il sistema non avanza, anche se nessun singolo thread sta "sbagliando" da solo.</p>
+          <table>
+            <thead>
+              <tr><th>Condizione</th><th>Descrizione</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Mutua esclusione</td><td>Almeno una risorsa può essere usata da una sola attività.</td><td>Una stampante fisica.</td></tr>
+              <tr><td>Possesso e attesa</td><td>Un'attività possiede una risorsa e ne aspetta un'altra.</td><td>A ha il file e chiede la stampante.</td></tr>
+              <tr><td>Nessuna prelazione</td><td>La risorsa non viene tolta con forza a chi la possiede.</td><td>Il lock resta al thread che lo ha preso.</td></tr>
+              <tr><td>Attesa circolare</td><td>Si forma una catena chiusa di attese.</td><td>A aspetta B e B aspetta A.</td></tr>
+            </tbody>
+          </table>
+          <p>Per prevenire il deadlock si può imporre un ordine fisso di acquisizione delle risorse, usare timeout, evitare di trattenere risorse mentre si attende o progettare il sistema in modo da eliminare una delle condizioni necessarie.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Starvation e attesa attiva</h2>
+          <p>La <strong>starvation</strong> si verifica quando un'attività resta pronta ma non ottiene mai la risorsa necessaria, perché altre attività vengono sempre servite prima. Non è un blocco circolare come il deadlock, ma può comunque impedire il completamento del lavoro.</p>
+          <p>L'<strong>attesa attiva</strong>, o busy waiting, avviene quando un'attività controlla continuamente una condizione consumando CPU. In alcuni sistemi a basso livello può essere accettabile per attese brevissime; nelle applicazioni comuni è meglio usare meccanismi che sospendono il thread finché non arriva un segnale.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: coda di stampa</h2>
+          <p>Una coda di stampa riceve documenti da più utenti. La stampante può eseguire un lavoro alla volta, quindi la coda protegge l'ordine dei documenti. Gli utenti inseriscono richieste; il servizio di stampa le preleva una per volta.</p>
+          <ol>
+            <li>Gli utenti producono richieste di stampa.</li>
+            <li>La coda è il buffer condiviso.</li>
+            <li>Un lock protegge inserimenti e prelievi dalla coda.</li>
+            <li>Un semaforo può indicare quante stampe sono in attesa.</li>
+            <li>Il servizio consumatore attende quando la coda è vuota.</li>
+          </ol>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Scrivi lo pseudocodice per proteggere l'aggiornamento di un saldo condiviso con un lock.</li>
+            <li>Spiega perché il produttore deve attendere quando il buffer è pieno.</li>
+            <li>Disegna una situazione di deadlock con due attività e due risorse.</li>
+            <li>Indica una strategia per evitare l'attesa circolare.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>Che differenza c'è tra mutex e semaforo?</summary>
+            <p>Un mutex protegge l'accesso esclusivo a una risorsa. Un semaforo può anche contare più risorse o segnalare condizioni tra attività.</p>
+          </details>
+          <details>
+            <summary>Perché il deadlock è difficile da vedere?</summary>
+            <p>Perché dipende dall'ordine temporale delle operazioni. Può comparire solo in alcune esecuzioni, quando le attività si incastrano in una particolare sequenza.</p>
+          </details>
+          <details>
+            <summary>Che cosa fa l'operazione <code>signal()</code>?</summary>
+            <p>Indica che una risorsa è stata liberata o che una condizione è diventata vera, permettendo eventualmente a un'attività in attesa di ripartire.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Sincronizzare significa controllare gli accessi e le attese. Devi saper collegare ogni strumento al problema che risolve: mutex per mutua esclusione, semaforo per risorse contate o segnali, ordine fisso per prevenire deadlock.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="condivisione-delle-risorse.html">Precedente: Condivisione delle risorse</a>
+      <a href="comunicazione-tra-processi.html">Successivo: Comunicazione tra processi</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

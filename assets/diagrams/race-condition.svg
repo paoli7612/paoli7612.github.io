@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
+  <title id="title">Race condition su una variabile condivisa</title>
+  <desc id="desc">Due thread leggono lo stesso contatore, calcolano un incremento e salvano un valore non corretto.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#006d77"/>
+    </marker>
+  </defs>
+  <rect x="18" y="18" width="724" height="304" rx="12" fill="#fff" stroke="#d8dee5"/>
+  <rect x="306" y="36" width="148" height="64" rx="10" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="380" y="62" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Contatore</text>
+  <text x="380" y="84" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#34495e">valore iniziale = 5</text>
+
+  <rect x="68" y="140" width="150" height="58" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <text x="143" y="164" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Thread A</text>
+  <text x="143" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">legge 5, calcola 6</text>
+
+  <rect x="542" y="140" width="150" height="58" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <text x="617" y="164" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Thread B</text>
+  <text x="617" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">legge 5, calcola 6</text>
+
+  <line x1="306" y1="88" x2="218" y2="142" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="454" y1="88" x2="542" y2="142" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="218" y1="198" x2="322" y2="246" stroke="#c44f24" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="542" y1="198" x2="438" y2="246" stroke="#c44f24" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="300" y="244" width="160" height="58" rx="10" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="380" y="268" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Risultato salvato</text>
+  <text x="380" y="288" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">6 invece di 7</text>
+
+  <rect x="248" y="107" width="264" height="25" rx="8" fill="#ffffff" stroke="#d8dee5"/>
+  <text x="380" y="124" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Interruzioni tra lettura, calcolo e scrittura</text>
+  <text x="380" y="318" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">La soluzione è proteggere l'incremento con una sezione critica.</text>
+</svg>

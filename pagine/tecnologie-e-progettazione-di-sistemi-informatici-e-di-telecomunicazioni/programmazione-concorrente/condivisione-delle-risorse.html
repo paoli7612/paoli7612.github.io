@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Condivisione delle risorse | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro TPSIT su risorse condivise, race condition, sezioni critiche e mutua esclusione.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -43,49 +43,168 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/programmazione-concorrente.html">Programmazione concorrente</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Condivisione delle risorse</h1>
-              <p>Programmazione concorrente</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>risorse condivise</h2>
-                    <p>Più attività concorrenti possono accedere agli stessi dati, file, dispositivi o altre risorse.</p>
-<p>Accessi non coordinati possono produrre risultati dipendenti dall'ordine imprevedibile delle operazioni.</p>
-                  </section>
-<section class="content-block">
-                    <h2>race condition</h2>
-                    <p>Una race condition si verifica quando il risultato dipende dalla temporizzazione relativa di più attività concorrenti.</p>
-<p>Individuare le sezioni in cui vengono manipolati dati condivisi è essenziale per progettare programmi concorrenti corretti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>sezioni critiche</h2>
-                    <p>Una sezione critica è una parte di programma che accede a una risorsa condivisa e non può essere eseguita contemporaneamente da attività incompatibili.</p>
-<p>La corretta protezione delle sezioni critiche impedisce modifiche concorrenti incoerenti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>mutua esclusione</h2>
-                    <p>La mutua esclusione garantisce che una risorsa critica venga utilizzata da una sola attività alla volta quando necessario.</p>
-<p>Meccanismi come lock, mutex e semafori permettono di coordinare l'accesso alle risorse condivise.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="concorrenza-e-parallelismo.html">Precedente: Concorrenza e parallelismo</a>
-            <a href="sincronizzazione.html">Successivo: Sincronizzazione</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/programmazione-concorrente.html">Programmazione concorrente</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 2</p>
+        <h1>Condivisione delle risorse</h1>
+        <p>Il vantaggio della concorrenza diventa un problema quando più attività usano gli stessi dati o gli stessi dispositivi. Per scrivere software corretto bisogna capire quali risorse sono condivise e proteggere le operazioni che non possono sovrapporsi.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Riconoscere dati, file, periferiche e servizi condivisi.</li>
+            <li>Spiegare che cos'è una race condition.</li>
+            <li>Individuare una sezione critica in un algoritmo.</li>
+            <li>Comprendere il principio della mutua esclusione.</li>
+            <li>Scrivere semplici regole per ridurre gli errori concorrenti.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Che cos'è una risorsa condivisa</h2>
+          <p>Una <strong>risorsa condivisa</strong> è qualunque elemento usato da più attività: una variabile, una lista, un file, una stampante, una connessione, una tabella di database o una periferica. La condivisione è utile perché permette collaborazione e risparmio di memoria, ma richiede regole.</p>
+          <p>Il problema nasce quando due attività eseguono operazioni non indipendenti. Leggere un dato può essere innocuo; leggerlo, modificarlo e salvarlo richiede invece attenzione, perché un'altra attività potrebbe intervenire nel mezzo.</p>
+          <table>
+            <thead>
+              <tr><th>Risorsa</th><th>Uso concorrente possibile</th><th>Problema tipico</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Variabile contatore</td><td>Più thread incrementano lo stesso valore.</td><td>Aggiornamenti persi.</td></tr>
+              <tr><td>File di log</td><td>Più processi scrivono righe nello stesso file.</td><td>Righe mescolate o incomplete.</td></tr>
+              <tr><td>Database</td><td>Più utenti modificano lo stesso record.</td><td>Dati incoerenti o sovrascritti.</td></tr>
+              <tr><td>Stampante</td><td>Più applicazioni inviano documenti.</td><td>Ordine non controllato senza coda.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Race condition</h2>
+          <p>Una <strong>race condition</strong> si verifica quando il risultato dipende dall'ordine con cui attività concorrenti vengono eseguite. L'ordine può cambiare da un'esecuzione all'altra, perché lo scheduler decide quando sospendere e riprendere processi o thread.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/race-condition.svg" alt="Schema di race condition su una variabile contatore condivisa">
+            <figcaption>Figura 1: due thread leggono lo stesso valore e salvano entrambi il risultato 6; un incremento viene perso.</figcaption>
+          </figure>
+          <pre><code>contatore = 5
+
+Thread A: legge contatore        -> 5
+Thread B: legge contatore        -> 5
+Thread A: calcola 5 + 1 e salva  -> 6
+Thread B: calcola 5 + 1 e salva  -> 6
+
+Risultato atteso: 7
+Risultato ottenuto: 6</code></pre>
+        </section>
+
+        <section class="content-block">
+          <h2>Operazioni atomiche</h2>
+          <p>Un'operazione è <strong>atomica</strong> quando viene eseguita come un tutto indivisibile: nessun'altra attività può osservarla o interromperla a metà. Molte istruzioni che sembrano semplici in realtà sono composte da più passi.</p>
+          <p>L'istruzione <code>contatore = contatore + 1</code> contiene almeno tre azioni: leggere il valore, sommare uno, scrivere il nuovo valore. Se due thread si alternano tra questi passi, il risultato può essere sbagliato.</p>
+          <aside class="simple-box">
+            <strong>Idea chiave</strong>
+            <p>Non basta che una riga di codice sembri unica. Bisogna chiedersi se l'operazione può essere interrotta tra lettura, calcolo e scrittura.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Sezione critica</h2>
+          <p>Una <strong>sezione critica</strong> è una parte di programma che accede a una risorsa condivisa e deve essere eseguita da una sola attività alla volta. Individuare le sezioni critiche è il primo passo per correggere un programma concorrente.</p>
+          <pre><code>// Sezione non critica
+prepara_dati()
+
+// Sezione critica: modifica una risorsa condivisa
+entra_nella_sezione_critica()
+contatore = contatore + 1
+esci_dalla_sezione_critica()
+
+// Sezione non critica
+mostra_risultato()</code></pre>
+          <p>La sezione critica deve essere più breve possibile. Se protegge troppo codice, il programma diventa lento; se protegge troppo poco, la risorsa resta esposta a errori.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Mutua esclusione</h2>
+          <p>La <strong>mutua esclusione</strong> garantisce che una sola attività alla volta entri nella sezione critica. Gli strumenti più comuni sono lock, mutex e semafori. Il loro compito è semplice da dire ma delicato da progettare: chi entra blocca l'accesso, chi esce lo libera.</p>
+          <table>
+            <thead>
+              <tr><th>Requisito</th><th>Significato</th><th>Perché è importante</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Mutua esclusione</td><td>Solo un'attività nella sezione critica.</td><td>Evita modifiche simultanee incoerenti.</td></tr>
+              <tr><td>Progresso</td><td>Se la risorsa è libera, qualcuno deve poter entrare.</td><td>Evita attese inutili.</td></tr>
+              <tr><td>Attesa limitata</td><td>Nessuna attività deve aspettare per sempre.</td><td>Riduce il rischio di starvation.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio scolastico: prenotazioni del laboratorio</h2>
+          <p>Due docenti provano a prenotare lo stesso laboratorio alla stessa ora. Se il sistema controlla la disponibilità e poi salva la prenotazione senza protezione, entrambi potrebbero leggere "libero" e salvare due prenotazioni incompatibili.</p>
+          <ol>
+            <li>Docente A controlla: laboratorio libero.</li>
+            <li>Docente B controlla: laboratorio ancora libero.</li>
+            <li>Docente A salva la prenotazione.</li>
+            <li>Docente B salva una prenotazione sovrapposta.</li>
+          </ol>
+          <p>La sezione critica comprende il controllo della disponibilità e il salvataggio. Devono essere trattati come un'unica operazione protetta.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Regole pratiche di progettazione</h2>
+          <ul>
+            <li>Riduci il numero di dati condivisi: meno condivisione significa meno rischi.</li>
+            <li>Proteggi insieme le operazioni che logicamente formano un unico aggiornamento.</li>
+            <li>Non tenere un lock mentre esegui operazioni lente come rete o input utente.</li>
+            <li>Documenta quali risorse sono condivise e quale meccanismo le protegge.</li>
+            <li>Prova il programma più volte e con carichi diversi: gli errori concorrenti non compaiono sempre.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Trova una sezione critica in un programma che gestisce il saldo di un conto.</li>
+            <li>Spiega perché due incrementi simultanei di un contatore possono produrre un solo incremento effettivo.</li>
+            <li>Disegna una sequenza di eventi in cui due utenti prenotano la stessa risorsa.</li>
+            <li>Scrivi tre esempi di risorse condivise in un'applicazione web scolastica.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>Che cos'è una race condition?</summary>
+            <p>È un errore che dipende dall'ordine imprevedibile con cui attività concorrenti leggono e modificano dati condivisi.</p>
+          </details>
+          <details>
+            <summary>Che cos'è una sezione critica?</summary>
+            <p>È una parte di codice che accede a una risorsa condivisa e deve essere eseguita da una sola attività alla volta.</p>
+          </details>
+          <details>
+            <summary>Perché la sezione critica deve essere breve?</summary>
+            <p>Perché mentre una attività la occupa, le altre devono aspettare. Una sezione critica troppo lunga riduce prestazioni e reattività.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Quando studi una risorsa condivisa chiediti sempre: chi la usa, quali operazioni la modificano, quale parte deve essere atomica e quale meccanismo garantisce la mutua esclusione.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="concorrenza-e-parallelismo.html">Precedente: Concorrenza e parallelismo</a>
+      <a href="sincronizzazione.html">Successivo: Sincronizzazione</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

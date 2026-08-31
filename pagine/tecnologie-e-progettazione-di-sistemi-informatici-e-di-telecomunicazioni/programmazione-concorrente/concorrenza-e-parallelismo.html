@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Concorrenza e parallelismo | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro TPSIT su concorrenza, parallelismo, processi, thread e multitasking.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -43,49 +43,153 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/programmazione-concorrente.html">Programmazione concorrente</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Concorrenza e parallelismo</h1>
-              <p>Programmazione concorrente</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>processi e thread</h2>
-                    <p>Processi e thread permettono di organizzare applicazioni composte da più attività potenzialmente eseguibili contemporaneamente.</p>
-<p>I processi dispongono normalmente di spazi di memoria separati, mentre i thread dello stesso processo condividono numerose risorse.</p>
-                  </section>
-<section class="content-block">
-                    <h2>concorrenza</h2>
-                    <p>La concorrenza riguarda la gestione di più attività il cui avanzamento può sovrapporsi nel tempo.</p>
-<p>Un programma concorrente deve coordinare correttamente attività che possono essere interrotte e riprese in momenti differenti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>parallelismo</h2>
-                    <p>Il parallelismo consiste nell'esecuzione effettivamente simultanea di più attività su differenti unità di elaborazione.</p>
-<p>Concorrenza e parallelismo sono concetti correlati ma non equivalenti e possono presentarsi indipendentemente.</p>
-                  </section>
-<section class="content-block">
-                    <h2>creazione e terminazione</h2>
-                    <p>Un programma può creare processi o thread per delegare attività differenti.</p>
-<p>È necessario gestirne correttamente avvio, terminazione, risultati ed eventuali errori.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <span></span>
-            <a href="condivisione-delle-risorse.html">Successivo: Condivisione delle risorse</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/programmazione-concorrente.html">Programmazione concorrente</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 1</p>
+        <h1>Concorrenza e parallelismo</h1>
+        <p>Un programma moderno raramente svolge una sola attività alla volta. Può leggere dati dalla rete, aggiornare l'interfaccia, scrivere su disco e rispondere all'utente. La programmazione concorrente studia come organizzare queste attività senza perdere controllo e correttezza.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Distinguere programma, processo, thread e attività.</li>
+            <li>Capire la differenza tra concorrenza e parallelismo.</li>
+            <li>Collegare multitasking, scheduler e context switch.</li>
+            <li>Riconoscere quando conviene dividere un lavoro in più attività.</li>
+            <li>Comprendere i primi rischi dei programmi concorrenti.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Programma, processo e thread</h2>
+          <p>Un <strong>programma</strong> è un insieme di istruzioni salvate in un file o in memoria. Quando viene eseguito, il sistema operativo crea un <strong>processo</strong>: un programma in esecuzione con il proprio spazio di memoria, le proprie risorse e il proprio stato.</p>
+          <p>Un <strong>thread</strong> è un flusso di esecuzione interno a un processo. Più thread dello stesso processo condividono dati e risorse, ma ciascuno possiede il proprio punto di esecuzione. Questa condivisione rende i thread efficienti, ma anche delicati da coordinare.</p>
+          <table>
+            <thead>
+              <tr><th>Concetto</th><th>Che cos'è</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Programma</td><td>Codice pronto per essere eseguito</td><td>Il file di un browser o di un editor.</td></tr>
+              <tr><td>Processo</td><td>Programma in esecuzione con memoria e risorse</td><td>Una finestra del browser aperta.</td></tr>
+              <tr><td>Thread</td><td>Flusso di esecuzione dentro un processo</td><td>Un thread scarica dati mentre un altro aggiorna l'interfaccia.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Che cosa significa concorrenza</h2>
+          <p>La <strong>concorrenza</strong> si ha quando più attività sono in corso nello stesso intervallo di tempo. Non significa necessariamente che stiano usando la CPU nello stesso identico istante: su una sola CPU il sistema operativo può alternarle molto rapidamente, dando l'impressione che procedano insieme.</p>
+          <p>Il passaggio da un'attività a un'altra si chiama <strong>context switch</strong>. Durante questo passaggio il sistema salva lo stato dell'attività corrente e carica lo stato di quella successiva. È indispensabile per il multitasking, ma ha un costo: se si cambia troppo spesso attività, una parte del tempo viene spesa solo per coordinare il lavoro.</p>
+          <aside class="simple-box">
+            <strong>Idea chiave</strong>
+            <p>La concorrenza riguarda l'organizzazione di attività che avanzano in modo sovrapposto. Il parallelismo riguarda l'esecuzione simultanea su più unità di elaborazione.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Concorrenza e parallelismo a confronto</h2>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/concurrency-parallelism.svg" alt="Schema che confronta concorrenza e parallelismo">
+            <figcaption>Figura 1: nella concorrenza una CPU alterna più attività; nel parallelismo più core eseguono attività nello stesso momento.</figcaption>
+          </figure>
+          <table>
+            <thead>
+              <tr><th>Aspetto</th><th>Concorrenza</th><th>Parallelismo</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Idea</td><td>Più attività avanzano nello stesso periodo.</td><td>Più attività eseguono davvero nello stesso istante.</td></tr>
+              <tr><td>Hardware</td><td>Può esistere anche con una sola CPU.</td><td>Richiede più core, CPU o unità di calcolo.</td></tr>
+              <tr><td>Obiettivo</td><td>Migliorare reattività e organizzazione.</td><td>Ridurre il tempo totale di calcolo.</td></tr>
+              <tr><td>Esempio</td><td>Un'app risponde all'utente mentre aspetta la rete.</td><td>Un programma elabora parti diverse di un'immagine su più core.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Quando serve programmare in modo concorrente</h2>
+          <p>La concorrenza è utile quando un'applicazione deve gestire più eventi indipendenti o attività con tempi di attesa diversi. Un server web deve servire molti client, un videogioco deve aggiornare input, grafica e audio, un'app mobile deve restare reattiva mentre scarica dati.</p>
+          <p>Non sempre però aggiungere thread migliora un programma. Se il problema è semplice, la concorrenza può complicare il codice senza vantaggi. Una buona progettazione valuta quali attività sono indipendenti, quali condividono dati e quali devono essere eseguite in un ordine preciso.</p>
+          <table>
+            <thead>
+              <tr><th>Scenario</th><th>Perché la concorrenza aiuta</th><th>Rischio da controllare</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Server web</td><td>Gestisce più richieste senza bloccare tutti gli utenti.</td><td>Accessi simultanei agli stessi dati.</td></tr>
+              <tr><td>Interfaccia grafica</td><td>Resta reattiva durante operazioni lente.</td><td>Aggiornare la UI dal thread sbagliato.</td></tr>
+              <tr><td>Download di file</td><td>Scarica più risorse o mostra progresso.</td><td>Gestione di errori, annullamenti e timeout.</td></tr>
+              <tr><td>Calcolo scientifico</td><td>Divide un lavoro grande in parti indipendenti.</td><td>Sovraccarico di coordinamento.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: laboratorio scolastico</h2>
+          <p>Immagina un programma che controlla i PC di un laboratorio. Deve mostrare l'elenco dei computer, controllare quali sono accesi, ricevere messaggi dagli studenti e salvare un registro. Se facesse tutto in sequenza, un controllo lento potrebbe bloccare l'interfaccia.</p>
+          <pre><code>Attività principale: mostra l'interfaccia al docente
+Attività di rete: controlla lo stato dei PC
+Attività di log: salva eventi e messaggi
+
+Il programma è concorrente perché queste attività avanzano nello stesso periodo.
+Diventa parallelo solo se il sistema le esegue davvero su core diversi.</code></pre>
+        </section>
+
+        <section class="content-block">
+          <h2>Primi rischi della concorrenza</h2>
+          <p>Quando più attività avanzano in ordine non prevedibile, il risultato non dipende solo dal codice scritto, ma anche dal momento in cui ogni attività viene sospesa o ripresa. Questo rende alcuni errori difficili da riprodurre: il programma può funzionare cento volte e fallire alla centounesima.</p>
+          <ul>
+            <li><strong>Race condition:</strong> il risultato dipende dall'ordine casuale degli accessi.</li>
+            <li><strong>Interferenza:</strong> un'attività modifica dati mentre un'altra li sta usando.</li>
+            <li><strong>Deadlock:</strong> più attività restano bloccate aspettandosi a vicenda.</li>
+            <li><strong>Starvation:</strong> un'attività non riceve mai le risorse necessarie.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Scrivi tre esempi di programmi che devono rimanere reattivi mentre svolgono operazioni lente.</li>
+            <li>Spiega con parole tue la differenza tra processo e thread.</li>
+            <li>Indica se i seguenti casi sono concorrenza, parallelismo o entrambi: download mentre scrivi un documento; rendering su otto core; server che serve più client.</li>
+            <li>Descrivi un rischio che nasce quando due thread modificano lo stesso dato.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>Concorrenza e parallelismo sono la stessa cosa?</summary>
+            <p>No. La concorrenza organizza più attività che avanzano nello stesso periodo; il parallelismo le esegue nello stesso istante su più unità di elaborazione.</p>
+          </details>
+          <details>
+            <summary>Perché i thread sono più delicati dei processi?</summary>
+            <p>Perché thread dello stesso processo condividono molti dati. Se li modificano senza coordinamento, possono produrre risultati incoerenti.</p>
+          </details>
+          <details>
+            <summary>A che cosa serve il context switch?</summary>
+            <p>Serve a sospendere un'attività e riprenderne un'altra, permettendo al sistema operativo di alternare più processi o thread.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Ricorda la catena: programma, processo, thread, attività. Poi separa bene i concetti: la concorrenza è organizzazione temporale, il parallelismo è esecuzione simultanea.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <span></span>
+      <a href="condivisione-delle-risorse.html">Successivo: Condivisione delle risorse</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

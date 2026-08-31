@@ -47,8 +47,8 @@
 <line x1="625" y1="285" x2="672" y2="245" class="arrow"/><polygon points="685,235 665,240 678,255" class="head"/>
 <line x1="765" y1="265" x2="765" y2="336" class="arrow"/><polygon points="765,350 756,334 774,334" class="head"/>
 
-<path d="M685 405 H650 C615 405 590 382 590 350 V318 C590 287 568 270 538 270" class="interrupt"/>
-<polygon points="525,270 543,260 543,280" class="ihead"/>
+<path d="M685 405 H650 C615 405 570 382 570 342 V338" class="interrupt"/>
+<polygon points="570,325 560,343 580,343" class="ihead"/>
 <rect x="390" y="360" width="230" height="44" rx="9" class="note"/>
 <text x="505" y="386" text-anchor="middle" class="small">interrupt: completato o errore</text>
 </svg>
