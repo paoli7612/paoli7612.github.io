@@ -1,37 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
   <title id="title">Concorrenza e parallelismo</title>
-  <desc id="desc">Confronto tra attività concorrenti su una CPU e attività parallele su più CPU.</desc>
+  <desc id="desc">Confronto tra concorrenza, in cui una CPU alterna rapidamente attivita, e parallelismo, in cui piu CPU o core eseguono attivita simultanee.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#006d77"/>
+    <filter id="softShadow" x="-10%" y="-30%" width="120%" height="170%">
+      <feDropShadow dx="0" dy="8" stdDeviation="11" flood-color="#102334" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrowTeal" viewBox="0 0 18 18" refX="16" refY="9" markerWidth="18" markerHeight="18" orient="auto">
+      <path d="M 1 2 L 17 9 L 1 16 z" fill="#087b86"/>
     </marker>
   </defs>
-  <rect x="18" y="18" width="724" height="294" rx="12" fill="#fff" stroke="#d8dee5"/>
-  <text x="60" y="58" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#17202a">Concorrenza</text>
-  <text x="455" y="58" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#17202a">Parallelismo</text>
-
-  <rect x="58" y="84" width="260" height="74" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
-  <text x="188" y="115" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Una CPU</text>
-  <text x="188" y="138" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">alterna rapidamente le attività</text>
-  <line x1="70" y1="195" x2="310" y2="195" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
-  <rect x="82" y="178" width="48" height="34" rx="6" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
-  <rect x="142" y="178" width="48" height="34" rx="6" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
-  <rect x="202" y="178" width="48" height="34" rx="6" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
-  <rect x="262" y="178" width="36" height="34" rx="6" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
-  <text x="106" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">A</text>
-  <text x="166" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">B</text>
-  <text x="226" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">A</text>
-  <text x="280" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">B</text>
-  <text x="188" y="246" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Le attività avanzano entrambe, ma non nello stesso istante.</text>
-
-  <rect x="442" y="84" width="260" height="74" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
-  <text x="572" y="115" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Più CPU o core</text>
-  <text x="572" y="138" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">eseguono attività nello stesso momento</text>
-  <line x1="462" y1="190" x2="690" y2="190" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
-  <line x1="462" y1="236" x2="690" y2="236" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
-  <rect x="485" y="173" width="150" height="34" rx="6" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
-  <rect x="485" y="219" width="150" height="34" rx="6" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
-  <text x="560" y="195" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">Attività A</text>
-  <text x="560" y="241" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">Attività B</text>
-  <text x="572" y="283" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Attività simultanee su risorse hardware separate.</text>
+  <rect x="16" y="20" width="968" height="394" rx="14" fill="#ffffff" stroke="#cbd6e2"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" fill="#102334">
+    <text x="72" y="73" font-size="25" font-weight="700">Concorrenza</text>
+    <text x="602" y="73" font-size="25" font-weight="700">Parallelismo</text>
+    <g filter="url(#softShadow)">
+      <rect x="70" y="108" width="350" height="100" rx="12" fill="#eaf4f1" stroke="#087b86" stroke-width="3"/>
+      <text x="245" y="150" text-anchor="middle" font-size="20" font-weight="700">Una CPU</text>
+      <text x="245" y="181" text-anchor="middle" font-size="16" fill="#41546b">alterna rapidamente le attività</text>
+      <rect x="585" y="108" width="350" height="100" rx="12" fill="#eaf4f1" stroke="#087b86" stroke-width="3"/>
+      <text x="760" y="150" text-anchor="middle" font-size="20" font-weight="700">Più CPU o core</text>
+      <text x="760" y="181" text-anchor="middle" font-size="16" fill="#41546b">eseguono attività nello stesso momento</text>
+    </g>
+    <g transform="translate(0 4)">
+      <line x1="86" y1="254" x2="446" y2="254" stroke="#087b86" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowTeal)"/>
+      <g font-size="16" font-weight="700" text-anchor="middle">
+        <rect x="102" y="230" width="65" height="48" rx="8" fill="#f7fbfd" stroke="#087b86" stroke-width="3"/>
+        <text x="134.5" y="260">A</text>
+        <rect x="183" y="230" width="65" height="48" rx="8" fill="#fff5ef" stroke="#c24f27" stroke-width="3"/>
+        <text x="215.5" y="260">B</text>
+        <rect x="264" y="230" width="65" height="48" rx="8" fill="#f7fbfd" stroke="#087b86" stroke-width="3"/>
+        <text x="296.5" y="260">A</text>
+        <rect x="345" y="230" width="49" height="48" rx="8" fill="#fff5ef" stroke="#c24f27" stroke-width="3"/>
+        <text x="369.5" y="260">B</text>
+      </g>
+    </g>
+    <g transform="translate(0 4)">
+      <line x1="612" y1="247" x2="921" y2="247" stroke="#087b86" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowTeal)"/>
+      <line x1="612" y1="310" x2="921" y2="310" stroke="#087b86" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowTeal)"/>
+      <rect x="643" y="224" width="202" height="46" rx="8" fill="#f7fbfd" stroke="#087b86" stroke-width="3"/>
+      <text x="744" y="253" text-anchor="middle" font-size="16" font-weight="700">Attività A</text>
+      <rect x="643" y="287" width="202" height="46" rx="8" fill="#fff5ef" stroke="#c24f27" stroke-width="3"/>
+      <text x="744" y="316" text-anchor="middle" font-size="16" font-weight="700">Attività B</text>
+    </g>
+    <text x="245" y="326" text-anchor="middle" font-size="16" fill="#41546b">Le attività avanzano entrambe, ma non nello stesso istante.</text>
+    <text x="760" y="376" text-anchor="middle" font-size="16" fill="#41546b">Attività simultanee su risorse hardware separate.</text>
+  </g>
 </svg>

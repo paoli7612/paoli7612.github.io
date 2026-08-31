@@ -1,39 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
-  <title id="title">Modelli di comunicazione tra processi</title>
-  <desc id="desc">Confronto tra memoria condivisa, pipe o code di messaggi e socket di rete.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" role="img" aria-labelledby="title desc">
+  <title id="title">Tre modelli principali di comunicazione tra processi</title>
+  <desc id="desc">Confronto tra memoria condivisa, messaggi e socket.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#006d77"/>
+    <filter id="softShadow" x="-10%" y="-25%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="11" flood-color="#102334" flood-opacity="0.08"/>
+    </filter>
+    <marker id="tealArrow" viewBox="0 0 18 18" refX="16" refY="9" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 2 L 17 9 L 1 16 z" fill="#087b86"/>
     </marker>
   </defs>
-  <rect x="18" y="18" width="724" height="304" rx="12" fill="#fff" stroke="#d8dee5"/>
-  <text x="132" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#17202a">Memoria condivisa</text>
-  <text x="380" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#17202a">Messaggi</text>
-  <text x="628" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#17202a">Socket</text>
-
-  <rect x="54" y="88" width="96" height="50" rx="9" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
-  <rect x="114" y="188" width="96" height="50" rx="9" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
-  <rect x="84" y="138" width="96" height="50" rx="9" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
-  <text x="102" y="118" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">Processo A</text>
-  <text x="162" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">Processo B</text>
-  <text x="132" y="167" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">Area comune</text>
-  <text x="132" y="272" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Veloce, ma richiede sincronizzazione.</text>
-
-  <rect x="302" y="102" width="86" height="48" rx="9" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
-  <rect x="372" y="198" width="86" height="48" rx="9" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
-  <line x1="388" y1="150" x2="372" y2="198" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
-  <rect x="326" y="158" width="108" height="34" rx="8" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
-  <text x="345" y="131" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">A</text>
-  <text x="415" y="227" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">B</text>
-  <text x="380" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">coda / pipe</text>
-  <text x="380" y="272" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">I dati viaggiano in un canale gestito.</text>
-
-  <rect x="552" y="98" width="96" height="50" rx="9" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
-  <rect x="610" y="204" width="96" height="50" rx="9" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
-  <line x1="648" y1="145" x2="610" y2="207" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
-  <text x="600" y="128" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">Client</text>
-  <text x="658" y="234" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#17202a">Server</text>
-  <rect x="560" y="164" width="120" height="26" rx="8" fill="#ffffff" stroke="#d8dee5"/>
-  <text x="620" y="182" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">rete + protocollo</text>
-  <text x="628" y="272" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Funziona anche tra macchine diverse.</text>
+  <rect x="20" y="20" width="1060" height="560" rx="14" fill="#ffffff" stroke="#cbd6e2"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <text x="70" y="74" font-size="28" font-weight="700" fill="#102334">Tre modelli principali</text>
+    <text x="70" y="106" font-size="17" fill="#52647a">I processi possono collaborare condividendo memoria, scambiando messaggi o comunicando in rete.</text>
+    <line x1="386" y1="142" x2="386" y2="514" stroke="#d7e0ea" stroke-width="2"/>
+    <line x1="714" y1="142" x2="714" y2="514" stroke="#d7e0ea" stroke-width="2"/>
+    <g transform="translate(70 136)">
+      <text x="150" y="28" text-anchor="middle" font-size="23" font-weight="700" fill="#102334">Memoria condivisa</text>
+      <g filter="url(#softShadow)">
+        <rect x="70" y="72" width="130" height="66" rx="10" fill="#eaf4f1" stroke="#087b86" stroke-width="3"/>
+        <rect x="110" y="136" width="130" height="66" rx="10" fill="#fff5ef" stroke="#c24f27" stroke-width="3"/>
+        <rect x="150" y="200" width="130" height="66" rx="10" fill="#eaf4f1" stroke="#087b86" stroke-width="3"/>
+      </g>
+      <text x="135" y="113" text-anchor="middle" font-size="16" font-weight="700" fill="#102334">Processo A</text>
+      <text x="175" y="177" text-anchor="middle" font-size="16" font-weight="700" fill="#102334">Area comune</text>
+      <text x="215" y="241" text-anchor="middle" font-size="16" font-weight="700" fill="#102334">Processo B</text>
+      <text x="150" y="342" text-anchor="middle" font-size="16" fill="#41546b">Veloce, ma richiede sincronizzazione.</text>
+    </g>
+    <g transform="translate(398 136)">
+      <text x="150" y="28" text-anchor="middle" font-size="23" font-weight="700" fill="#102334">Messaggi</text>
+      <line x1="128" y1="156" x2="175" y2="172" stroke="#087b86" stroke-width="3" stroke-linecap="round" marker-end="url(#tealArrow)"/>
+      <line x1="175" y1="220" x2="222" y2="250" stroke="#087b86" stroke-width="3" stroke-linecap="round" marker-end="url(#tealArrow)"/>
+      <g filter="url(#softShadow)">
+        <rect x="70" y="80" width="116" height="64" rx="10" fill="#eaf4f1" stroke="#087b86" stroke-width="3"/>
+        <rect x="102" y="172" width="146" height="48" rx="9" fill="#ffffff" stroke="#087b86" stroke-width="3"/>
+        <rect x="164" y="250" width="116" height="64" rx="10" fill="#eaf4f1" stroke="#087b86" stroke-width="3"/>
+      </g>
+      <text x="128" y="120" text-anchor="middle" font-size="16" font-weight="700" fill="#102334">A</text>
+      <text x="175" y="203" text-anchor="middle" font-size="16" fill="#41546b">coda / pipe</text>
+      <text x="222" y="290" text-anchor="middle" font-size="16" font-weight="700" fill="#102334">B</text>
+      <text x="150" y="342" text-anchor="middle" font-size="16" fill="#41546b">I dati viaggiano in un canale gestito.</text>
+    </g>
+    <g transform="translate(746 136)">
+      <text x="150" y="28" text-anchor="middle" font-size="23" font-weight="700" fill="#102334">Socket</text>
+      <line x1="212" y1="146" x2="174" y2="178" stroke="#087b86" stroke-width="3" stroke-linecap="round" marker-end="url(#tealArrow)"/>
+      <line x1="174" y1="220" x2="225" y2="248" stroke="#087b86" stroke-width="3" stroke-linecap="round" marker-end="url(#tealArrow)"/>
+      <g filter="url(#softShadow)">
+        <rect x="84" y="78" width="130" height="68" rx="10" fill="#eaf4f1" stroke="#087b86" stroke-width="3"/>
+        <rect x="94" y="178" width="160" height="42" rx="9" fill="#ffffff" stroke="#d5dee8" stroke-width="2"/>
+        <rect x="160" y="248" width="130" height="68" rx="10" fill="#eaf4f1" stroke="#087b86" stroke-width="3"/>
+      </g>
+      <text x="149" y="120" text-anchor="middle" font-size="16" font-weight="700" fill="#102334">Client</text>
+      <text x="174" y="205" text-anchor="middle" font-size="16" fill="#41546b">rete + protocollo</text>
+      <text x="225" y="290" text-anchor="middle" font-size="16" font-weight="700" fill="#102334">Server</text>
+      <text x="150" y="342" text-anchor="middle" font-size="16" fill="#41546b">Funziona anche tra macchine diverse.</text>
+    </g>
+  </g>
 </svg>

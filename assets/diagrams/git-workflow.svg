@@ -1,47 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
   <title id="title">Workflow Git con branch e merge</title>
-  <desc id="desc">Linea principale con commit, branch di sviluppo e merge finale.</desc>
+  <desc id="desc">Diagramma che mostra un ramo principale, la creazione di un branch, tre commit sul branch e il merge nel ramo principale.</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-      <path d="M0,0 L9,3 L0,6 Z" fill="#006d77"/>
+    <filter id="softShadow" x="-10%" y="-40%" width="120%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#102334" flood-opacity="0.10"/>
+    </filter>
+    <marker id="mainArrow" viewBox="0 0 16 16" refX="13" refY="8" markerWidth="16" markerHeight="16" orient="auto">
+      <path d="M 1 2 L 15 8 L 1 14 z" fill="#087b86"/>
     </marker>
-    <style>
-      .line{stroke:#006d77;stroke-width:4;stroke-linecap:round;fill:none;marker-end:url(#arrow)}
-      .branch{stroke:#c44f24;stroke-width:4;stroke-linecap:round;fill:none;marker-end:url(#arrow)}
-      .dot{fill:#fff;stroke:#006d77;stroke-width:4}
-      .bdot{fill:#fff;stroke:#c44f24;stroke-width:4}
-      .tag{fill:#fff;stroke:#d8dee5;stroke-width:1.5}
-      .branch-tag{fill:#fff3ea;stroke:#c44f24;stroke-width:1.5}
-      .label{font:700 16px Arial, sans-serif;fill:#17202a}
-      .small{font:14px Arial, sans-serif;fill:#5f6c78}
-      .tiny{font:12px Arial, sans-serif;fill:#5f6c78}
-    </style>
   </defs>
-  <rect width="920" height="420" rx="18" fill="#fbfcfb"/>
-  <text class="label" x="64" y="54">Workflow Git: branch e merge</text>
-  <text class="small" x="64" y="82">Il branch separa una nuova funzione; il merge la riporta nel ramo principale.</text>
-
-  <path class="line" d="M110 270 H805"/>
-  <circle class="dot" cx="135" cy="270" r="14"/>
-  <circle class="dot" cx="285" cy="270" r="14"/>
-  <circle class="dot" cx="725" cy="270" r="14"/>
-  <polygon points="835,270 795,252 795,288" fill="#006d77"/>
-
-  <rect class="tag" x="89" y="306" width="92" height="32" rx="8"/>
-  <text class="tiny" x="135" y="327" text-anchor="middle">commit iniziale</text>
-  <rect class="tag" x="239" y="306" width="92" height="32" rx="8"/>
-  <text class="tiny" x="285" y="327" text-anchor="middle">commit base</text>
-  <rect class="tag" x="681" y="306" width="88" height="32" rx="8"/>
-  <text class="tiny" x="725" y="327" text-anchor="middle">merge</text>
-  <text class="small" x="450" y="366" text-anchor="middle">ramo principale</text>
-
-  <path class="branch" d="M285 270 C350 150 470 118 580 158 C650 184 696 222 725 270"/>
-  <circle class="bdot" cx="405" cy="168" r="14"/>
-  <circle class="bdot" cx="532" cy="154" r="14"/>
-  <circle class="bdot" cx="642" cy="198" r="14"/>
-  <rect class="branch-tag" x="390" y="102" width="170" height="32" rx="8"/>
-  <text class="tiny" x="475" y="123" text-anchor="middle">branch: nuova funzione</text>
-  <text class="label" x="405" y="142" text-anchor="middle">A</text>
-  <text class="label" x="532" y="128" text-anchor="middle">B</text>
-  <text class="label" x="642" y="172" text-anchor="middle">C</text>
+  <rect x="20" y="8" width="1060" height="544" rx="10" fill="#ffffff" stroke="#cbd6e2"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <text x="100" y="80" font-size="22" font-weight="700" fill="#102334">Workflow Git: branch e merge</text>
+    <text x="100" y="112" font-size="17" fill="#506278">Un branch isola una nuova funzionalità; il merge integra le modifiche nel ramo principale.</text>
+    <g transform="translate(0 8)">
+      <line x1="150" y1="320" x2="920" y2="320" stroke="#087b86" stroke-width="6" stroke-linecap="round" marker-end="url(#mainArrow)"/>
+      <path d="M 346 320 C 430 165, 665 150, 835 320" fill="none" stroke="#c24f27" stroke-width="5" stroke-linecap="round"/>
+      <g fill="#ffffff" stroke-width="5">
+        <circle cx="180" cy="320" r="16" stroke="#087b86"/>
+        <circle cx="346" cy="320" r="16" stroke="#087b86"/>
+        <circle cx="835" cy="320" r="16" stroke="#087b86"/>
+        <circle cx="482" cy="208" r="16" stroke="#c24f27"/>
+        <circle cx="622" cy="192" r="16" stroke="#c24f27"/>
+        <circle cx="744" cy="240" r="16" stroke="#c24f27"/>
+      </g>
+      <g font-size="18" font-weight="700" fill="#102334">
+        <text x="482" y="180" text-anchor="middle">A</text>
+        <text x="622" y="164" text-anchor="middle">B</text>
+        <text x="744" y="212" text-anchor="middle">C</text>
+      </g>
+      <g filter="url(#softShadow)" font-size="14" fill="#41546b">
+        <rect x="128" y="360" width="104" height="36" rx="8" fill="#ffffff" stroke="#d5dee8" stroke-width="2"/>
+        <text x="180" y="383" text-anchor="middle">commit iniziale</text>
+        <rect x="294" y="360" width="104" height="36" rx="8" fill="#ffffff" stroke="#d5dee8" stroke-width="2"/>
+        <text x="346" y="383" text-anchor="middle">commit base</text>
+        <rect x="779" y="360" width="112" height="36" rx="8" fill="#ffffff" stroke="#d5dee8" stroke-width="2"/>
+        <text x="835" y="383" text-anchor="middle">merge</text>
+        <rect x="448" y="132" width="218" height="38" rx="9" fill="#fff9f5" stroke="#c24f27" stroke-width="2"/>
+        <text x="557" y="156" text-anchor="middle" fill="#794226">branch: nuova funzionalità</text>
+      </g>
+      <text x="540" y="428" text-anchor="middle" font-size="17" fill="#506278">ramo principale</text>
+      <text x="610" y="226" text-anchor="middle" font-size="16" fill="#794226">branch di lavoro</text>
+    </g>
+    <text x="55" y="516" font-size="17" fill="#52647a">Figura 1: i commit registrano la storia del progetto; i branch separano il lavoro; il merge riporta le modifiche nel ramo principale.</text>
+  </g>
 </svg>
