@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Rappresentazione binaria delle informazioni</title>
+  <desc id="desc">Schema che mostra come testi, immagini e suoni vengono trasformati in sequenze di bit.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#006d77"/></marker>
+    <style>
+      .box{fill:#fff;stroke:#d8dee5;stroke-width:2}.soft{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.warn{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 17px Arial,Helvetica,sans-serif;fill:#17202a}.s{font:14px Arial,Helvetica,sans-serif;fill:#2f4150}.bit{font:700 18px Consolas,monospace;fill:#006d77}.line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="box"/>
+  <text x="56" y="70" class="t">Ogni informazione diventa una codifica binaria</text>
+  <rect x="70" y="118" width="150" height="70" rx="8" class="soft"/><text x="145" y="148" text-anchor="middle" class="t">Testo</text><text x="145" y="170" text-anchor="middle" class="s">caratteri</text>
+  <rect x="70" y="226" width="150" height="70" rx="8" class="soft"/><text x="145" y="256" text-anchor="middle" class="t">Immagine</text><text x="145" y="278" text-anchor="middle" class="s">pixel</text>
+  <path d="M220 153 H325" class="line"/><path d="M220 261 H325" class="line"/>
+  <rect x="330" y="115" width="170" height="184" rx="8" class="warn"/><text x="415" y="150" text-anchor="middle" class="t">Codifica</text><text x="415" y="177" text-anchor="middle" class="s">regole condivise</text><text x="415" y="203" text-anchor="middle" class="s">che assegnano</text><text x="415" y="229" text-anchor="middle" class="s">un numero ai dati</text>
+  <path d="M500 207 H580" class="line"/>
+  <rect x="585" y="142" width="112" height="130" rx="8" class="soft"/>
+  <text x="641" y="176" text-anchor="middle" class="bit">01000001</text><text x="641" y="205" text-anchor="middle" class="bit">11100100</text><text x="641" y="234" text-anchor="middle" class="bit">00011010</text><text x="641" y="260" text-anchor="middle" class="s">bit e byte</text>
+  <text x="56" y="320" class="s">Figura 1: il computer conserva e trasmette dati usando sequenze di 0 e 1.</text>
+</svg>

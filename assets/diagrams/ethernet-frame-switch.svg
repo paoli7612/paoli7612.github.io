@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Frame Ethernet e switch</title>
+  <desc id="desc">Tre computer collegati a uno switch e un frame con indirizzi MAC sorgente e destinazione.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#006d77"/></marker><style>.box{fill:#fff;stroke:#d8dee5;stroke-width:2}.node{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.sw{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial,Helvetica,sans-serif;fill:#17202a}.s{font:14px Arial,Helvetica,sans-serif;fill:#2f4150}.line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="box"/><text x="56" y="66" class="t">Il livello di collegamento consegna frame nella rete locale</text>
+  <rect x="86" y="118" width="120" height="58" rx="8" class="node"/><text x="146" y="152" text-anchor="middle" class="t">PC A</text>
+  <rect x="320" y="150" width="120" height="70" rx="8" class="sw"/><text x="380" y="180" text-anchor="middle" class="t">Switch</text><text x="380" y="201" text-anchor="middle" class="s">tabella MAC</text>
+  <rect x="554" y="92" width="120" height="58" rx="8" class="node"/><text x="614" y="126" text-anchor="middle" class="t">PC B</text>
+  <rect x="554" y="232" width="120" height="58" rx="8" class="node"/><text x="614" y="266" text-anchor="middle" class="t">PC C</text>
+  <path d="M206 147 L311 178" class="line"/><path d="M440 178 L545 127" class="line"/><path d="M440 195 L545 256" class="line"/>
+  <rect x="112" y="252" width="440" height="42" rx="8" fill="#f6f7f4" stroke="#d8dee5" stroke-width="2"/><text x="130" y="278" class="s">Frame: MAC destinazione | MAC sorgente | tipo | dati | controllo errore</text>
+  <text x="56" y="326" class="s">Figura 1: lo switch inoltra i frame usando indirizzi MAC e porte fisiche.</text>
+</svg>

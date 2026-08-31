@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Ciclo fetch decode execute</title>
+  <desc id="desc">Schema circolare del ciclo con prelievo, decodifica, esecuzione e aggiornamento del program counter.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#006d77"/></marker><style>.box{fill:#fff;stroke:#d8dee5;stroke-width:2}.soft{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.warn{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial,Helvetica,sans-serif;fill:#17202a}.s{font:14px Arial,Helvetica,sans-serif;fill:#2f4150}.line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="box"/><text x="56" y="68" class="t">La CPU ripete continuamente un ciclo di lavoro</text>
+  <rect x="96" y="132" width="140" height="72" rx="8" class="soft"/><text x="166" y="161" text-anchor="middle" class="t">Fetch</text><text x="166" y="184" text-anchor="middle" class="s">preleva istruzione</text>
+  <rect x="310" y="132" width="140" height="72" rx="8" class="soft"/><text x="380" y="161" text-anchor="middle" class="t">Decode</text><text x="380" y="184" text-anchor="middle" class="s">interpreta opcode</text>
+  <rect x="524" y="132" width="140" height="72" rx="8" class="soft"/><text x="594" y="161" text-anchor="middle" class="t">Execute</text><text x="594" y="184" text-anchor="middle" class="s">calcola o trasferisce</text>
+  <path d="M236 168 H301" class="line"/><path d="M450 168 H515" class="line"/><path d="M594 204 C590 282 170 282 166 214" class="line"/>
+  <rect x="274" y="242" width="212" height="52" rx="8" class="warn"/><text x="380" y="264" text-anchor="middle" class="t">Aggiorna registri e PC</text><text x="380" y="285" text-anchor="middle" class="s">sceglie la prossima istruzione</text>
+  <text x="96" y="95" class="s">PC: indirizzo dell'istruzione. IR: istruzione corrente. ALU: unita aritmetico-logica.</text>
+  <text x="56" y="326" class="s">Figura 1: il linguaggio macchina viene eseguito come sequenza di istruzioni elementari.</text>
+</svg>

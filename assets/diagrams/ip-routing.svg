@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Instradamento IP</title>
+  <desc id="desc">Un pacchetto IP attraversa due router per raggiungere una rete di destinazione.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#006d77"/></marker><style>.box{fill:#fff;stroke:#d8dee5;stroke-width:2}.net{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.rt{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial,Helvetica,sans-serif;fill:#17202a}.s{font:14px Arial,Helvetica,sans-serif;fill:#2f4150}.line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="box"/><text x="56" y="66" class="t">IP sceglie il percorso tra reti diverse</text>
+  <rect x="70" y="135" width="130" height="80" rx="8" class="net"/><text x="135" y="166" text-anchor="middle" class="t">Rete A</text><text x="135" y="190" text-anchor="middle" class="s">192.168.1.0/24</text>
+  <rect x="268" y="138" width="92" height="74" rx="8" class="rt"/><text x="314" y="170" text-anchor="middle" class="t">Router</text><text x="314" y="192" text-anchor="middle" class="s">gateway</text>
+  <rect x="430" y="138" width="92" height="74" rx="8" class="rt"/><text x="476" y="170" text-anchor="middle" class="t">Router</text><text x="476" y="192" text-anchor="middle" class="s">next hop</text>
+  <rect x="590" y="135" width="130" height="80" rx="8" class="net"/><text x="655" y="166" text-anchor="middle" class="t">Rete B</text><text x="655" y="190" text-anchor="middle" class="s">10.0.0.0/24</text>
+  <path d="M200 175 H259" class="line"/><path d="M360 175 H421" class="line"/><path d="M522 175 H581" class="line"/>
+  <rect x="226" y="252" width="308" height="42" rx="8" fill="#f6f7f4" stroke="#d8dee5" stroke-width="2"/><text x="380" y="278" text-anchor="middle" class="s">Pacchetto: IP sorgente, IP destinazione, dati</text>
+  <text x="56" y="326" class="s">Figura 1: ogni router consulta la tabella di routing e inoltra verso il prossimo salto.</text>
+</svg>

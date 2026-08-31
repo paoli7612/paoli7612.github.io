@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">TCP, UDP e porte applicative</title>
+  <desc id="desc">Confronto tra TCP affidabile e UDP leggero con esempi di porte applicative.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#006d77"/></marker><style>.box{fill:#fff;stroke:#d8dee5;stroke-width:2}.soft{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.warn{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial,Helvetica,sans-serif;fill:#17202a}.s{font:14px Arial,Helvetica,sans-serif;fill:#2f4150}.line{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="box"/><text x="56" y="66" class="t">Il trasporto collega processi usando numeri di porta</text>
+  <rect x="70" y="132" width="130" height="70" rx="8" class="soft"/><text x="135" y="161" text-anchor="middle" class="t">Client</text><text x="135" y="184" text-anchor="middle" class="s">porta 53120</text>
+  <rect x="560" y="132" width="130" height="70" rx="8" class="soft"/><text x="625" y="161" text-anchor="middle" class="t">Server</text><text x="625" y="184" text-anchor="middle" class="s">porta 443</text>
+  <rect x="270" y="104" width="220" height="72" rx="8" class="warn"/><text x="380" y="134" text-anchor="middle" class="t">TCP</text><text x="380" y="157" text-anchor="middle" class="s">connessione, conferme, ordine</text>
+  <rect x="270" y="206" width="220" height="72" rx="8" class="warn"/><text x="380" y="236" text-anchor="middle" class="t">UDP</text><text x="380" y="259" text-anchor="middle" class="s">datagrammi rapidi, meno controlli</text>
+  <path d="M200 156 C235 130 235 130 261 140" class="line"/><path d="M490 140 C525 130 525 130 551 156" class="line"/><path d="M200 184 C235 230 235 230 261 242" class="line"/><path d="M490 242 C525 230 525 230 551 184" class="line"/>
+  <text x="78" y="256" class="s">Esempi: HTTP 80, HTTPS 443, DNS 53, SSH 22</text>
+  <text x="56" y="326" class="s">Figura 1: le porte permettono a piu applicazioni di condividere lo stesso indirizzo IP.</text>
+</svg>

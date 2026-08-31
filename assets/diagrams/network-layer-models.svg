@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-labelledby="title desc">
+  <title id="title">Confronto tra modello OSI e TCP/IP</title>
+  <desc id="desc">Due pile di livelli affiancate mostrano il modello OSI e il modello TCP/IP.</desc>
+  <defs><style>.box{fill:#fff;stroke:#d8dee5;stroke-width:2}.osi{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.tcp{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial,Helvetica,sans-serif;fill:#17202a}.s{font:14px Arial,Helvetica,sans-serif;fill:#2f4150}</style></defs>
+  <rect x="24" y="24" width="712" height="332" rx="8" class="box"/><text x="56" y="66" class="t">I modelli separano le responsabilita della comunicazione</text>
+  <text x="210" y="100" text-anchor="middle" class="t">ISO/OSI</text><text x="540" y="100" text-anchor="middle" class="t">TCP/IP</text>
+  <g class="osi"><rect x="110" y="118" width="200" height="30"/><rect x="110" y="148" width="200" height="30"/><rect x="110" y="178" width="200" height="30"/><rect x="110" y="208" width="200" height="30"/><rect x="110" y="238" width="200" height="30"/><rect x="110" y="268" width="200" height="30"/><rect x="110" y="298" width="200" height="30"/></g>
+  <text x="210" y="139" text-anchor="middle" class="s">Applicazione</text><text x="210" y="169" text-anchor="middle" class="s">Presentazione</text><text x="210" y="199" text-anchor="middle" class="s">Sessione</text><text x="210" y="229" text-anchor="middle" class="s">Trasporto</text><text x="210" y="259" text-anchor="middle" class="s">Rete</text><text x="210" y="289" text-anchor="middle" class="s">Collegamento</text><text x="210" y="319" text-anchor="middle" class="s">Fisico</text>
+  <g class="tcp"><rect x="440" y="118" width="200" height="84"/><rect x="440" y="202" width="200" height="42"/><rect x="440" y="244" width="200" height="42"/><rect x="440" y="286" width="200" height="42"/></g>
+  <text x="540" y="166" text-anchor="middle" class="s">Applicazione</text><text x="540" y="228" text-anchor="middle" class="s">Trasporto</text><text x="540" y="270" text-anchor="middle" class="s">Internet</text><text x="540" y="312" text-anchor="middle" class="s">Accesso alla rete</text>
+  <text x="56" y="346" class="s">Figura 1: OSI e TCP/IP sono mappe concettuali utili per collocare protocolli e dispositivi.</text>
+</svg>
