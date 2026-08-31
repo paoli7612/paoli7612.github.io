@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">VPN e accesso sicuro</title><desc id="desc">Utente remoto che accede alla rete aziendale attraverso un tunnel cifrato.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006d77"/></marker><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:4;fill:none;marker-end:url(#a)}.d{stroke:#c44f24;stroke-width:2;stroke-dasharray:8 8;fill:none}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">La VPN crea un canale logico protetto su Internet</text>
+  <rect x="70" y="145" width="140" height="72" rx="8" class="n"/><text x="140" y="176" text-anchor="middle" class="t">Utente remoto</text><text x="140" y="198" text-anchor="middle" class="s">notebook</text>
+  <ellipse cx="380" cy="181" rx="130" ry="62" fill="#f6f7f4" stroke="#d8dee5" stroke-width="2"/><text x="380" y="187" text-anchor="middle" class="t">Internet</text>
+  <rect x="560" y="145" width="140" height="72" rx="8" class="w"/><text x="630" y="176" text-anchor="middle" class="t">Gateway VPN</text><text x="630" y="198" text-anchor="middle" class="s">rete interna</text>
+  <path d="M210 181 H550" class="l"/><path d="M230 114 C330 68 484 72 548 130" class="d"/><path d="M230 248 C330 294 484 290 548 232" class="d"/>
+  <text x="56" y="326" class="s">Figura 1: autenticazione, cifratura e autorizzazioni rendono l'accesso remoto controllato.</text>
+</svg>

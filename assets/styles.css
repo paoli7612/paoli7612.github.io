@@ -676,6 +676,8 @@ main {
   main {
     width: min(358px, calc(100% - 32px));
     max-width: min(358px, calc(100% - 32px));
+    margin-right: 16px;
+    margin-left: 16px;
   }
 
   .study-page {

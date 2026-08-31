@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Progettazione di infrastrutture</title><desc id="desc">Schema da requisiti a rete, servizi, sicurezza, continuita e documentazione.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006d77"/></marker><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">La progettazione traduce bisogni in scelte tecniche</text>
+  <rect x="58" y="148" width="120" height="58" rx="8" class="n"/><text x="118" y="182" text-anchor="middle" class="t">Requisiti</text>
+  <rect x="226" y="92" width="120" height="58" rx="8" class="w"/><text x="286" y="126" text-anchor="middle" class="t">Topologia</text>
+  <rect x="226" y="204" width="120" height="58" rx="8" class="w"/><text x="286" y="238" text-anchor="middle" class="t">Indirizzi</text>
+  <rect x="410" y="92" width="120" height="58" rx="8" class="w"/><text x="470" y="126" text-anchor="middle" class="t">Servizi</text>
+  <rect x="410" y="204" width="120" height="58" rx="8" class="w"/><text x="470" y="238" text-anchor="middle" class="t">Sicurezza</text>
+  <rect x="582" y="148" width="120" height="58" rx="8" class="n"/><text x="642" y="182" text-anchor="middle" class="t">Documenti</text>
+  <path d="M178 177 C205 128 205 128 217 121" class="l"/><path d="M178 177 C205 225 205 225 217 233" class="l"/><path d="M346 121 H401" class="l"/><path d="M346 233 H401" class="l"/><path d="M530 121 C560 145 560 145 573 166" class="l"/><path d="M530 233 C560 210 560 210 573 188" class="l"/>
+  <text x="56" y="326" class="s">Figura 1: una buona infrastruttura nasce da requisiti misurabili e documentazione aggiornata.</text>
+</svg>

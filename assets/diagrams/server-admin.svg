@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Amministrazione di un server</title><desc id="desc">Server amministrato tramite account, aggiornamenti, log, backup e monitoraggio.</desc>
+  <defs><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">Amministrare significa mantenere servizi affidabili</text>
+  <rect x="310" y="132" width="140" height="92" rx="8" class="n"/><text x="380" y="169" text-anchor="middle" class="t">Server</text><text x="380" y="194" text-anchor="middle" class="s">servizi attivi</text>
+  <rect x="70" y="98" width="150" height="48" rx="8" class="w"/><text x="145" y="128" text-anchor="middle" class="t">Account</text>
+  <rect x="70" y="214" width="150" height="48" rx="8" class="w"/><text x="145" y="244" text-anchor="middle" class="t">Backup</text>
+  <rect x="540" y="98" width="150" height="48" rx="8" class="w"/><text x="615" y="128" text-anchor="middle" class="t">Aggiornamenti</text>
+  <rect x="540" y="214" width="150" height="48" rx="8" class="w"/><text x="615" y="244" text-anchor="middle" class="t">Log e metriche</text>
+  <path d="M220 122 H310" class="l"/><path d="M220 238 H310" class="l"/><path d="M450 122 H540" class="l"/><path d="M450 238 H540" class="l"/>
+  <text x="56" y="326" class="s">Figura 1: gestione degli utenti, aggiornamenti, backup e monitoraggio riducono i fermi servizio.</text>
+</svg>

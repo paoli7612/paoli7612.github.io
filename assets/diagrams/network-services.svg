@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Servizi fondamentali di rete</title><desc id="desc">Client che riceve configurazione DHCP, risolve nomi DNS e accede a un server web.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006d77"/></marker><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">DHCP, DNS e servizi applicativi lavorano insieme</text>
+  <rect x="70" y="150" width="120" height="62" rx="8" class="n"/><text x="130" y="185" text-anchor="middle" class="t">Client</text>
+  <rect x="286" y="82" width="140" height="58" rx="8" class="w"/><text x="356" y="116" text-anchor="middle" class="t">DHCP</text>
+  <rect x="286" y="152" width="140" height="58" rx="8" class="w"/><text x="356" y="186" text-anchor="middle" class="t">DNS</text>
+  <rect x="286" y="222" width="140" height="58" rx="8" class="w"/><text x="356" y="256" text-anchor="middle" class="t">File/Web</text>
+  <rect x="552" y="152" width="140" height="58" rx="8" class="n"/><text x="622" y="186" text-anchor="middle" class="t">Internet</text>
+  <path d="M190 174 C230 120 245 111 277 111" class="l"/><path d="M190 181 H277" class="l"/><path d="M426 181 H543" class="l"/><path d="M190 190 C230 248 245 251 277 251" class="l"/>
+  <text x="56" y="326" class="s">Figura 1: molti accessi dipendono da servizi invisibili all'utente ma essenziali alla rete.</text>
+</svg>

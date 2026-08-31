@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Configurazione IP di un host</title><desc id="desc">Scheda con IP, subnet, gateway e DNS di un computer in rete.</desc>
+  <defs><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">Per comunicare un host deve avere parametri coerenti</text>
+  <rect x="80" y="104" width="230" height="184" rx="8" class="n"/><text x="195" y="134" text-anchor="middle" class="t">PC laboratorio</text><text x="112" y="174" class="s">IP: 192.168.10.23</text><text x="112" y="204" class="s">Prefisso: /24</text><text x="112" y="234" class="s">Gateway: 192.168.10.1</text><text x="112" y="264" class="s">DNS: 192.168.10.10</text>
+  <rect x="450" y="118" width="170" height="62" rx="8" class="w"/><text x="535" y="154" text-anchor="middle" class="t">Gateway</text><rect x="450" y="226" width="170" height="62" rx="8" class="w"/><text x="535" y="262" text-anchor="middle" class="t">DNS</text>
+  <path d="M310 176 H450" class="l"/><path d="M310 242 H450" class="l"/><text x="56" y="326" class="s">Figura 1: IP e prefisso collocano l'host nella rete; gateway e DNS abilitano servizi esterni.</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Diagnostica di rete per livelli</title><desc id="desc">Scala di controlli: cavo, IP locale, gateway, DNS, servizio.</desc>
+  <defs><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">La diagnosi procede dal basso verso l'alto</text>
+  <rect x="95" y="250" width="570" height="42" rx="8" class="n"/><text x="380" y="277" text-anchor="middle" class="t">1. collegamento fisico o Wi-Fi</text>
+  <rect x="130" y="202" width="500" height="42" rx="8" class="n"/><text x="380" y="229" text-anchor="middle" class="t">2. indirizzo IP e subnet</text>
+  <rect x="165" y="154" width="430" height="42" rx="8" class="w"/><text x="380" y="181" text-anchor="middle" class="t">3. gateway raggiungibile</text>
+  <rect x="200" y="106" width="360" height="42" rx="8" class="w"/><text x="380" y="133" text-anchor="middle" class="t">4. DNS funzionante</text>
+  <rect x="235" y="58" width="290" height="42" rx="8" fill="#fff" stroke="#d8dee5" stroke-width="2"/><text x="380" y="85" text-anchor="middle" class="t">5. servizio applicativo</text>
+  <text x="56" y="326" class="s">Figura 1: isolare il livello del guasto evita prove casuali e rende la manutenzione più rapida.</text>
+</svg>

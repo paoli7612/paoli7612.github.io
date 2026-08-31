@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Obiettivi della sicurezza</title><desc id="desc">Triangolo con riservatezza, integrita e disponibilita.</desc>
+  <defs><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">La sicurezza protegge tre obiettivi principali</text>
+  <polygon points="380,96 570,260 190,260" fill="#f6f7f4" stroke="#d8dee5" stroke-width="2"/>
+  <rect x="300" y="76" width="160" height="52" rx="8" class="n"/><text x="380" y="108" text-anchor="middle" class="t">Riservatezza</text>
+  <rect x="104" y="236" width="172" height="52" rx="8" class="w"/><text x="190" y="268" text-anchor="middle" class="t">Integrità</text>
+  <rect x="484" y="236" width="172" height="52" rx="8" class="w"/><text x="570" y="268" text-anchor="middle" class="t">Disponibilità</text>
+  <text x="270" y="185" class="s">rischio = probabilità * impatto</text><line x1="250" y1="202" x2="510" y2="202" class="l"/>
+  <text x="56" y="326" class="s">Figura 1: controlli tecnici e organizzativi riducono vulnerabilità, minacce e danni.</text>
+</svg>

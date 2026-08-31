@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">LAN e VLAN</title><desc id="desc">Una rete locale con due VLAN separate e collegamento verso il router.</desc>
+  <defs><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.v1{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.v2{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none}.o{stroke:#c44f24;stroke-width:3;fill:none}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">Una LAN può essere separata logicamente in VLAN</text>
+  <rect x="84" y="112" width="230" height="152" rx="8" class="v1"/><text x="199" y="142" text-anchor="middle" class="t">VLAN 10 - studenti</text>
+  <rect x="446" y="112" width="230" height="152" rx="8" class="v2"/><text x="561" y="142" text-anchor="middle" class="t">VLAN 20 - docenti</text>
+  <rect x="160" y="176" width="78" height="42" rx="8" fill="#fff" stroke="#d8dee5" stroke-width="2"/><text x="199" y="202" text-anchor="middle" class="s">PC</text>
+  <rect x="522" y="176" width="78" height="42" rx="8" fill="#fff" stroke="#d8dee5" stroke-width="2"/><text x="561" y="202" text-anchor="middle" class="s">PC</text>
+  <rect x="324" y="164" width="112" height="58" rx="8" fill="#fff" stroke="#006d77" stroke-width="2"/><text x="380" y="198" text-anchor="middle" class="t">Switch</text>
+  <path d="M238 197 H324" class="l"/><path d="M436 197 H522" class="o"/><path d="M380 164 V104 H610" class="l"/><rect x="610" y="78" width="88" height="52" rx="8" fill="#fff" stroke="#c44f24" stroke-width="2"/><text x="654" y="109" text-anchor="middle" class="t">Router</text>
+  <text x="56" y="326" class="s">Figura 1: le VLAN separano domini logici anche quando i cavi arrivano allo stesso switch.</text>
+</svg>

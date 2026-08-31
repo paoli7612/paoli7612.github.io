@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Crittografia e TLS</title><desc id="desc">Client verifica certificato del server e poi comunica con chiave di sessione.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006d77"/></marker><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">TLS combina crittografia asimmetrica e simmetrica</text>
+  <rect x="80" y="140" width="130" height="70" rx="8" class="n"/><text x="145" y="170" text-anchor="middle" class="t">Client</text><text x="145" y="192" text-anchor="middle" class="s">browser</text>
+  <rect x="315" y="92" width="130" height="70" rx="8" class="w"/><text x="380" y="122" text-anchor="middle" class="t">Certificato</text><text x="380" y="144" text-anchor="middle" class="s">identità</text>
+  <rect x="550" y="140" width="130" height="70" rx="8" class="n"/><text x="615" y="170" text-anchor="middle" class="t">Server</text><text x="615" y="192" text-anchor="middle" class="s">HTTPS</text>
+  <path d="M210 162 C255 122 270 118 306 125" class="l"/><path d="M445 125 C490 118 505 122 541 162" class="l"/><path d="M210 195 H541" class="l"/><text x="380" y="225" text-anchor="middle" class="s">dopo la verifica: chiave di sessione per dati cifrati</text>
+  <text x="56" y="326" class="s">Figura 1: la crittografia protegge il contenuto e aiuta a verificare l'identità del server.</text>
+</svg>

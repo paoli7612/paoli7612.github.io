@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Dispositivi di rete</title><desc id="desc">Host collegati a switch, router, access point e firewall.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006d77"/></marker><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}.l{stroke:#006d77;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">Ogni dispositivo opera con un compito preciso</text>
+  <rect x="72" y="128" width="112" height="62" rx="8" class="n"/><text x="128" y="154" text-anchor="middle" class="t">Host</text><text x="128" y="176" text-anchor="middle" class="s">client/server</text>
+  <rect x="246" y="128" width="112" height="62" rx="8" class="n"/><text x="302" y="154" text-anchor="middle" class="t">Switch</text><text x="302" y="176" text-anchor="middle" class="s">LAN</text>
+  <rect x="420" y="128" width="112" height="62" rx="8" class="w"/><text x="476" y="154" text-anchor="middle" class="t">Router</text><text x="476" y="176" text-anchor="middle" class="s">tra reti</text>
+  <rect x="594" y="128" width="112" height="62" rx="8" class="w"/><text x="650" y="154" text-anchor="middle" class="t">Firewall</text><text x="650" y="176" text-anchor="middle" class="s">filtra traffico</text>
+  <path d="M184 159 H237" class="l"/><path d="M358 159 H411" class="l"/><path d="M532 159 H585" class="l"/>
+  <rect x="246" y="238" width="112" height="62" rx="8" class="n"/><text x="302" y="264" text-anchor="middle" class="t">Access point</text><text x="302" y="286" text-anchor="middle" class="s">Wi-Fi</text><path d="M302 190 V229" class="l"/>
+  <text x="56" y="326" class="s">Figura 1: conoscere il livello operativo dei dispositivi aiuta a progettare e diagnosticare una rete.</text>
+</svg>

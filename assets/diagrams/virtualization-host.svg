@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Virtualizzazione</title><desc id="desc">Host fisico con hypervisor e tre macchine virtuali.</desc>
+  <defs><style>.b{fill:#fff;stroke:#d8dee5;stroke-width:2}.n{fill:#e7f0ed;stroke:#006d77;stroke-width:2}.w{fill:#fff3ed;stroke:#c44f24;stroke-width:2}.t{font:700 16px Arial;fill:#17202a}.s{font:14px Arial;fill:#2f4150}</style></defs>
+  <rect x="24" y="24" width="712" height="312" rx="8" class="b"/><text x="56" y="66" class="t">Un host fisico può eseguire più ambienti isolati</text>
+  <rect x="90" y="106" width="580" height="198" rx="8" fill="#f6f7f4" stroke="#d8dee5" stroke-width="2"/><text x="380" y="286" text-anchor="middle" class="t">Hardware fisico: CPU, RAM, disco, rete</text>
+  <rect x="126" y="216" width="508" height="42" rx="8" class="w"/><text x="380" y="243" text-anchor="middle" class="t">Hypervisor</text>
+  <rect x="132" y="132" width="136" height="62" rx="8" class="n"/><text x="200" y="158" text-anchor="middle" class="t">VM 1</text><text x="200" y="180" text-anchor="middle" class="s">web</text>
+  <rect x="312" y="132" width="136" height="62" rx="8" class="n"/><text x="380" y="158" text-anchor="middle" class="t">VM 2</text><text x="380" y="180" text-anchor="middle" class="s">database</text>
+  <rect x="492" y="132" width="136" height="62" rx="8" class="n"/><text x="560" y="158" text-anchor="middle" class="t">VM 3</text><text x="560" y="180" text-anchor="middle" class="s">test</text>
+  <text x="56" y="326" class="s">Figura 1: la virtualizzazione migliora isolamento, consolidamento e gestione degli ambienti.</text>
+</svg>
