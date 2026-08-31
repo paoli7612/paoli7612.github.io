@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Protocolli applicativi | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro TPSIT sui protocolli applicativi: sintassi, semantica, comandi, risposte, stati, errori e versioni.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -43,49 +43,188 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/programmazione-di-rete.html">Programmazione di rete</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Protocolli applicativi</h1>
-              <p>Programmazione di rete</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>utilizzo dei protocolli</h2>
-                    <p>Le applicazioni possono implementare protocolli propri oppure utilizzare protocolli applicativi standard.</p>
-<p>La conoscenza delle regole del protocollo permette di realizzare client e server interoperabili.</p>
-                  </section>
-<section class="content-block">
-                    <h2>HTTP</h2>
-                    <p>HTTP utilizza un modello basato su richieste e risposte per permettere la comunicazione tra client e server Web.</p>
-<p>Metodi, URI, header, codici di stato e body costituiscono elementi fondamentali dei messaggi HTTP.</p>
-                  </section>
-<section class="content-block">
-                    <h2>protocolli testuali e binari</h2>
-                    <p>I protocolli possono rappresentare i messaggi in formato testuale oppure utilizzare codifiche binarie.</p>
-<p>Le due soluzioni presentano differenti caratteristiche in termini di leggibilità, efficienza e complessità.</p>
-                  </section>
-<section class="content-block">
-                    <h2>analisi e realizzazione</h2>
-                    <p>L'analisi di protocolli esistenti permette di comprenderne struttura e funzionamento attraverso esempi reali.</p>
-<p>La progettazione di semplici protocolli applicativi permette di applicare concretamente i principi della comunicazione distribuita.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="scambio-e-rappresentazione-dei-dati.html">Precedente: Scambio e rappresentazione dei dati</a>
-            <span></span>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/programmazione-di-rete.html">Programmazione di rete</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 4</p>
+        <h1>Protocolli applicativi</h1>
+        <p>Un protocollo applicativo stabilisce le regole con cui due programmi si capiscono. Non basta inviare dati: bisogna decidere forma dei messaggi, ordine, significato, errori, stati e versioni.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Definire che cos'è un protocollo applicativo.</li>
+            <li>Distinguere sintassi, semantica e temporizzazione.</li>
+            <li>Progettare comandi e codici di risposta.</li>
+            <li>Riconoscere protocolli stateless e stateful.</li>
+            <li>Scrivere una specifica semplice e verificabile.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Che cos'è un protocollo applicativo</h2>
+          <p>Un <strong>protocollo applicativo</strong> è un insieme di regole usate da programmi per scambiarsi messaggi significativi. TCP o UDP trasportano i dati, ma il protocollo applicativo spiega che cosa quei dati vogliono dire.</p>
+          <p>Esempi di protocolli applicativi sono HTTP per il web, SMTP per la posta inviata, IMAP per leggere email, DNS per risolvere nomi di dominio. Anche un'applicazione scolastica può definire un protocollo proprio, se client e server rispettano le stesse regole.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/application-protocol-exchange.svg" alt="Schema di protocollo applicativo con richiesta e risposta">
+            <figcaption>Figura 1: un protocollo definisce ordine e significato dei messaggi scambiati tra client e server.</figcaption>
+          </figure>
+        </section>
+
+        <section class="content-block">
+          <h2>Sintassi, semantica e temporizzazione</h2>
+          <p>Per descrivere un protocollo servono tre aspetti. La <strong>sintassi</strong> dice come sono scritti i messaggi. La <strong>semantica</strong> dice che cosa significano. La <strong>temporizzazione</strong> dice quando possono essere inviati e in quale ordine.</p>
+          <table>
+            <thead>
+              <tr><th>Aspetto</th><th>Domanda</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sintassi</td><td>Come è fatto il messaggio?</td><td><code>PRENOTA aula data ora</code></td></tr>
+              <tr><td>Semantica</td><td>Che cosa significa?</td><td>Richiede una prenotazione.</td></tr>
+              <tr><td>Temporizzazione</td><td>Quando si può inviare?</td><td>Solo dopo autenticazione.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Comandi e risposte</h2>
+          <p>Molti protocolli organizzano i messaggi in comandi e risposte. Il client invia un comando con eventuali parametri; il server risponde con un codice, un messaggio e, se serve, dei dati.</p>
+          <pre><code>Richiesta:
+PRENOTA laboratorio-2 2026-04-10 09:00 11:00
+
+Risposta positiva:
+200 OK prenotazione-458
+
+Risposta negativa:
+409 ERRORE laboratorio già occupato</code></pre>
+          <p>I codici numerici aiutano i programmi a reagire in modo automatico; il testo descrittivo aiuta gli utenti e gli sviluppatori a capire il problema.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Codici di stato</h2>
+          <p>I codici di stato riassumono l'esito della richiesta. HTTP usa codici molto noti, ma anche un protocollo semplice può adottare categorie simili: successo, errore del client, errore del server.</p>
+          <table>
+            <thead>
+              <tr><th>Categoria</th><th>Significato</th><th>Esempio didattico</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2xx</td><td>Operazione riuscita.</td><td><code>200 OK</code></td></tr>
+              <tr><td>4xx</td><td>Richiesta non valida o non autorizzata.</td><td><code>401 NON_AUTORIZZATO</code>, <code>404 NON_TROVATO</code></td></tr>
+              <tr><td>409</td><td>Conflitto con lo stato attuale.</td><td>Laboratorio già prenotato.</td></tr>
+              <tr><td>5xx</td><td>Errore del server.</td><td><code>500 ERRORE_SERVER</code></td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Stato, sessione e autenticazione</h2>
+          <p>Un protocollo può essere stateless o stateful. In un protocollo stateless ogni richiesta contiene le informazioni necessarie. In un protocollo stateful il server mantiene una sessione, per esempio dopo il login.</p>
+          <pre><code>LOGIN docente password
+200 OK sessione=abc123
+
+PRENOTA sessione=abc123 aula=lab2 data=2026-04-10
+200 OK prenotazione creata</code></pre>
+          <p>Quando si usa una sessione, bisogna specificare durata, chiusura, permessi e comportamento in caso di token scaduto. Questi dettagli fanno parte della progettazione del protocollo.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Versioni e compatibilità</h2>
+          <p>Un protocollo può cambiare nel tempo. Aggiungere un campo, cambiare un comando o modificare il significato di una risposta può rompere i client esistenti. Per questo è utile indicare una versione.</p>
+          <table>
+            <thead>
+              <tr><th>Scelta</th><th>Perché serve</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Versione nel messaggio</td><td>Client e server sanno quali regole usare.</td><td><code>TPSIT/1.0 PRENOTA ...</code></td></tr>
+              <tr><td>Campi opzionali</td><td>Permettono evoluzione graduale.</td><td>Aggiungere note alla prenotazione.</td></tr>
+              <tr><td>Documentazione</td><td>Evita interpretazioni diverse.</td><td>Specifica dei comandi accettati.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Progettare un protocollo semplice</h2>
+          <p>Una buona specifica di protocollo deve essere chiara e verificabile. Chi la legge deve poter implementare un client o un server senza chiedere ogni dettaglio a voce.</p>
+          <ol>
+            <li>Definisci lo scopo del protocollo.</li>
+            <li>Elenca i comandi ammessi.</li>
+            <li>Descrivi formato e parametri di ogni comando.</li>
+            <li>Definisci le risposte possibili e i codici di errore.</li>
+            <li>Indica ordine dei messaggi e stati della sessione.</li>
+            <li>Scrivi esempi completi di richiesta e risposta.</li>
+          </ol>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: protocollo per la biblioteca</h2>
+          <p>Supponiamo di progettare un protocollo testuale per cercare libri e registrare prestiti. Ogni messaggio termina con una nuova riga e i parametri sono separati da spazi. Le stringhe lunghe possono essere scritte tra virgolette.</p>
+          <pre><code>CERCA "reti"
+200 OK 3 risultati
+
+PRESTA libro=42 utente=rossi.mario
+200 OK prestito=881 scadenza=2026-05-20
+
+PRESTA libro=42 utente=bianchi.luca
+409 ERRORE libro non disponibile</code></pre>
+          <p>Questo esempio mostra sintassi, semantica ed errori. Per completarlo servirebbe anche specificare autenticazione, permessi e formato dettagliato dei risultati.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Errori comuni</h2>
+          <ul>
+            <li>Non documentare i comandi ammessi.</li>
+            <li>Usare messaggi ambigui, difficili da interpretare automaticamente.</li>
+            <li>Dimenticare codici di errore e casi limite.</li>
+            <li>Non indicare dove finisce un messaggio.</li>
+            <li>Cambiare il protocollo senza gestire la compatibilità.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Progetta tre comandi per un protocollo di prenotazione laboratori.</li>
+            <li>Scrivi una risposta positiva e una negativa per il comando <code>CANCELLA_PRENOTAZIONE</code>.</li>
+            <li>Indica sintassi, semantica e temporizzazione del comando <code>LOGIN</code>.</li>
+            <li>Spiega perché conviene documentare una versione del protocollo.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>TCP è un protocollo applicativo?</summary>
+            <p>No. TCP è un protocollo di trasporto. Un protocollo applicativo, come HTTP, definisce il significato dei messaggi scambiati dalle applicazioni.</p>
+          </details>
+          <details>
+            <summary>Perché servono codici di risposta?</summary>
+            <p>Per permettere al client di capire subito l'esito della richiesta e reagire in modo automatico.</p>
+          </details>
+          <details>
+            <summary>Che cosa deve contenere una specifica di protocollo?</summary>
+            <p>Deve contenere formato dei messaggi, comandi, parametri, risposte, errori, ordine degli scambi, eventuali stati e versioni.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Un protocollo applicativo è un contratto tra programmi. Per studiarlo chiediti sempre: come sono scritti i messaggi, che cosa significano, in quale ordine si inviano e come vengono gestiti gli errori.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="scambio-e-rappresentazione-dei-dati.html">Precedente: Scambio e rappresentazione dei dati</a>
+      <span></span>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

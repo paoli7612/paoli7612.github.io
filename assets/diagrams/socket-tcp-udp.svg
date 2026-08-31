@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 350" role="img" aria-labelledby="title desc">
+  <title id="title">Socket TCP e UDP</title>
+  <desc id="desc">Confronto tra comunicazione TCP orientata alla connessione e comunicazione UDP a datagrammi.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#006d77"/>
+    </marker>
+  </defs>
+  <rect x="18" y="18" width="724" height="314" rx="12" fill="#fff" stroke="#d8dee5"/>
+  <text x="190" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#17202a">TCP</text>
+  <text x="570" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#17202a">UDP</text>
+
+  <rect x="66" y="88" width="112" height="52" rx="9" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <rect x="250" y="88" width="112" height="52" rx="9" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="122" y="119" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#17202a">Client</text>
+  <text x="306" y="119" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#17202a">Server</text>
+  <line x1="178" y1="104" x2="250" y2="104" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="250" y1="124" x2="178" y2="124" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="214" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#34495e">connessione</text>
+  <rect x="80" y="180" width="250" height="56" rx="9" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
+  <text x="205" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#17202a">Flusso ordinato e affidabile</text>
+  <text x="205" y="224" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">ritrasmissioni e controllo dell'ordine</text>
+  <text x="205" y="282" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Utile per pagine web, file, email e dati che non devono perdersi.</text>
+
+  <rect x="446" y="88" width="112" height="52" rx="9" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <rect x="630" y="88" width="72" height="52" rx="9" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="502" y="119" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#17202a">Mittente</text>
+  <text x="666" y="119" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#17202a">Dest.</text>
+  <line x1="558" y1="100" x2="630" y2="100" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="558" y1="118" x2="630" y2="118" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="558" y1="136" x2="630" y2="136" stroke="#006d77" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+  <rect x="452" y="180" width="250" height="56" rx="9" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
+  <text x="577" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#17202a">Datagrammi indipendenti</text>
+  <text x="577" y="224" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">meno overhead, possibile perdita</text>
+  <text x="577" y="282" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Utile per streaming, giochi, DNS e dati frequenti.</text>
+</svg>

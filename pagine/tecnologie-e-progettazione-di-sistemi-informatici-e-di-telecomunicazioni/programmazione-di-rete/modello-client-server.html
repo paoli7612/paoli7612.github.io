@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Modello client-server | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro TPSIT sul modello client-server, richieste, risposte, porte e concorrenza lato server.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -43,49 +43,153 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/programmazione-di-rete.html">Programmazione di rete</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Modello client-server</h1>
-              <p>Programmazione di rete</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>client e server</h2>
-                    <p>Nel modello client-server il client richiede un servizio e il server rimane disponibile per ricevere e gestire le richieste.</p>
-<p>La separazione dei ruoli permette a più client di utilizzare servizi centralizzati attraverso la rete.</p>
-                  </section>
-<section class="content-block">
-                    <h2>richieste e risposte</h2>
-                    <p>Molti protocolli applicativi organizzano la comunicazione come scambio di richieste e relative risposte.</p>
-<p>Client e server devono condividere un protocollo che stabilisca formato, significato e sequenza dei messaggi.</p>
-                  </section>
-<section class="content-block">
-                    <h2>server iterativi e concorrenti</h2>
-                    <p>Un server iterativo gestisce normalmente una richiesta alla volta, mentre un server concorrente può servire più client contemporaneamente.</p>
-<p>Processi, thread o modelli asincroni permettono di implementare differenti strategie di concorrenza lato server.</p>
-                  </section>
-<section class="content-block">
-                    <h2>progettazione del protocollo</h2>
-                    <p>Un protocollo applicativo deve stabilire struttura e significato dei messaggi scambiati.</p>
-<p>È necessario considerare delimitazione dei messaggi, codifica dei dati, gestione degli errori e chiusura della comunicazione.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <span></span>
-            <a href="socket.html">Successivo: Socket</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/programmazione-di-rete.html">Programmazione di rete</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 1</p>
+        <h1>Modello client-server</h1>
+        <p>Molte applicazioni di rete si basano su un'idea semplice: un programma richiede un servizio e un altro programma lo fornisce. Il primo è il client, il secondo è il server.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Distinguere client e server in una comunicazione di rete.</li>
+            <li>Capire il ciclo richiesta-risposta.</li>
+            <li>Collegare indirizzi IP, porte e servizi.</li>
+            <li>Descrivere come un server gestisce più client.</li>
+            <li>Confrontare client-server e peer-to-peer.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Client e server</h2>
+          <p>Il <strong>client</strong> è il programma che avvia la comunicazione perché ha bisogno di un servizio: una pagina web, un file, una ricerca, un dato del registro elettronico. Il <strong>server</strong> resta in ascolto e risponde alle richieste che arrivano.</p>
+          <p>I ruoli non dipendono dal tipo di computer. Un portatile può eseguire un server locale, e una macchina potente può comportarsi da client verso un altro servizio. Ciò che conta è il ruolo nella comunicazione.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/network-client-server.svg" alt="Schema del modello client-server con più client e un server">
+            <figcaption>Figura 1: più client possono contattare lo stesso server, che riceve richieste ed invia risposte.</figcaption>
+          </figure>
+        </section>
+
+        <section class="content-block">
+          <h2>Richiesta e risposta</h2>
+          <p>La comunicazione client-server segue spesso un ciclo: il client prepara una richiesta, la invia, il server la interpreta, esegue un'elaborazione e restituisce una risposta. Nel web, per esempio, il browser invia una richiesta HTTP e il server risponde con HTML, CSS, immagini, JSON o codici di errore.</p>
+          <pre><code>Client:  vorrei la pagina /materie/tpsit.html
+Server:  controllo se esiste e se puoi leggerla
+Server:  invio contenuto o errore
+Client:  visualizzo il risultato all'utente</code></pre>
+        </section>
+
+        <section class="content-block">
+          <h2>Indirizzi IP, porte e servizi</h2>
+          <p>Per raggiungere un server bisogna sapere dove si trova e quale servizio usare. L'<strong>indirizzo IP</strong> identifica un dispositivo nella rete; la <strong>porta</strong> identifica un servizio in ascolto su quel dispositivo.</p>
+          <table>
+            <thead>
+              <tr><th>Elemento</th><th>Funzione</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Indirizzo IP</td><td>Indica la macchina da raggiungere.</td><td><code>192.168.1.20</code></td></tr>
+              <tr><td>Porta</td><td>Indica il servizio sulla macchina.</td><td><code>80</code> per HTTP, <code>443</code> per HTTPS.</td></tr>
+              <tr><td>Protocollo</td><td>Definisce le regole dello scambio.</td><td>HTTP, FTP, SMTP, DNS.</td></tr>
+              <tr><td>URL</td><td>Rende leggibile l'indirizzo di una risorsa.</td><td><code>https://scuola.it/orario</code></td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Server concorrente</h2>
+          <p>Un server reale deve gestire più client. Se elaborasse una richiesta alla volta, un client lento potrebbe bloccare tutti gli altri. Per questo i server usano concorrenza, thread, processi, code di richieste o modelli asincroni.</p>
+          <p>La concorrenza lato server va progettata con attenzione: più richieste possono modificare gli stessi dati, aprire file, usare connessioni al database o consumare memoria. Per questo la programmazione di rete è collegata alla programmazione concorrente.</p>
+          <aside class="simple-box">
+            <strong>Collegamento TPSIT</strong>
+            <p>Un server multi-client è un caso concreto di programmazione concorrente: molte richieste avanzano nello stesso periodo e devono condividere risorse senza corrompere i dati.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Stato della comunicazione</h2>
+          <p>Un servizio è <strong>stateless</strong> quando ogni richiesta contiene tutto ciò che serve per essere elaborata. È <strong>stateful</strong> quando il server mantiene informazioni sulla conversazione o sull'utente tra una richiesta e l'altra.</p>
+          <table>
+            <thead>
+              <tr><th>Tipo</th><th>Caratteristica</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Stateless</td><td>Ogni richiesta è indipendente.</td><td>Richiesta di una pagina pubblica.</td></tr>
+              <tr><td>Stateful</td><td>Il sistema conserva uno stato della sessione.</td><td>Carrello di un e-commerce o login utente.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Client-server e peer-to-peer</h2>
+          <p>Nel modello client-server i ruoli sono distinti: il server offre servizi, i client li usano. Nel modello <strong>peer-to-peer</strong> i nodi possono comportarsi sia da client sia da server, condividendo direttamente risorse tra loro.</p>
+          <table>
+            <thead>
+              <tr><th>Modello</th><th>Vantaggio</th><th>Limite</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Client-server</td><td>Controllo centralizzato, gestione chiara, sicurezza più semplice.</td><td>Il server può diventare un punto critico.</td></tr>
+              <tr><td>Peer-to-peer</td><td>Distribuisce risorse e carico tra nodi.</td><td>Coordinamento e sicurezza più complessi.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: registro di classe</h2>
+          <ol>
+            <li>Il browser del docente è il client.</li>
+            <li>Il server del registro riceve la richiesta di inserire un voto.</li>
+            <li>Il server controlla autenticazione e autorizzazione.</li>
+            <li>Il server salva il voto nel database.</li>
+            <li>Il client riceve una risposta: operazione riuscita o errore.</li>
+          </ol>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Individua client e server quando apri una pagina web.</li>
+            <li>Spiega perché un server deve ascoltare su una porta.</li>
+            <li>Descrivi un servizio stateful e uno stateless.</li>
+            <li>Scrivi una sequenza richiesta-risposta per una prenotazione del laboratorio.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>Il server è sempre un computer speciale?</summary>
+            <p>No. Un server è un programma che offre un servizio. Può girare su un computer dedicato, su un portatile o su una macchina virtuale.</p>
+          </details>
+          <details>
+            <summary>A che cosa serve una porta?</summary>
+            <p>Serve a distinguere i servizi attivi sulla stessa macchina. L'IP identifica il dispositivo, la porta identifica il servizio.</p>
+          </details>
+          <details>
+            <summary>Perché un server usa la concorrenza?</summary>
+            <p>Per gestire più client senza bloccare tutti quando una richiesta è lenta o richiede attesa.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Memorizza la frase: il client chiede, il server risponde. Poi aggiungi i dettagli tecnici: IP per trovare la macchina, porta per trovare il servizio, protocollo per capire i messaggi.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <span></span>
+      <a href="socket.html">Successivo: Socket</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

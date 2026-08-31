@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
+  <title id="title">Serializzazione dei dati</title>
+  <desc id="desc">Un oggetto applicativo viene trasformato in byte, inviato sulla rete e ricostruito dal destinatario.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#006d77"/>
+    </marker>
+  </defs>
+  <rect x="18" y="18" width="724" height="304" rx="12" fill="#fff" stroke="#d8dee5"/>
+  <rect x="54" y="106" width="148" height="92" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <text x="128" y="134" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Oggetto</text>
+  <text x="128" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">nome: "Ada"</text>
+  <text x="128" y="179" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">classe: "4B"</text>
+
+  <rect x="258" y="106" width="148" height="92" rx="10" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="332" y="134" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Formato</text>
+  <text x="332" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">JSON, XML, CSV</text>
+  <text x="332" y="179" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">regole condivise</text>
+
+  <rect x="462" y="106" width="110" height="92" rx="10" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
+  <text x="517" y="134" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Byte</text>
+  <text x="517" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">sequenza</text>
+  <text x="517" y="179" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">trasmessa</text>
+
+  <rect x="628" y="106" width="78" height="92" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <text x="667" y="143" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#17202a">Oggetto</text>
+  <text x="667" y="168" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">ricostruito</text>
+
+  <line x1="202" y1="152" x2="258" y2="152" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="406" y1="152" x2="462" y2="152" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="572" y1="152" x2="628" y2="152" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="230" y="135" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#34495e">serializza</text>
+  <text x="434" y="135" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#34495e">codifica</text>
+  <text x="600" y="135" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#34495e">decodifica</text>
+  <text x="380" y="260" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Mittente e destinatario devono conoscere lo stesso formato e la stessa codifica.</text>
+</svg>

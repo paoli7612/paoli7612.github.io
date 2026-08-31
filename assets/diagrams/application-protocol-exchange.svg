@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Protocollo applicativo richiesta risposta</title>
+  <desc id="desc">Sequenza di messaggi tra client e server secondo un protocollo applicativo.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#006d77"/>
+    </marker>
+  </defs>
+  <rect x="18" y="18" width="724" height="324" rx="12" fill="#fff" stroke="#d8dee5"/>
+  <rect x="80" y="58" width="132" height="52" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <rect x="548" y="58" width="132" height="52" rx="10" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="146" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Client</text>
+  <text x="614" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#17202a">Server</text>
+  <line x1="146" y1="110" x2="146" y2="306" stroke="#d8dee5" stroke-width="2"/>
+  <line x1="614" y1="110" x2="614" y2="306" stroke="#d8dee5" stroke-width="2"/>
+
+  <line x1="146" y1="148" x2="614" y2="148" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="282" y="124" width="196" height="34" rx="8" fill="#f7fbff" stroke="#006d77"/>
+  <text x="380" y="146" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">COMANDO + dati</text>
+
+  <line x1="614" y1="206" x2="146" y2="206" stroke="#c44f24" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="282" y="182" width="196" height="34" rx="8" fill="#fff1ea" stroke="#c44f24"/>
+  <text x="380" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">CODICE + risultato</text>
+
+  <line x1="146" y1="264" x2="614" y2="264" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="282" y="240" width="196" height="34" rx="8" fill="#f7fbff" stroke="#006d77"/>
+  <text x="380" y="262" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">nuova richiesta o chiusura</text>
+  <text x="380" y="324" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#34495e">Un protocollo stabilisce sintassi, ordine dei messaggi, significato e gestione degli errori.</text>
+</svg>

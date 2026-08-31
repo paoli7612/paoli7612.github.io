@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Socket | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro TPSIT sui socket: endpoint, indirizzi, porte, TCP, UDP e ciclo di vita della comunicazione.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -43,49 +43,169 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/programmazione-di-rete.html">Programmazione di rete</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Socket</h1>
-              <p>Programmazione di rete</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>endpoint di comunicazione</h2>
-                    <p>Un socket costituisce un endpoint software attraverso cui un'applicazione comunica utilizzando i protocolli di rete.</p>
-<p>Indirizzi IP, porte e protocollo di trasporto permettono di identificare gli endpoint coinvolti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>socket TCP</h2>
-                    <p>Le socket TCP utilizzano una connessione affidabile attraverso la quale viene trasferito un flusso ordinato di byte.</p>
-<p>Client e server eseguono operazioni differenti per stabilire la connessione prima di poter scambiare dati.</p>
-                  </section>
-<section class="content-block">
-                    <h2>socket UDP</h2>
-                    <p>Le socket UDP scambiano datagrammi senza stabilire preventivamente una connessione.</p>
-<p>L'applicazione deve considerare che i datagrammi possono essere persi, duplicati o ricevuti in ordine differente.</p>
-                  </section>
-<section class="content-block">
-                    <h2>gestione delle connessioni</h2>
-                    <p>Le applicazioni devono gestire apertura, utilizzo e chiusura delle socket e le eventuali condizioni di errore.</p>
-<p>Timeout ed eccezioni permettono di evitare che un programma rimanga indefinitamente bloccato a causa di problemi di comunicazione.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="modello-client-server.html">Precedente: Modello client-server</a>
-            <a href="scambio-e-rappresentazione-dei-dati.html">Successivo: Scambio e rappresentazione dei dati</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/programmazione-di-rete.html">Programmazione di rete</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 2</p>
+        <h1>Socket</h1>
+        <p>Un socket è il punto di accesso software con cui un'applicazione invia e riceve dati in rete. Per programmare applicazioni client-server bisogna capire indirizzi, porte, protocolli di trasporto e gestione degli errori.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Definire che cos'è un socket.</li>
+            <li>Collegare socket, indirizzo IP, porta e protocollo.</li>
+            <li>Distinguere socket TCP e socket UDP.</li>
+            <li>Descrivere le fasi principali di client e server.</li>
+            <li>Riconoscere errori comuni nelle comunicazioni di rete.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Che cos'è un socket</h2>
+          <p>Un <strong>socket</strong> è un endpoint di comunicazione: rappresenta una delle due estremità di un collegamento tra applicazioni. Attraverso il socket un programma può inviare byte verso un altro processo e ricevere byte da esso.</p>
+          <p>Un socket non è il cavo di rete e non è il protocollo completo: è l'interfaccia offerta dal sistema operativo al programma. Il programma chiede al sistema operativo di aprire, usare e chiudere la comunicazione.</p>
+          <aside class="simple-box">
+            <strong>Idea chiave</strong>
+            <p>Il socket sta tra applicazione e rete: il programma lo usa come porta software per parlare con un altro programma.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Indirizzo, porta e trasporto</h2>
+          <p>Per comunicare bisogna sapere quale macchina raggiungere e quale servizio contattare. L'indirizzo IP individua l'host, la porta individua l'applicazione o il servizio, il protocollo di trasporto stabilisce come i dati viaggiano.</p>
+          <table>
+            <thead>
+              <tr><th>Elemento</th><th>Domanda a cui risponde</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>IP</td><td>Dove si trova la macchina?</td><td><code>192.168.1.30</code></td></tr>
+              <tr><td>Porta</td><td>Quale servizio sto contattando?</td><td><code>8080</code>, <code>443</code></td></tr>
+              <tr><td>TCP/UDP</td><td>Come vengono trasportati i dati?</td><td>Flusso affidabile o datagrammi.</td></tr>
+              <tr><td>Protocollo applicativo</td><td>Che significato hanno i messaggi?</td><td>HTTP, DNS, protocollo del registro.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>TCP e UDP</h2>
+          <p>I socket usano spesso due protocolli di trasporto: <strong>TCP</strong> e <strong>UDP</strong>. TCP stabilisce una connessione e fornisce un flusso ordinato e affidabile. UDP invia datagrammi indipendenti, più leggeri ma senza garanzia automatica di consegna e ordine.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/socket-tcp-udp.svg" alt="Schema di confronto tra socket TCP e UDP">
+            <figcaption>Figura 1: TCP privilegia affidabilità e ordine; UDP privilegia semplicità e rapidità.</figcaption>
+          </figure>
+          <table>
+            <thead>
+              <tr><th>Aspetto</th><th>TCP</th><th>UDP</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Connessione</td><td>Prima di comunicare viene stabilita una connessione.</td><td>Non richiede una connessione preventiva.</td></tr>
+              <tr><td>Dati</td><td>Flusso di byte ordinato.</td><td>Datagrammi separati.</td></tr>
+              <tr><td>Affidabilità</td><td>Gestisce ritrasmissione e ordine.</td><td>Non garantisce automaticamente consegna e ordine.</td></tr>
+              <tr><td>Uso tipico</td><td>Web, file, posta, login.</td><td>DNS, streaming, giochi, sensori.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Ciclo di vita di un server TCP</h2>
+          <p>Un server TCP segue una sequenza tipica. Prima crea un socket, poi lo collega a una porta locale, si mette in ascolto e accetta connessioni dai client. Ogni connessione accettata viene poi usata per scambiare dati.</p>
+          <pre><code>Server TCP:
+crea socket
+associa socket a indirizzo e porta
+mette il socket in ascolto
+ripeti:
+  accetta connessione da un client
+  ricevi richiesta
+  invia risposta
+  chiudi connessione o continua la conversazione</code></pre>
+          <p>Nei server reali l'accettazione di una connessione può avviare un thread, usare una coda di lavoro o affidarsi a un modello asincrono, così più client possono essere serviti nello stesso periodo.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Ciclo di vita di un client TCP</h2>
+          <p>Il client normalmente crea un socket, si connette all'indirizzo e alla porta del server, invia una richiesta, legge la risposta e chiude la comunicazione quando non serve più.</p>
+          <pre><code>Client TCP:
+crea socket
+si connette al server
+invia richiesta
+riceve risposta
+chiude socket</code></pre>
+          <p>La chiusura è importante perché libera risorse del sistema operativo. Lasciare socket aperti inutilmente può consumare memoria, porte e connessioni disponibili.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Errori e timeout</h2>
+          <p>La rete è meno prevedibile della memoria locale. Un server può non rispondere, una connessione può interrompersi, un messaggio può arrivare incompleto, un client può chiudere prima del previsto. Per questo un programma di rete deve gestire errori e timeout.</p>
+          <table>
+            <thead>
+              <tr><th>Problema</th><th>Che cosa può succedere</th><th>Come si gestisce</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Server non raggiungibile</td><td>La connessione fallisce.</td><td>Mostrare errore e permettere nuovo tentativo.</td></tr>
+              <tr><td>Timeout</td><td>La risposta non arriva entro il tempo previsto.</td><td>Interrompere l'attesa e liberare risorse.</td></tr>
+              <tr><td>Dati incompleti</td><td>Il messaggio non può essere interpretato.</td><td>Validare lunghezza, formato e fine messaggio.</td></tr>
+              <tr><td>Chiusura improvvisa</td><td>Una parte interrompe la comunicazione.</td><td>Gestire eccezione e ripulire lo stato.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: chat scolastica</h2>
+          <ol>
+            <li>Il server apre una porta e resta in ascolto.</li>
+            <li>Ogni client si connette con un socket.</li>
+            <li>Il client invia messaggi testuali codificati.</li>
+            <li>Il server riceve un messaggio e lo inoltra ai destinatari.</li>
+            <li>Se un client si disconnette, il server chiude il socket corrispondente.</li>
+          </ol>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Spiega perché IP e porta servono entrambi.</li>
+            <li>Indica tre applicazioni adatte a TCP e due adatte a UDP.</li>
+            <li>Disegna il ciclo di vita di un server TCP.</li>
+            <li>Descrivi che cosa dovrebbe fare un client quando scatta un timeout.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>Un socket identifica da solo il protocollo applicativo?</summary>
+            <p>No. Il socket permette di inviare e ricevere dati; il protocollo applicativo stabilisce il significato dei messaggi scambiati.</p>
+          </details>
+          <details>
+            <summary>Perché TCP è detto affidabile?</summary>
+            <p>Perché gestisce ordine, controllo degli errori e ritrasmissione dei dati persi, offrendo all'applicazione un flusso ordinato di byte.</p>
+          </details>
+          <details>
+            <summary>UDP è sempre peggiore di TCP?</summary>
+            <p>No. UDP è utile quando conta la rapidità o quando l'applicazione può tollerare qualche perdita, come in streaming, giochi o richieste molto brevi.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>Un socket è un endpoint. Per descriverlo bene cita sempre: indirizzo IP, porta, protocollo di trasporto e protocollo applicativo che interpreta i dati.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="modello-client-server.html">Precedente: Modello client-server</a>
+      <a href="scambio-e-rappresentazione-dei-dati.html">Successivo: Scambio e rappresentazione dei dati</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>

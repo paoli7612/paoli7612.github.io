@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scambio e rappresentazione dei dati | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro TPSIT su byte, codifiche, serializzazione, formati dati e validazione dei messaggi di rete.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
@@ -43,49 +43,166 @@
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/programmazione-di-rete.html">Programmazione di rete</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Scambio e rappresentazione dei dati</h1>
-              <p>Programmazione di rete</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>byte e codifica</h2>
-                    <p>La rete trasporta sequenze di byte, mentre le applicazioni utilizzano tipi di dato e strutture più complesse.</p>
-<p>Mittente e destinatario devono quindi concordare come trasformare i dati applicativi nella rappresentazione trasmessa.</p>
-                  </section>
-<section class="content-block">
-                    <h2>serializzazione</h2>
-                    <p>La serializzazione converte strutture dati in una forma adatta alla memorizzazione o alla trasmissione.</p>
-<p>Il destinatario effettua la deserializzazione per ricostruire la struttura originaria.</p>
-                  </section>
-<section class="content-block">
-                    <h2>formati strutturati</h2>
-                    <p>Formati come JSON e XML permettono di rappresentare informazioni strutturate in modo indipendente dal linguaggio utilizzato.</p>
-<p>Sono frequentemente impiegati nello scambio di dati tra applicazioni e servizi distribuiti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>gestione degli errori</h2>
-                    <p>Le applicazioni di rete devono considerare disconnessioni, timeout, messaggi non validi e indisponibilità dei servizi.</p>
-<p>La gestione esplicita degli errori permette di evitare stati incoerenti e fornire comportamenti prevedibili.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <a href="socket.html">Precedente: Socket</a>
-            <a href="protocolli-applicativi.html">Successivo: Protocolli applicativi</a>
-          </nav>
+      <a href="../../../index.html">Home</a>
+      <span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
+      <span>/</span>
+      <a href="../../../capitoli/programmazione-di-rete.html">Programmazione di rete</a>
+    </section>
+
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 3</p>
+        <h1>Scambio e rappresentazione dei dati</h1>
+        <p>La rete trasporta sequenze di byte, ma le applicazioni lavorano con numeri, stringhe, oggetti, liste e record. Per comunicare correttamente bisogna trasformare i dati in un formato condiviso e poi ricostruirli dall'altra parte.</p>
+      </header>
+
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Capire perché in rete i dati viaggiano come byte.</li>
+            <li>Distinguere dato applicativo, formato e codifica.</li>
+            <li>Definire serializzazione e deserializzazione.</li>
+            <li>Confrontare formati testuali e binari.</li>
+            <li>Riconoscere il ruolo della validazione dei messaggi.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Dai dati ai byte</h2>
+          <p>Un'applicazione può gestire dati complessi: un utente, un voto, un messaggio, una prenotazione, una lista di prodotti. La rete però non conosce questi concetti: trasporta byte. Serve quindi una rappresentazione che trasformi i dati dell'applicazione in una sequenza trasmissibile.</p>
+          <p>Il mittente deve codificare i dati e il destinatario deve interpretarli nello stesso modo. Se le due parti non condividono formato e codifica, il messaggio può essere frainteso anche se arriva senza errori.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/data-serialization-network.svg" alt="Schema della serializzazione dei dati per la rete">
+            <figcaption>Figura 1: un oggetto applicativo viene serializzato in un formato, inviato come byte e ricostruito dal destinatario.</figcaption>
+          </figure>
+        </section>
+
+        <section class="content-block">
+          <h2>Codifica dei caratteri</h2>
+          <p>Quando si invia testo, bisogna stabilire come rappresentare i caratteri. Una codifica assegna numeri ai simboli. Oggi la codifica più comune è <strong>UTF-8</strong>, perché può rappresentare caratteri di molte lingue ed è compatibile con molti sistemi.</p>
+          <table>
+            <thead>
+              <tr><th>Concetto</th><th>Significato</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Carattere</td><td>Simbolo logico.</td><td><code>A</code>, <code>è</code>, <code>9</code></td></tr>
+              <tr><td>Codifica</td><td>Regola che trasforma caratteri in byte.</td><td>UTF-8</td></tr>
+              <tr><td>Formato</td><td>Struttura del messaggio.</td><td>JSON, XML, CSV</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Serializzazione</h2>
+          <p>La <strong>serializzazione</strong> trasforma una struttura dati in una sequenza di byte o testo. La <strong>deserializzazione</strong> fa il percorso inverso: legge la sequenza ricevuta e ricostruisce la struttura dati.</p>
+          <pre><code>Dati applicativi:
+nome = "Ada"
+classe = "4B"
+presente = true
+
+Rappresentazione JSON:
+{"nome":"Ada","classe":"4B","presente":true}</code></pre>
+          <p>La serializzazione deve conservare il significato dei dati. Per esempio, il valore <code>10</code> può essere un numero, una stringa, un codice o una quantità: il formato deve permettere al destinatario di capirlo correttamente.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Formati testuali e binari</h2>
+          <p>I formati testuali sono leggibili dagli esseri umani e facili da ispezionare durante il debug. I formati binari sono spesso più compatti e veloci, ma meno immediati da leggere senza strumenti specifici.</p>
+          <table>
+            <thead>
+              <tr><th>Formato</th><th>Tipo</th><th>Uso tipico</th><th>Caratteristica</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>JSON</td><td>Testuale</td><td>API web, configurazioni, scambio dati.</td><td>Compatto e molto diffuso.</td></tr>
+              <tr><td>XML</td><td>Testuale</td><td>Documenti strutturati, integrazioni legacy.</td><td>Verboso ma molto descrittivo.</td></tr>
+              <tr><td>CSV</td><td>Testuale</td><td>Tabelle semplici.</td><td>Adatto a righe e colonne.</td></tr>
+              <tr><td>Binario</td><td>Binario</td><td>Audio, video, immagini, protocolli efficienti.</td><td>Compatto, richiede specifica precisa.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="content-block">
+          <h2>Delimitare i messaggi</h2>
+          <p>In una comunicazione TCP i dati arrivano come flusso di byte. Il programma deve capire dove finisce un messaggio e dove inizia il successivo. Questo problema si chiama delimitazione o framing.</p>
+          <table>
+            <thead>
+              <tr><th>Metodo</th><th>Idea</th><th>Esempio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Separatore</td><td>Un simbolo indica la fine del messaggio.</td><td>Una riga termina con <code>\n</code>.</td></tr>
+              <tr><td>Lunghezza</td><td>Prima si invia la dimensione del messaggio.</td><td><code>32:{...messaggio...}</code></td></tr>
+              <tr><td>Formato strutturato</td><td>La struttura indica inizio e fine.</td><td>Oggetto JSON completo.</td></tr>
+            </tbody>
+          </table>
+          <aside class="simple-box">
+            <strong>Errore comune</strong>
+            <p>Non bisogna presumere che una lettura dal socket corrisponda sempre a un messaggio completo. La rete può consegnare dati a pezzi o raggruppare più messaggi.</p>
+          </aside>
+        </section>
+
+        <section class="content-block">
+          <h2>Validazione dei dati ricevuti</h2>
+          <p>Ogni messaggio ricevuto dalla rete deve essere considerato non affidabile finché non viene controllato. Può essere incompleto, malformato, troppo grande, fuori formato o creato apposta per provocare errori.</p>
+          <ul>
+            <li>Controllare che il formato sia corretto.</li>
+            <li>Controllare che i campi obbligatori esistano.</li>
+            <li>Verificare tipi, lunghezze e valori ammessi.</li>
+            <li>Gestire dati mancanti senza bloccare il programma.</li>
+            <li>Non eseguire mai comandi ricevuti dalla rete senza controlli.</li>
+          </ul>
+        </section>
+
+        <section class="content-block">
+          <h2>Esempio guidato: invio di un voto</h2>
+          <p>Un client invia al server un voto inserito dal docente. Il dato applicativo contiene studente, materia, voto e data. Prima di inviarlo, il client lo serializza in JSON; il server lo riceve, lo valida e lo salva.</p>
+          <pre><code>{
+  "studente": "Mario Rossi",
+  "materia": "TPSIT",
+  "voto": 8,
+  "data": "2026-03-12"
+}</code></pre>
+          <p>Il server deve controllare che il voto sia numerico, che sia compreso nell'intervallo ammesso, che la materia esista e che l'utente abbia il permesso di inserire voti.</p>
+        </section>
+
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Scrivi in JSON un messaggio che rappresenta la prenotazione di un laboratorio.</li>
+            <li>Spiega perché mittente e destinatario devono usare la stessa codifica.</li>
+            <li>Confronta JSON e CSV usando un esempio scolastico.</li>
+            <li>Indica tre controlli da fare su un messaggio ricevuto dalla rete.</li>
+          </ol>
+        </section>
+
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details>
+            <summary>Che cosa significa serializzare?</summary>
+            <p>Significa trasformare una struttura dati in una sequenza trasmissibile, per esempio testo JSON o byte.</p>
+          </details>
+          <details>
+            <summary>Perché il formato del messaggio è importante?</summary>
+            <p>Perché permette al destinatario di capire il significato dei byte ricevuti e ricostruire correttamente i dati.</p>
+          </details>
+          <details>
+            <summary>Perché bisogna validare i dati ricevuti?</summary>
+            <p>Perché la rete può portare dati errati o ostili. La validazione evita errori, incoerenze e problemi di sicurezza.</p>
+          </details>
+        </section>
+      </div>
+
+      <section class="notes-box">
+        <h2>Per ripassare</h2>
+        <p>La rete trasporta byte. L'applicazione deve scegliere formato, codifica, regole di delimitazione e controlli di validazione per trasformare quei byte in dati affidabili.</p>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="Capitoletti vicini">
+      <a href="socket.html">Precedente: Socket</a>
+      <a href="protocolli-applicativi.html">Successivo: Protocolli applicativi</a>
+    </nav>
   </main>
   <footer class="site-footer">
     <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>
