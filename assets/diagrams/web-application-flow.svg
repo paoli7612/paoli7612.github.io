@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
+  <title id="title">Flusso di una applicazione web</title>
+  <desc id="desc">Il browser invia una richiesta HTTP al server, che consulta dati e restituisce una risposta.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006d77"/></marker></defs>
+  <rect x="18" y="18" width="724" height="304" rx="12" fill="#fff" stroke="#d8dee5"/>
+  <rect x="62" y="86" width="138" height="76" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <text x="131" y="118" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700">Browser</text>
+  <text x="131" y="142" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">HTML, CSS, JS</text>
+  <rect x="312" y="86" width="138" height="76" rx="10" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="381" y="118" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700">Server web</text>
+  <text x="381" y="142" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">route e risposte</text>
+  <rect x="562" y="86" width="138" height="76" rx="10" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
+  <text x="631" y="118" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700">Database</text>
+  <text x="631" y="142" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">letture e scritture</text>
+  <line x1="200" y1="110" x2="312" y2="110" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="312" y1="138" x2="200" y2="138" stroke="#c44f24" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="450" y1="110" x2="562" y2="110" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="562" y1="138" x2="450" y2="138" stroke="#c44f24" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="256" y="92" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">richiesta</text>
+  <text x="256" y="166" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">risposta</text>
+  <rect x="130" y="222" width="500" height="50" rx="9" fill="#f7fbff" stroke="#d8dee5"/>
+  <text x="380" y="252" text-anchor="middle" font-family="Arial" font-size="13" fill="#34495e">Il front-end mostra l'interfaccia; il back-end applica regole e accede ai dati.</text>
+</svg>

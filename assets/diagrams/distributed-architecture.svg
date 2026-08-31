@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
+  <title id="title">Architettura distribuita</title>
+  <desc id="desc">Client, server applicativo, database e servizio esterno comunicano attraverso la rete.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006d77"/></marker></defs>
+  <rect x="18" y="18" width="724" height="304" rx="12" fill="#fff" stroke="#d8dee5"/>
+  <rect x="54" y="122" width="140" height="76" rx="10" fill="#e7f0ed" stroke="#006d77" stroke-width="2"/>
+  <text x="124" y="154" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700">Client</text>
+  <text x="124" y="178" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">browser o app</text>
+  <rect x="292" y="92" width="176" height="136" rx="12" fill="#fff1ea" stroke="#c44f24" stroke-width="2"/>
+  <text x="380" y="126" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700">Server applicativo</text>
+  <text x="380" y="152" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">regole di business</text>
+  <text x="380" y="176" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">controlli e logica</text>
+  <text x="380" y="200" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">API esposte</text>
+  <rect x="566" y="68" width="138" height="72" rx="10" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
+  <text x="635" y="99" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700">Database</text>
+  <text x="635" y="121" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">dati persistenti</text>
+  <rect x="566" y="196" width="138" height="72" rx="10" fill="#f7fbff" stroke="#006d77" stroke-width="2"/>
+  <text x="635" y="227" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700">Servizio esterno</text>
+  <text x="635" y="249" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">email, mappe, auth</text>
+  <line x1="194" y1="160" x2="292" y2="160" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="468" y1="128" x2="566" y2="104" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="468" y1="190" x2="566" y2="226" stroke="#006d77" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="243" y="143" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">HTTP/HTTPS</text>
+  <text x="380" y="286" text-anchor="middle" font-family="Arial" font-size="12" fill="#34495e">In un sistema distribuito le responsabilità sono divise tra componenti collegati in rete.</text>
+</svg>

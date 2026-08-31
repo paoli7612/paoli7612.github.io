@@ -4,91 +4,115 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Architetture delle applicazioni | Programmi di studio A041</title>
-  <meta name="description" content="Programmi di studio A041: materiali di informatica per istituto tecnico, tecnico economico e scienze applicate.">
+  <meta name="description" content="Pagina-libro TPSIT su monoliti, livelli, componenti distribuiti, scalabilità e guasti parziali.">
   <link rel="stylesheet" href="../../../assets/styles.css">
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="../../../index.html" aria-label="Torna alla home">
       <span class="brand-mark">A041</span>
-      <span>
-        <strong>Programmi di studio A041</strong>
-        <small>Informatica nella scuola secondaria</small>
-      </span>
+      <span><strong>Programmi di studio A041</strong><small>Informatica nella scuola secondaria</small></span>
     </a>
     <nav class="top-nav" aria-label="Navigazione principale">
       <a href="../../../index.html">Home</a>
-      <details class="nav-menu">
-        <summary>I.T. tecnologico</summary>
-        <div class="nav-menu-list">
-          <a href="../../../materie/informatica.html">Informatica</a>
-          <a href="../../../materie/sistemi-e-reti.html">Sistemi e reti</a>
-          <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a>
-          <a href="../../../materie/telecomunicazioni.html">Telecomunicazioni</a>
-        </div>
-      </details>
-      <details class="nav-menu">
-        <summary>Tecnico economico</summary>
-        <div class="nav-menu-list">
-          <span class="nav-disabled" aria-disabled="true">Informatica</span>
-        </div>
-      </details>
-      <details class="nav-menu">
-        <summary>Liceo scienze applicate</summary>
-        <div class="nav-menu-list">
-          <span class="nav-disabled" aria-disabled="true">Informatica</span>
-        </div>
-      </details>
+      <details class="nav-menu"><summary>I.T. tecnologico</summary><div class="nav-menu-list"><a href="../../../materie/informatica.html">Informatica</a><a href="../../../materie/sistemi-e-reti.html">Sistemi e reti</a><a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a><a href="../../../materie/telecomunicazioni.html">Telecomunicazioni</a></div></details>
+      <details class="nav-menu"><summary>Tecnico economico</summary><div class="nav-menu-list"><span class="nav-disabled" aria-disabled="true">Informatica</span></div></details>
+      <details class="nav-menu"><summary>Liceo scienze applicate</summary><div class="nav-menu-list"><span class="nav-disabled" aria-disabled="true">Informatica</span></div></details>
     </nav>
   </header>
   <main>
     <section class="breadcrumbs" aria-label="Percorso">
-            <a href="../../../index.html">Home</a>
-            <span>/</span>
-            <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni</a>
-            <span>/</span>
-            <a href="../../../capitoli/architetture-e-servizi-distribuiti.html">Architetture e servizi distribuiti</a>
-          </section>
-          <article class="study-page">
-            <header>
-              <p class="eyebrow">Capitoletto</p>
-              <h1>Architetture delle applicazioni</h1>
-              <p>Architetture e servizi distribuiti</p>
-            </header>
-            <div class="content-blocks">
-              <section class="content-block">
-                    <h2>applicazioni monolitiche e distribuite</h2>
-                    <p>Un'applicazione monolitica concentra gran parte delle funzionalità in un unico sistema, mentre un'applicazione distribuita suddivide responsabilità tra più componenti.</p>
-<p>La distribuzione introduce vantaggi di separazione e scalabilità ma anche problemi relativi a comunicazione e coordinamento.</p>
-                  </section>
-<section class="content-block">
-                    <h2>architettura client-server</h2>
-                    <p>L'architettura client-server separa la componente che utilizza il servizio da quella che lo fornisce.</p>
-<p>Può essere estesa organizzando presentazione, logica applicativa e gestione dei dati in livelli distinti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>architetture a livelli</h2>
-                    <p>Un'architettura a livelli separa responsabilità differenti dietro interfacce definite.</p>
-<p>La separazione facilita manutenzione, sostituzione e distribuzione indipendente di alcune componenti.</p>
-                  </section>
-<section class="content-block">
-                    <h2>sistemi distribuiti</h2>
-                    <p>Un sistema distribuito è composto da componenti eseguiti su nodi differenti che cooperano attraverso una rete.</p>
-<p>La progettazione deve considerare latenza, concorrenza, guasti parziali e disponibilità dei servizi.</p>
-                  </section>
-            </div>
-            <section class="notes-box">
-              <h2>Spazio per aggiornamenti</h2>
-              <p>Aggiungi qui appunti, esempi, mappe, esercizi o collegamenti quando riprenderai questo argomento.</p>
-            </section>
-          </article>
-          <nav class="pager" aria-label="Capitoletti vicini">
-            <span></span>
-            <a href="applicazioni-web.html">Successivo: Applicazioni Web</a>
-          </nav>
+      <a href="../../../index.html">Home</a><span>/</span>
+      <a href="../../../materie/tecnologie-e-progettazione-di-sistemi-informatici-e-di-telecomunicazioni.html">T.P.S.I.T</a><span>/</span>
+      <a href="../../../capitoli/architetture-e-servizi-distribuiti.html">Architetture e servizi distribuiti</a>
+    </section>
+    <article class="study-page">
+      <header>
+        <p class="eyebrow">Capitoletto 1</p>
+        <h1>Architetture delle applicazioni</h1>
+        <p>L'architettura di un'applicazione descrive come il software è diviso in parti, quali responsabilità ha ogni parte e come le parti comunicano. Una buona architettura rende il sistema più comprensibile, modificabile e affidabile.</p>
+      </header>
+      <div class="content-blocks">
+        <section class="content-block">
+          <h2>Obiettivi della lezione</h2>
+          <ul>
+            <li>Distinguere applicazioni monolitiche, a livelli e distribuite.</li>
+            <li>Capire perché si separano presentazione, logica e dati.</li>
+            <li>Riconoscere vantaggi e rischi della distribuzione.</li>
+            <li>Collegare architettura, scalabilità, disponibilità e manutenzione.</li>
+          </ul>
+        </section>
+        <section class="content-block">
+          <h2>Che cos'è un'architettura software</h2>
+          <p>L'architettura è l'organizzazione generale del sistema. Non riguarda solo i file del progetto, ma le decisioni importanti: quali moduli esistono, dove sono i dati, chi esegue le regole, quali componenti parlano tra loro e quali tecnologie permettono l'esecuzione.</p>
+          <p>In TPSIT l'architettura collega progettazione, programmazione di rete, basi di dati e gestione dei sistemi. Un'applicazione moderna è spesso una rete di componenti: browser, server, database, API e servizi esterni.</p>
+        </section>
+        <section class="content-block">
+          <h2>Monolite e applicazione distribuita</h2>
+          <p>Un'applicazione <strong>monolitica</strong> concentra molte funzionalità in un unico sistema aggiornato come un solo blocco. È semplice da avviare e capire nei progetti piccoli. Un'applicazione <strong>distribuita</strong> divide il lavoro tra componenti separati, spesso eseguiti su macchine o ambienti diversi.</p>
+          <figure class="lesson-figure">
+            <img src="../../../assets/diagrams/distributed-architecture.svg" alt="Schema di architettura distribuita con client, server, database e servizio esterno">
+            <figcaption>Figura 1: in un sistema distribuito le responsabilità sono divise tra componenti che comunicano in rete.</figcaption>
+          </figure>
+          <table>
+            <thead><tr><th>Tipo</th><th>Vantaggi</th><th>Rischi</th></tr></thead>
+            <tbody>
+              <tr><td>Monolite</td><td>Semplice da sviluppare, testare e distribuire all'inizio.</td><td>Crescendo può diventare difficile da modificare e scalare.</td></tr>
+              <tr><td>Distribuita</td><td>Separa responsabilità e permette scalabilità selettiva.</td><td>Aumenta complessità, latenza e gestione dei guasti.</td></tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="content-block">
+          <h2>Architettura a livelli</h2>
+          <p>Una scelta molto comune è dividere l'applicazione in livelli. Il livello di presentazione gestisce ciò che vede l'utente, la logica applicativa applica le regole, l'accesso ai dati legge e scrive le informazioni, la persistenza conserva i dati nel tempo.</p>
+          <table>
+            <thead><tr><th>Livello</th><th>Responsabilità</th><th>Esempio</th></tr></thead>
+            <tbody>
+              <tr><td>Presentazione</td><td>Interfaccia e interazione con l'utente.</td><td>Pagina web per prenotare un laboratorio.</td></tr>
+              <tr><td>Logica applicativa</td><td>Regole e controlli.</td><td>Impedire due prenotazioni sovrapposte.</td></tr>
+              <tr><td>Accesso ai dati</td><td>Query e operazioni controllate.</td><td>Ricerca delle prenotazioni nel database.</td></tr>
+              <tr><td>Persistenza</td><td>Conservazione stabile.</td><td>Database o file.</td></tr>
+            </tbody>
+          </table>
+          <aside class="simple-box"><strong>Idea chiave</strong><p>Separare i livelli permette di cambiare una parte senza riscrivere tutto il sistema.</p></aside>
+        </section>
+        <section class="content-block">
+          <h2>Accoppiamento e coesione</h2>
+          <p>Un componente ha alta <strong>coesione</strong> quando svolge responsabilità collegate tra loro. Ha basso <strong>accoppiamento</strong> quando dipende poco dai dettagli interni degli altri componenti. Questi due principi aiutano a progettare sistemi manutenibili.</p>
+          <p>Per esempio, il modulo che invia email non dovrebbe conoscere tutta la logica dei voti o delle prenotazioni. Dovrebbe ricevere un messaggio chiaro e occuparsi solo dell'invio.</p>
+        </section>
+        <section class="content-block">
+          <h2>Scalabilità, disponibilità e guasti parziali</h2>
+          <p>La <strong>scalabilità</strong> è la capacità di reggere più utenti o più lavoro. La <strong>disponibilità</strong> è la capacità di restare utilizzabile. Nei sistemi distribuiti esistono anche i <strong>guasti parziali</strong>: un componente funziona, un altro è lento o non raggiungibile.</p>
+          <ul>
+            <li>Un database lento può rallentare tutto il servizio.</li>
+            <li>Un servizio esterno non raggiungibile può impedire l'invio di email.</li>
+            <li>Una rete instabile può produrre timeout anche se il codice è corretto.</li>
+          </ul>
+        </section>
+        <section class="content-block">
+          <h2>Esempio guidato</h2>
+          <p>Una piattaforma scolastica può essere divisa così: browser degli studenti, server applicativo, database, servizio email e servizio di autenticazione. Ogni parte ha un compito; se cambia il servizio email, il resto dovrebbe continuare a funzionare con poche modifiche.</p>
+        </section>
+        <section class="content-block">
+          <h2>Esercizi guidati</h2>
+          <ol>
+            <li>Dividi un registro elettronico in livelli: presentazione, logica, dati e persistenza.</li>
+            <li>Scrivi due vantaggi e due rischi di un'architettura distribuita.</li>
+            <li>Spiega la differenza tra scalabilità e disponibilità.</li>
+          </ol>
+        </section>
+        <section class="qa-box">
+          <h2>Domande con risposta semplice</h2>
+          <details><summary>Perché si separano i livelli?</summary><p>Per rendere il sistema più chiaro, modificabile e testabile. Ogni livello ha responsabilità diverse.</p></details>
+          <details><summary>Un sistema distribuito è sempre migliore?</summary><p>No. Offre flessibilità e scalabilità, ma introduce rete, latenza, coordinamento e guasti parziali.</p></details>
+          <details><summary>Che cosa significa basso accoppiamento?</summary><p>Significa che un componente dipende poco dai dettagli interni degli altri componenti.</p></details>
+        </section>
+      </div>
+      <section class="notes-box"><h2>Per ripassare</h2><p>Ricorda: architettura significa divisione delle responsabilità. Valuta sempre componenti, comunicazione, dati, guasti e possibilità di crescita.</p></section>
+    </article>
+    <nav class="pager" aria-label="Capitoletti vicini"><span></span><a href="applicazioni-web.html">Successivo: Applicazioni Web</a></nav>
   </main>
-  <footer class="site-footer">
-    <p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p>
-  </footer>
+  <footer class="site-footer"><p>Programmi di studio A041: materiali didattici modificabili per i percorsi di informatica della scuola secondaria.</p></footer>
 </body>
 </html>
