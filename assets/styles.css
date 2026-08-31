@@ -74,12 +74,64 @@ a {
   gap: 8px;
 }
 
-.top-nav a {
+.top-nav a,
+.nav-menu summary {
   padding: 8px 10px;
   border-radius: 8px;
   color: var(--muted);
   font-size: 14px;
   text-decoration: none;
+}
+
+.nav-menu {
+  position: relative;
+}
+
+.nav-menu summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-menu summary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.18s ease;
+}
+
+.nav-menu[open] summary::after {
+  transform: translateY(2px) rotate(225deg);
+}
+
+.nav-menu-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 20;
+  display: grid;
+  min-width: 230px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.nav-menu-list a,
+.nav-menu-list .nav-disabled {
+  display: block;
+  width: 100%;
 }
 
 .top-nav .nav-disabled {
@@ -90,7 +142,9 @@ a {
 }
 
 .top-nav a:hover,
-.top-nav a[aria-current="page"] {
+.top-nav a[aria-current="page"],
+.nav-menu summary:hover,
+.nav-menu[open] summary {
   background: var(--soft);
   color: var(--accent);
 }
@@ -588,6 +642,21 @@ main {
 
   .top-nav {
     justify-content: flex-start;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .nav-menu summary {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-menu-list {
+    position: static;
+    margin-top: 6px;
+    box-shadow: none;
   }
 
   .hero h1,
